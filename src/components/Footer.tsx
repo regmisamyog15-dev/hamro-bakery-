@@ -5,59 +5,61 @@ import { FeedbackModal } from "@/components/FeedbackModal";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
-const socialCards = [
-  {
-    icon: <SiFacebook className="w-7 h-7 text-white" />,
-    bg: "bg-[#1877F2]",
-    name: "Facebook",
-    desc: "Like & Follow Us",
-    href: "https://www.facebook.com/share/1E8bcas3Dv/",
-    testId: "link-fb-card",
-  },
-  {
-    icon: <SiInstagram className="w-7 h-7 text-white" />,
-    bg: "bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
-    name: "Instagram",
-    desc: "Visual Stories",
-    href: "https://www.instagram.com/hamrobakerynarayangarh",
-    testId: "link-ig-card",
-  },
-  {
-    icon: <SiTiktok className="w-7 h-7 text-white" />,
-    bg: "bg-[#010101]",
-    name: "TikTok",
-    desc: "Watch Our Reels",
-    href: "https://www.tiktok.com/@hamro.bakery.shop",
-    testId: "link-tt-card",
-  },
-  {
-    icon: <SiWhatsapp className="w-7 h-7 text-white" />,
-    bg: "bg-[#25D366]",
-    name: "WhatsApp",
-    desc: "Order Instantly",
-    href: "https://wa.me/9779865009581",
-    testId: "link-wa-card",
-  },
-  {
-    icon: <SiGmail className="w-7 h-7 text-white" />,
-    bg: "bg-[#EA4335]",
-    name: "Email",
-    desc: "Write To Us",
-    href: "mailto:bakeryhamro1@gmail.com",
-    testId: "link-mail-card",
-  },
-  {
-    icon: <Phone className="w-7 h-7 text-white" />,
-    bg: "bg-[#8B4513]",
-    name: "Call Us",
-    desc: "Owner: 9865009581",
-    href: "tel:9865009581",
-    testId: "link-phone-card",
-  },
-];
+
 
 export function Footer() {
   const { branchData, selectedBranch } = useBranch();
+
+  const socialCards = [
+    {
+      icon: <SiFacebook className="w-7 h-7 text-white" />,
+      bg: "bg-[#1877F2]",
+      name: "Facebook",
+      desc: "Like & Follow Us",
+      href: "https://www.facebook.com/share/1E8bcas3Dv/",
+      testId: "link-fb-card",
+    },
+    {
+      icon: <SiInstagram className="w-7 h-7 text-white" />,
+      bg: "bg-gradient-to-br from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
+      name: "Instagram",
+      desc: "Visual Stories",
+      href: "https://www.instagram.com/hamrobakerynarayangarh",
+      testId: "link-ig-card",
+    },
+    {
+      icon: <SiTiktok className="w-7 h-7 text-white" />,
+      bg: "bg-[#010101]",
+      name: "TikTok",
+      desc: "Watch Our Reels",
+      href: branchData?.tiktok ?? "https://www.tiktok.com/@hamro.bakery.shop",
+      testId: "link-tt-card",
+    },
+    {
+      icon: <SiWhatsapp className="w-7 h-7 text-white" />,
+      bg: "bg-[#25D366]",
+      name: "WhatsApp",
+      desc: "Order Instantly",
+      href: `https://wa.me/977${branchData?.whatsapp ?? "9865009581"}`,
+      testId: "link-wa-card",
+    },
+    {
+      icon: <SiGmail className="w-7 h-7 text-white" />,
+      bg: "bg-[#EA4335]",
+      name: "Email",
+      desc: "Write To Us",
+      href: "mailto:bakeryhamro1@gmail.com",
+      testId: "link-mail-card",
+    },
+    {
+      icon: <Phone className="w-7 h-7 text-white" />,
+      bg: "bg-[#8B4513]",
+      name: "Call Us",
+      desc: `Call: ${branchData?.phone ?? "9865009581"}`,
+      href: `tel:${branchData?.phone ?? "9865009581"}`,
+      testId: "link-phone-card",
+    },
+  ];
 
   const saveContact = () => {
     const phone = branchData?.phone ?? "9865009581";
