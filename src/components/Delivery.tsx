@@ -8,13 +8,13 @@ const platforms = [
   {
     name: "Foodmandu",
     url: "https://foodmandu.com/",
-    img: foodmanduImg,
+    img: "/images/img34.webp"
     description: "Order on the app & get it delivered fast",
   },
   {
     name: "Mero Kinamel",
     url: "https://www.merokinamel.com/",
-    img: meroKinamelImg,
+    img: "/images/img32.jpg"
     description: "Local delivery partner across Chitwan",
   },
 ];
