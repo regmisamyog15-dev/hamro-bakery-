@@ -83,7 +83,7 @@ END:VCARD`;
       {/* Contact bar */}
       <div className="bg-[#2a1208] border-b border-white/10 py-3 px-4 text-center">
         <p className="text-[#C9A84C] text-sm font-medium">
-          📞 For cosstom website like this  &amp; details, call us:{" "}
+          📞 For costom website like this  &amp; details, call us:{" "}
           <a href="tel:9768530353" className="text-white hover:text-[#C9A84C] transition-colors font-bold tracking-wide">
             9768530353
           </a>
