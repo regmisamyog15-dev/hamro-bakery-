@@ -79,7 +79,16 @@ END:VCARD`;
   };
 
   return (
-    <footer id="location" className="bg-[#1C0D05]">
+   <footer id="location" className="bg-[#1C0D05]">
+      {/* Contact bar */}
+      <div className="bg-[#2a1208] border-b border-white/10 py-3 px-4 text-center">
+        <p className="text-[#C9A84C] text-sm font-medium">
+          📞 For orders &amp; inquiries, call us:{" "}
+          <a href="tel:9768530353" className="text-white hover:text-[#C9A84C] transition-colors font-bold tracking-wide">
+            9768530353
+          </a>
+        </p>
+      </div>
       {/* Get in touch hero band */}
       <div className="relative overflow-hidden px-4 pt-16 pb-12">
         {/* Subtle warm grid texture */}
