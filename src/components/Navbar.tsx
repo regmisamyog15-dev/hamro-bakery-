@@ -4,6 +4,7 @@ import { ChevronDown, MapPin, Phone } from "lucide-react";
 import { SiInstagram, SiFacebook } from "react-icons/si";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 export function Navbar() {
   const { branchData, selectedBranch, setShowSelector } = useBranch();
@@ -78,6 +79,9 @@ export function Navbar() {
           </DropdownMenu>
           <button onClick={() => scrollTo("location")} className="hover:text-primary transition-colors">Location</button>
           <button onClick={() => scrollTo("gallery")} className="hover:text-primary transition-colors">Gallery</button>
+          <Link href="/blog">
+            <span className="hover:text-primary transition-colors cursor-pointer font-medium">Blog</span>
+          </Link>
         </div>
 
         <div className="flex items-center gap-2 md:gap-4">
