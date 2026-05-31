@@ -4,6 +4,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 import { BranchProvider } from "@/context/BranchContext";
 import { useEffect } from "react";
 
@@ -12,25 +14,25 @@ const queryClient = new QueryClient();
 function FestiveMode() {
   useEffect(() => {
     const date = new Date();
-    const month = date.getMonth() + 1; // 1-12
+    const month = date.getMonth() + 1;
     const day = date.getDate();
 
     let particleColor = "";
     let particleCount = 0;
-    
-    if (month === 8 || month === 9) { // Teej
+
+    if (month === 8 || month === 9) {
       particleColor = "bg-red-500 shadow-[0_0_10px_red]";
       particleCount = 15;
-    } else if (month === 10) { // Dashain
+    } else if (month === 10) {
       particleColor = "bg-red-600 shadow-[0_0_10px_red]";
       particleCount = 20;
-    } else if (month === 11) { // Tihar
+    } else if (month === 11) {
       particleColor = "bg-orange-400 shadow-[0_0_15px_orange]";
       particleCount = 25;
-    } else if (month === 2) { // Losar
+    } else if (month === 2) {
       particleColor = "bg-gradient-to-r from-pink-500 to-yellow-500";
       particleCount = 15;
-    } else if (month === 12 && day >= 20) { // Christmas
+    } else if (month === 12 && day >= 20) {
       particleColor = "bg-white shadow-[0_0_10px_white]";
       particleCount = 20;
     }
@@ -63,6 +65,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -85,3 +89,4 @@ function App() {
 }
 
 export default App;
+
