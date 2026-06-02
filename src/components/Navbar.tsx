@@ -42,7 +42,7 @@ export function Navbar() {
           data-testid="link-home"
         >
           <img
-            src="/images/img31.jpeg"
+            src="/images/logo.jpeg"
             alt="Hamro Bakery Logo"
             className="h-12 w-12 object-contain rounded-full bg-white border border-border/40 shadow-sm"
           />
@@ -81,6 +81,9 @@ export function Navbar() {
           <button onClick={() => scrollTo("gallery")} className="hover:text-primary transition-colors">Gallery</button>
           <Link href="/blog">
             <span className="hover:text-primary transition-colors cursor-pointer font-medium">Blog</span>
+          </Link>
+          <Link href="/facts">
+            <span className="hover:text-primary transition-colors cursor-pointer font-medium">🎉 Fun Facts</span>
           </Link>
         </div>
 
@@ -124,3 +127,4 @@ export function Navbar() {
     </nav>
   );
 }
+
