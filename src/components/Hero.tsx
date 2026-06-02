@@ -8,7 +8,7 @@ export function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 5000);
+    }, 2000);
     return () => clearInterval(timer);
   }, []);
 
