@@ -33,6 +33,12 @@ export function Navbar() {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleOrderNow = () => {
+    const phone = branchData?.whatsapp ?? "9865009581";
+    const msg = `Hello Hamro Bakery${selectedBranch ? ` (${selectedBranch})` : ""}! I'd like to place an order. Please help me!`;
+    window.open(`https://wa.me/977${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b">
       <div className="w-full px-2 sm:px-4 h-16 flex items-center justify-between">
@@ -93,25 +99,13 @@ export function Navbar() {
             {isOpen ? 'Open' : 'Closed'}
           </div>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button size="sm" className="hidden sm:flex rounded-full px-6 shadow-sm hover:shadow">
-                Order Now
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-48">
-              <DropdownMenuItem asChild>
-                <a href="https://foodmandu.com/" target="_blank" rel="noreferrer" className="cursor-pointer font-medium">
-                  Foodmandu
-                </a>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <a href="https://www.merokinamel.com/" target="_blank" rel="noreferrer" className="cursor-pointer font-medium">
-                  Mero Kinamel
-                </a>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button
+            size="sm"
+            onClick={handleOrderNow}
+            className="hidden sm:flex rounded-full px-6 shadow-sm hover:shadow"
+          >
+            Order Now
+          </Button>
 
           <button
             onClick={() => setShowSelector(true)}
@@ -127,4 +121,3 @@ export function Navbar() {
     </nav>
   );
 }
-
