@@ -173,16 +173,79 @@
         "https://kaha6.com/company/hamro-bakery/"
       ],
       "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Hamro Bakery Menu",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Custom Birthday Cakes", "description": "Custom birthday cakes from Rs 600 per pound in Chitwan Narayangarh"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Wedding Cakes", "description": "Elegant wedding cakes and fondant design cakes from Rs 1500 per pound"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Redvelvet Cake", "description": "Premium Redvelvet cake at Rs 1000 per pound"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Fresh Pastries", "description": "Daily fresh pastries from Rs 70 per piece"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Cookies and Dry Items", "description": "Assorted cookies and dry baked goods from Rs 20"}}
-        ]
-      },
+  "@type": "OfferCatalog",
+  "name": "Hamro Bakery Menu",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Custom Birthday Cakes",
+        "description": "Custom birthday cakes in Chitwan Narayangarh",
+        "offers": {
+          "@type": "Offer",
+          "price": "600",
+          "priceCurrency": "NPR",
+          "priceSpecification": "per pound"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Wedding Cakes",
+        "description": "Elegant wedding cakes and fondant design cakes",
+        "offers": {
+          "@type": "Offer",
+          "price": "1500",
+          "priceCurrency": "NPR",
+          "priceSpecification": "per pound"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Redvelvet Cake",
+        "description": "Premium Redvelvet cake",
+        "offers": {
+          "@type": "Offer",
+          "price": "1000",
+          "priceCurrency": "NPR",
+          "priceSpecification": "per pound"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Fresh Pastries",
+        "description": "Daily fresh pastries",
+        "offers": {
+          "@type": "Offer",
+          "price": "70",
+          "priceCurrency": "NPR"
+        }
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Cookies and Dry Items",
+        "description": "Assorted cookies and dry baked goods",
+        "offers": {
+          "@type": "Offer",
+          "price": "20",
+          "priceCurrency": "NPR"
+        }
+      }
+    }
+  ]
+}
       "areaServed": [
         {"@type": "City", "name": "Narayangarh"},
         {"@type": "City", "name": "Bharatpur"},
