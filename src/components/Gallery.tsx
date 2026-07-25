@@ -1,157 +1,149 @@
 import { galleryImages } from "@/data";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Pause, Play } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
-
-const INTERVAL = 4000;
+import { X, ZoomIn } from "lucide-react";
 
 export function Gallery() {
-  const isMobile = useIsMobile();
-  const isTablet = !isMobile && typeof window !== "undefined" && window.innerWidth < 1024;
-  const perPage = isMobile ? 1 : isTablet ? 2 : 4;
+  const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const totalPages = Math.ceil(galleryImages.length / perPage);
-  const [page, setPage] = useState(0);
-  const [playing, setPlaying] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const progressRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const startTick = useCallback(() => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    if (progressRef.current) clearInterval(progressRef.current);
-    setProgress(0);
-
-    intervalRef.current = setInterval(() => {
-      setPage((p) => (p + 1) % totalPages);
-      setProgress(0);
-    }, INTERVAL);
-
-    progressRef.current = setInterval(() => {
-      setProgress((p) => Math.min(p + (100 / (INTERVAL / 100)), 100));
-    }, 100);
-  }, [totalPages]);
-
-  const stopTick = useCallback(() => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    if (progressRef.current) clearInterval(progressRef.current);
-  }, []);
-
-  useEffect(() => {
-    if (playing) startTick();
-    else stopTick();
-    return stopTick;
-  }, [playing, startTick, stopTick]);
-
-  const goToPage = (p: number) => {
-    setPage(p);
-    if (playing) startTick();
-  };
-
-  const startX = useRef(0);
-  const handleTouchStart = (e: React.TouchEvent) => { startX.current = e.touches[0].clientX; };
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    const diff = startX.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      setPage((p) => (diff > 0 ? (p + 1) % totalPages : (p - 1 + totalPages) % totalPages));
-      if (playing) startTick();
-    }
-  };
-
-  const pageImages = galleryImages.slice(page * perPage, page * perPage + perPage);
+  const featured = galleryImages.slice(0, 7);
 
   return (
-    <section id="gallery" className="py-16 px-4 bg-secondary/10">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-4xl md:text-5xl font-serif text-primary mb-2">Our Creations</h2>
-          <p className="text-muted-foreground">Every cake tells a story</p>
-        </motion.div>
-
-        <div
-          className="relative overflow-hidden rounded-2xl bg-card"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={page}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.5 }}
-              className={`grid gap-2 ${
-                perPage === 4 ? "grid-cols-4" : perPage === 2 ? "grid-cols-2" : "grid-cols-1"
-              }`}
-            >
-              {pageImages.map((img, i) => (
-                <div
-                  key={`${page}-${i}`}
-                  className="overflow-hidden aspect-square rounded-xl"
-                >
-                  <motion.img
-                    src={img}
-                    alt={`Hamro Bakery creation ${page * perPage + i + 1}`}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.06 }}
-                    transition={{ duration: 0.4 }}
-                    data-testid={`img-gallery-${page * perPage + i}`}
-                  />
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="h-1 bg-border mt-2">
-            <motion.div
-              className="h-full bg-primary"
-              style={{ width: `${playing ? progress : 0}%` }}
-              transition={{ duration: 0.1 }}
-            />
-          </div>
+    <section id="gallery" className="py-24 px-6 bg-white">
+      <div className="container mx-auto max-w-5xl">
+        <div className="mb-12">
+          <span className="section-eyebrow mb-3 block">Gallery</span>
+          <h2 className="font-serif text-5xl md:text-6xl font-light text-[#2C1A0E]">
+            From our <span className="italic">kitchen</span>
+          </h2>
         </div>
 
-        <div className="flex items-center justify-center gap-3 mt-5 flex-wrap">
-          <div className="flex gap-2">
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goToPage(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === page ? "w-6 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-primary/50"
-                }`}
-                aria-label={`Go to page ${i + 1}`}
-                data-testid={`btn-gallery-dot-${i}`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            className={`ml-4 flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all ${
-              playing
-                ? "bg-primary text-primary-foreground border-primary shadow-sm animate-pulse"
-                : "bg-card border-border text-foreground hover:bg-secondary"
-            }`}
-            data-testid="btn-gallery-pause"
+        {/* Masonry-style grid with intentional sizing */}
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          {/* Big feature image */}
+          <motion.div
+            className="col-span-2 row-span-2 relative overflow-hidden cursor-pointer group aspect-[4/3]"
+            whileHover="hovered"
+            onClick={() => setLightbox(0)}
           >
-            {playing ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-            {playing ? "Pause" : "Resume"}
-          </button>
-        </div>
+            <img
+              src={featured[0]}
+              alt="Hamro Bakery signature cake"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <motion.div
+              variants={{ hovered: { opacity: 1 }, initial: { opacity: 0 } }}
+              initial="initial"
+              className="absolute inset-0 bg-[#2C1A0E]/30 flex items-center justify-center"
+            >
+              <ZoomIn className="w-8 h-8 text-white" />
+            </motion.div>
+          </motion.div>
 
-        {!playing && (
-          <p className="text-center text-xs text-muted-foreground mt-2">
-            Slideshow paused — click Resume to continue
-          </p>
-        )}
+          {/* Right column — two portrait images */}
+          {[1, 2].map((idx) => (
+            <motion.div
+              key={idx}
+              className="relative overflow-hidden cursor-pointer group aspect-square"
+              whileHover="hovered"
+              onClick={() => setLightbox(idx)}
+            >
+              <img
+                src={featured[idx]}
+                alt={`Hamro Bakery product ${idx + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <motion.div
+                variants={{ hovered: { opacity: 1 }, initial: { opacity: 0 } }}
+                initial="initial"
+                className="absolute inset-0 bg-[#2C1A0E]/30 flex items-center justify-center"
+              >
+                <ZoomIn className="w-6 h-6 text-white" />
+              </motion.div>
+            </motion.div>
+          ))}
+
+          {/* Bottom row — four squares */}
+          {[3, 4, 5, 6].map((idx) => (
+            <motion.div
+              key={idx}
+              className="relative overflow-hidden cursor-pointer group aspect-square"
+              whileHover="hovered"
+              onClick={() => setLightbox(idx)}
+            >
+              <img
+                src={featured[idx]}
+                alt={`Hamro Bakery product ${idx + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <motion.div
+                variants={{ hovered: { opacity: 1 }, initial: { opacity: 0 } }}
+                initial="initial"
+                className="absolute inset-0 bg-[#2C1A0E]/30 flex items-center justify-center"
+              >
+                <ZoomIn className="w-5 h-5 text-white" />
+              </motion.div>
+            </motion.div>
+          ))}
+
+          {/* Last slot — "view all" teaser */}
+          <motion.div
+            className="relative overflow-hidden cursor-pointer group aspect-square col-span-1"
+            onClick={() => setLightbox(7 % galleryImages.length)}
+          >
+            <img
+              src={galleryImages[7]}
+              alt="More from Hamro Bakery"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white">
+                <p className="font-serif text-2xl font-light">+{galleryImages.length - 7}</p>
+                <p className="font-sans text-xs tracking-wider">more</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
+            onClick={() => setLightbox(null)}
+          >
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-white transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <motion.img
+              key={lightbox}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src={galleryImages[lightbox]}
+              alt="Hamro Bakery"
+              className="max-w-full max-h-[85vh] object-contain rounded-sm"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2">
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox((lightbox - 1 + galleryImages.length) % galleryImages.length); }}
+                className="px-4 py-1.5 bg-white/10 hover:bg-white/25 text-white text-sm font-sans rounded-sm transition-colors"
+              >← Prev</button>
+              <button
+                onClick={(e) => { e.stopPropagation(); setLightbox((lightbox + 1) % galleryImages.length); }}
+                className="px-4 py-1.5 bg-white/10 hover:bg-white/25 text-white text-sm font-sans rounded-sm transition-colors"
+              >Next →</button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

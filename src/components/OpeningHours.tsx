@@ -2,10 +2,10 @@ import { useBranch, branches, BranchName } from "@/context/BranchContext";
 import { motion } from "framer-motion";
 import { Clock } from "lucide-react";
 
-const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export function OpeningHours() {
-  const { selectedBranch, branchData } = useBranch();
+  const { selectedBranch, setShowSelector, branchData } = useBranch();
   const today = new Date().getDay();
   const currentHour = new Date().getHours();
 
@@ -14,80 +14,105 @@ export function OpeningHours() {
     : false;
 
   return (
-    <section className="py-16 px-4 bg-background">
-      <div className="container mx-auto max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <Clock className="w-8 h-8 text-primary mx-auto mb-3" />
-          <h2 className="text-4xl md:text-5xl font-serif text-primary mb-2">Opening Hours</h2>
-          <p className="text-muted-foreground">We're here when you need us</p>
-        </motion.div>
+    <section className="py-24 px-6 bg-white">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-card border border-border rounded-2xl shadow-md overflow-hidden"
-        >
-          <div className="px-6 py-5 bg-primary/5 border-b border-border flex items-center justify-between">
-            <div>
-              <p className="text-sm text-muted-foreground">Currently showing</p>
-              <p className="font-serif text-xl font-bold text-primary">{selectedBranch ?? "Select a branch"}</p>
-              {branchData && <p className="text-sm text-muted-foreground">{branchData.hoursText} daily</p>}
-            </div>
-            <div className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm ${isOpen ? "bg-green-100 text-green-700" : "bg-red-100 text-red-600"}`}>
-              <span className={`w-2 h-2 rounded-full animate-pulse ${isOpen ? "bg-green-500" : "bg-red-500"}`} />
-              {isOpen ? "Open Now" : "Closed Now"}
-            </div>
-          </div>
-
+          {/* Left */}
           <div>
-            {DAYS.map((day, i) => {
-              const isToday = i === today;
-              return (
-                <div
-                  key={day}
-                  className={`flex justify-between items-center px-6 py-3.5 ${
-                    i < 6 ? "border-b border-border" : ""
-                  } ${isToday ? "bg-primary/5" : "hover:bg-secondary/20 transition-colors"}`}
-                  data-testid={`hours-row-${i}`}
-                >
-                  <span className={`font-medium ${isToday ? "text-primary font-bold" : "text-foreground/80"}`}>
-                    {day} {isToday && <span className="text-xs bg-primary text-primary-foreground px-2 py-0.5 rounded-full ml-2">Today</span>}
-                  </span>
-                  <span className={`text-sm ${isToday ? "text-primary font-semibold" : "text-muted-foreground"}`}>
-                    {branchData ? branchData.hoursText : "—"}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="px-6 py-4 bg-secondary/20">
-            <p className="text-xs text-muted-foreground text-center">
-              Hours may vary on public holidays. Call ahead to confirm.
+            <span className="section-eyebrow mb-3 block">Hours</span>
+            <h2 className="font-serif text-5xl font-light text-[#2C1A0E] mb-6">
+              We're open<br />
+              <span className="italic">every day</span>
+            </h2>
+            <p className="text-[#2C1A0E]/50 text-sm font-sans leading-relaxed mb-8">
+              All four branches open at 8 AM daily. Hours may vary on public holidays — call ahead to confirm.
             </p>
-          </div>
-        </motion.div>
 
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {(Object.keys(branches) as BranchName[]).map((b) => (
-            <div
-              key={b}
-              className={`rounded-xl p-3 text-center border transition-all ${
-                b === selectedBranch
-                  ? "bg-primary text-primary-foreground border-primary shadow-md"
-                  : "bg-card border-border text-muted-foreground"
-              }`}
-            >
-              <p className="text-xs font-semibold">{b}</p>
-              <p className="text-xs mt-0.5 opacity-80">{branches[b].hoursText}</p>
+            {/* Branch grid picker */}
+            <div className="grid grid-cols-2 gap-2">
+              {(Object.keys(branches) as BranchName[]).map((b) => (
+                <button
+                  key={b}
+                  onClick={() => setShowSelector(true)}
+                  className={`text-left p-3.5 rounded-sm border transition-all duration-200 ${
+                    b === selectedBranch
+                      ? "bg-[#2C1A0E] text-white border-[#2C1A0E]"
+                      : "border-[#2C1A0E]/12 hover:border-[#2C1A0E]/30 text-[#2C1A0E]"
+                  }`}
+                >
+                  <p className={`text-xs font-sans font-medium ${b === selectedBranch ? "text-white" : "text-[#2C1A0E]"}`}>{b}</p>
+                  <p className={`text-xs font-sans mt-0.5 ${b === selectedBranch ? "text-white/60" : "text-[#2C1A0E]/40"}`}>
+                    {branches[b].hoursText}
+                  </p>
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Right — hours card */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="border border-[#2C1A0E]/8 overflow-hidden rounded-sm"
+          >
+            {/* Status bar */}
+            <div className="px-6 py-4 border-b border-[#2C1A0E]/8 flex items-center justify-between bg-[#FAF7F2]">
+              <div>
+                <p className="font-sans text-xs text-[#2C1A0E]/40 uppercase tracking-widest mb-0.5">
+                  {selectedBranch ?? "Select a branch"}
+                </p>
+                {branchData && (
+                  <p className="font-sans text-sm text-[#2C1A0E] font-medium">{branchData.hoursText} daily</p>
+                )}
+              </div>
+              <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-sans font-medium ${
+                isOpen ? "bg-green-50 text-green-700" : "bg-red-50 text-red-500"
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${isOpen ? "bg-green-500 animate-pulse" : "bg-red-400"}`} />
+                {isOpen ? "Open now" : "Closed"}
+              </div>
+            </div>
+
+            {/* Day rows */}
+            <div className="divide-y divide-[#2C1A0E]/5">
+              {DAYS.map((day, i) => {
+                const isToday = i === today;
+                return (
+                  <div
+                    key={day}
+                    className={`flex justify-between items-center px-6 py-3.5 ${
+                      isToday ? "bg-[#FAF7F2]" : ""
+                    }`}
+                    data-testid={`hours-row-${i}`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {isToday && <span className="w-1 h-4 bg-[#C4714A] rounded-full" />}
+                      {!isToday && <span className="w-1 h-4 rounded-full" />}
+                      <span className={`font-sans text-sm ${
+                        isToday ? "text-[#2C1A0E] font-semibold" : "text-[#2C1A0E]/50"
+                      }`}>
+                        {day}{isToday && <span className="text-[#C4714A] text-xs font-normal ml-2">today</span>}
+                      </span>
+                    </div>
+                    <span className={`font-sans text-sm ${
+                      isToday ? "text-[#2C1A0E] font-medium" : "text-[#2C1A0E]/40"
+                    }`}>
+                      {branchData ? branchData.hoursText : "—"}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="px-6 py-3 bg-[#FAF7F2] border-t border-[#2C1A0E]/5">
+              <p className="text-xs text-[#2C1A0E]/35 font-sans">
+                Hours may vary on public holidays.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
