@@ -16,15 +16,11 @@ const img14 = "/images/img15.jpeg";
 const img15 = "/images/img11.jpeg";
 const img16 = "/images/img17.jpeg";
 
-// New professional photoshoot — 2026 expansion
-const img35 = "/images/img35.png";
-const img36 = "/images/img36.png";
+// 2026 photoshoot — verified Hamro Bakery originals
 const img37 = "/images/img37.png";
 const img38 = "/images/img38.png";
-const img39 = "/images/img39.png";
-
 export const galleryImages = [
-  img35, img36, img37, img38, img39,
+  img37, img38,
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
 ];
 

@@ -7,7 +7,13 @@ import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import BakeryFacts from "@/pages/BakeryFacts";
+import MenuPage from "@/pages/MenuPage";
+import GalleryPage from "@/pages/GalleryPage";
+import CustomCakePage from "@/pages/CustomCakePage";
+import AboutPage from "@/pages/AboutPage";
+import ContactPage from "@/pages/ContactPage";
 import { BranchProvider } from "@/context/BranchContext";
+import { MithiBot } from "@/components/MithiBot";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -17,33 +23,17 @@ function FestiveMode() {
     const date = new Date();
     const month = date.getMonth() + 1;
     const day = date.getDate();
-
     let particleColor = "";
     let particleCount = 0;
-
-    if (month === 8 || month === 9) {
-      particleColor = "bg-red-500 shadow-[0_0_10px_red]";
-      particleCount = 15;
-    } else if (month === 10) {
-      particleColor = "bg-red-600 shadow-[0_0_10px_red]";
-      particleCount = 20;
-    } else if (month === 11) {
-      particleColor = "bg-orange-400 shadow-[0_0_15px_orange]";
-      particleCount = 25;
-    } else if (month === 2) {
-      particleColor = "bg-gradient-to-r from-pink-500 to-yellow-500";
-      particleCount = 15;
-    } else if (month === 12 && day >= 20) {
-      particleColor = "bg-white shadow-[0_0_10px_white]";
-      particleCount = 20;
-    }
-
+    if (month === 8 || month === 9) { particleColor = "bg-red-500 shadow-[0_0_10px_red]"; particleCount = 15; }
+    else if (month === 10) { particleColor = "bg-red-600 shadow-[0_0_10px_red]"; particleCount = 20; }
+    else if (month === 11) { particleColor = "bg-orange-400 shadow-[0_0_15px_orange]"; particleCount = 25; }
+    else if (month === 2) { particleColor = "bg-gradient-to-r from-pink-500 to-yellow-500"; particleCount = 15; }
+    else if (month === 12 && day >= 20) { particleColor = "bg-white shadow-[0_0_10px_white]"; particleCount = 20; }
     if (!particleColor) return;
-
     const container = document.createElement("div");
     container.className = "fixed inset-0 pointer-events-none z-50 overflow-hidden";
     document.body.appendChild(container);
-
     for (let i = 0; i < particleCount; i++) {
       const p = document.createElement("div");
       p.className = `particle absolute rounded-full ${particleColor}`;
@@ -54,10 +44,7 @@ function FestiveMode() {
       p.style.animationDelay = `${Math.random() * 5}s`;
       container.appendChild(p);
     }
-
-    return () => {
-      document.body.removeChild(container);
-    };
+    return () => { document.body.removeChild(container); };
   }, []);
   return null;
 }
@@ -66,6 +53,11 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/menu" component={MenuPage} />
+      <Route path="/gallery" component={GalleryPage} />
+      <Route path="/custom-cake" component={CustomCakePage} />
+      <Route path="/about" component={AboutPage} />
+      <Route path="/contact" component={ContactPage} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/facts" component={BakeryFacts} />
@@ -82,6 +74,7 @@ function App() {
           <FestiveMode />
           <WouterRouter base="">
             <Router />
+            <MithiBot />
           </WouterRouter>
           <Toaster />
         </BranchProvider>
@@ -91,4 +84,3 @@ function App() {
 }
 
 export default App;
-
