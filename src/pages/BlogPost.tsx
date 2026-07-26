@@ -1,3 +1,7 @@
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { BranchSelector } from "@/components/BranchSelector";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { motion } from "framer-motion";
 import { useRoute, Link } from "wouter";
 
@@ -107,41 +111,49 @@ export default function BlogPost() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="container mx-auto max-w-3xl px-4 py-16"
-      >
-        <Link href="/blog">
-          <span className="text-primary hover:underline cursor-pointer text-sm mb-8 block">
-            ← Back to Blog
-          </span>
-        </Link>
-        <img
-          src={post.image}
-          alt={post.title}
-          className="w-full h-64 object-cover rounded-2xl mb-8"
-        />
-        <p className="text-muted-foreground text-sm mb-2">{post.date}</p>
-        <h1 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-8 leading-tight">
-          {post.title}
-        </h1>
-        <div
-          className="prose prose-lg max-w-none text-foreground [&>h2]:text-2xl [&>h2]:font-serif [&>h2]:text-primary [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>p]:leading-relaxed [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:pl-6 [&>ol>li]:mb-2"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
-        <div className="mt-12 p-6 bg-primary/10 rounded-2xl text-center">
-          <h3 className="text-xl font-serif text-primary mb-2">Order from Hamro Bakery</h3>
-          <p className="text-muted-foreground mb-4">Call or WhatsApp us to place your order!</p>
-          <a
-            href="https://wa.me/9779865009581"
-            className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
-          >
-            WhatsApp: 9865009581
-          </a>
-        </div>
-      </motion.div>
+    <div className="min-h-screen bg-[#FAF7F2]">
+      <BranchSelector />
+      <Navbar />
+      <div className="pt-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="container mx-auto max-w-3xl px-6 py-12"
+        >
+          {/* Breadcrumb nav */}
+          <div className="flex items-center gap-2 text-xs font-sans text-[#2C1A0E]/40 mb-8">
+            <Link href="/"><span className="hover:text-[#C4714A] cursor-pointer transition-colors">Home</span></Link>
+            <span>/</span>
+            <Link href="/blog"><span className="hover:text-[#C4714A] cursor-pointer transition-colors">Blog</span></Link>
+            <span>/</span>
+            <span className="text-[#2C1A0E]/60 truncate max-w-[200px]">{post.title}</span>
+          </div>
+          <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-sm mb-8" />
+          <p className="text-[#2C1A0E]/35 text-xs font-sans mb-3">{post.date}</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-light text-[#2C1A0E] mb-8 leading-tight">{post.title}</h1>
+          <div
+            className="prose prose-lg max-w-none text-[#2C1A0E]/70 font-sans [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-[#2C1A0E] [&>h2]:font-light [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>p]:leading-relaxed [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:pl-6 [&>ol>li]:mb-2"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+          <div className="mt-12 p-7 bg-[#2C1A0E] rounded-sm text-center">
+            <h3 className="font-serif text-2xl font-light text-white mb-2">Order from Hamro Bakery</h3>
+            <p className="text-white/45 text-sm font-sans mb-5">Call or WhatsApp any branch to place your order!</p>
+            <a
+              href="https://wa.me/9779865009581"
+              className="inline-flex items-center gap-2 bg-[#C4714A] hover:bg-[#b56540] text-white px-6 py-3 rounded-sm text-sm font-sans font-medium transition-colors"
+            >
+              WhatsApp: 9865009581
+            </a>
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/blog">
+              <span className="text-[#2C1A0E]/40 hover:text-[#C4714A] text-sm font-sans cursor-pointer transition-colors">← More articles</span>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

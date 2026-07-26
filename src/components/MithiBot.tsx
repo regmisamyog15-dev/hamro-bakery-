@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronRight } from "lucide-react";
 import { useLocation } from "wouter";
@@ -11,64 +11,30 @@ interface Message {
   whatsapp?: boolean;
 }
 
-// All keyword chips — user just taps, no typing needed
 const KEYWORD_CHIPS = [
-  { label: "🎂 Birthday Cake", prompt: "I want a birthday cake" },
-  { label: "💍 Wedding Cake", prompt: "I want a wedding cake" },
-  { label: "🎨 Custom Design", prompt: "I want a custom cake design" },
-  { label: "📋 See Menu", prompt: "Show me the menu and prices" },
-  { label: "📍 Locations", prompt: "Where are your branches located?" },
-  { label: "🚚 Delivery", prompt: "Do you deliver?" },
-  { label: "🕐 Opening Hours", prompt: "What are your opening hours?" },
-  { label: "💰 Cake Prices", prompt: "How much do cakes cost?" },
-  { label: "📸 Gallery", prompt: "Show me photos of your cakes" },
-  { label: "📞 Contact", prompt: "How do I contact you?" },
-  { label: "🛍️ Order Now", prompt: "I want to place an order now" },
-  { label: "🌿 Eggless Options", prompt: "Do you have eggless cakes?" },
+  { label: "🎂 Birthday Cake", response: "We make stunning birthday cakes in Blackforest, Butterscotch, Chocolate, Red Velvet and more — starting Rs 600/lb. Order 2–3 days in advance for custom designs!", redirect: { label: "Order Custom Cake", path: "/custom-cake" } },
+  { label: "💍 Wedding Cake", response: "Our wedding cakes are crafted to your exact vision — multi-tier, fondant designs, flowers. Starting Rs 1500/lb. Please order at least 5–7 days ahead.", redirect: { label: "Order Custom Cake", path: "/custom-cake" } },
+  { label: "🎨 Custom Design", response: "Describe your dream cake — occasion, flavour, colours, message — and our bakers will bring it to life. 2–3 days advance notice needed.", redirect: { label: "Design Your Cake", path: "/custom-cake" } },
+  { label: "📋 See Menu", response: "We have cakes (Rs 600–1500/lb), pastries (Rs 70–250), cookies (Rs 125–200), dry items, breads and more — all baked fresh every morning!", redirect: { label: "View Full Menu", path: "/menu" } },
+  { label: "📍 Locations", response: "We have 4 branches in Narayangarh:\n• Hakim Chowk — 9865009581\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163", redirect: { label: "Contact & Map", path: "/contact" } },
+  { label: "🚚 Delivery", response: "Yes! We deliver via Foodmandu and Mero Kinamel apps, or WhatsApp us directly for home delivery across Narayangarh and Bharatpur.", redirect: { label: "Contact Us", path: "/contact" }, whatsapp: true },
+  { label: "🕐 Opening Hours", response: "All 4 branches open at 8:00 AM daily.\n• Sangam Road closes 9 PM\n• Hakim, Bishal & Synergy close 8 PM\nOpen 7 days a week including public holidays.", redirect: { label: "See All Hours", path: "/contact" } },
+  { label: "💰 Cake Prices", response: "Cake prices (per pound):\n• Classic flavours — Rs 600\n• Chocolate — Rs 700\n• Red Velvet — Rs 1000\n• Simple Design — Rs 1000\n• Fondant Design — Rs 1500\nPastries from Rs 70.", redirect: { label: "Full Menu & Prices", path: "/menu" } },
+  { label: "📸 Gallery", response: "Check out our gallery — real cakes made by our bakers at our Narayangarh branches. No studio shots!", redirect: { label: "View Gallery", path: "/gallery" } },
+  { label: "📞 Contact", response: "Call or WhatsApp any branch:\n• Hakim Chowk — 9865009581\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163\nEmail: bakeryhamro1@gmail.com", redirect: { label: "All Contacts", path: "/contact" } },
+  { label: "🛍️ Order Now", response: "Ready to order? WhatsApp us your items and we'll confirm quickly. For custom cakes, order 2–3 days ahead!", redirect: { label: "Order via WhatsApp", path: "/menu" }, whatsapp: true },
+  { label: "🌿 Eggless Options", response: "Yes, we have eggless cake options available! Mention it when ordering and our bakers will prepare accordingly.", redirect: { label: "Order Custom Cake", path: "/custom-cake" } },
 ];
 
-const SYSTEM_PROMPT = `You are Mithi, the AI assistant for Hamro Bakery — Narayangarh Chitwan's most loved bakery since 2013.
-
-BAKERY FACTS:
-- 4 branches: Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), Synergy Road (9821207163)
-- Hours: 8 AM – 9 PM daily (Hakim/Bishal/Synergy close 8 PM)
-- Payment: Cash, QR, eSewa, Khalti
-- Custom cakes: order 2–3 days in advance
-- Delivery: Foodmandu, Mero Kinamel, or direct WhatsApp
-- Cake prices: Classic flavours Rs 600/lb, Chocolate Rs 700/lb, Red Velvet Rs 1000/lb, Fondant/design Rs 1500/lb
-- Pastries: Rs 70–250 | Cookies: Rs 125–200
-- Eggless options: yes available
-
-ALWAYS end your reply with EXACTLY one JSON redirect on its own line:
-{"redirect":"/menu","label":"See Full Menu"}
-{"redirect":"/gallery","label":"View Gallery"}  
-{"redirect":"/custom-cake","label":"Order Custom Cake"}
-{"redirect":"/about","label":"Our Story"}
-{"redirect":"/contact","label":"Find Our Branches"}
-{"redirect":"/menu","label":"Order Now","whatsapp":true}
-
-Rules for which redirect to use:
-- menu / prices / pastry / cookies / eggless → /menu
-- gallery / photos / pictures → /gallery  
-- custom / birthday / wedding / anniversary / design → /custom-cake
-- about / story / history / since 2013 → /about
-- contact / location / address / where / phone / hours / open → /contact
-- order / buy / place order / want to order → /menu with whatsapp:true
-- delivery → /contact
-
-TONE: Warm, 1–2 sentences MAX. Be direct. No fluff.`;
-
-// Tooltip that appears after 10s, visible for 4s, then hides until next page load
 function TooltipBubble() {
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
-    const showTimer = setTimeout(() => {
+    const show = setTimeout(() => {
       setVisible(true);
-      const hideTimer = setTimeout(() => setVisible(false), 4000);
-      return () => clearTimeout(hideTimer);
+      const hide = setTimeout(() => setVisible(false), 4000);
+      return () => clearTimeout(hide);
     }, 10000);
-    return () => clearTimeout(showTimer);
+    return () => clearTimeout(show);
   }, []);
 
   return (
@@ -82,7 +48,6 @@ function TooltipBubble() {
           className="bg-[#1a0e06] text-white text-xs font-sans px-3 py-2 rounded-sm shadow-lg whitespace-nowrap relative"
         >
           Chat with Mithi AI 🎂
-          {/* Arrow pointing down-left toward button */}
           <span className="absolute -bottom-1.5 left-5 w-3 h-3 bg-[#1a0e06] rotate-45" />
         </motion.div>
       )}
@@ -93,64 +58,20 @@ function TooltipBubble() {
 export function MithiBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(false);
   const [usedChips, setUsedChips] = useState<Set<string>>(new Set());
   const [, navigate] = useLocation();
   const { branchData } = useBranch();
-  const bottomRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
-
-  const sendChip = async (chip: typeof KEYWORD_CHIPS[0]) => {
-    if (loading) return;
+  const sendChip = (chip: typeof KEYWORD_CHIPS[0]) => {
     setUsedChips((prev) => new Set([...prev, chip.label]));
-
     const userMsg: Message = { role: "user", content: chip.label };
-    const history = [...messages, userMsg];
-    setMessages(history);
-    setLoading(true);
-
-    try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "anthropic-version": "2023-06-01",
-          "anthropic-dangerous-direct-browser-access": "true",
-        },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-6",
-          max_tokens: 200,
-          system: SYSTEM_PROMPT,
-          messages: history.map((m) => ({ role: m.role, content: m.content })),
-        }),
-      });
-
-      const data = await response.json();
-      const raw: string = data.content?.[0]?.text ?? "Please call us at 9865009581!";
-
-      let content = raw;
-      let redirect: Message["redirect"] = undefined;
-      let whatsapp = false;
-
-      const match = raw.match(/\{"redirect":"([^"]+)","label":"([^"]+)"(?:,"whatsapp":true)?\}/);
-      if (match) {
-        content = raw.replace(match[0], "").replace(/\n{2,}/g, "\n").trim();
-        redirect = { path: match[1], label: match[2] };
-        whatsapp = raw.includes('"whatsapp":true');
-      }
-
-      setMessages((prev) => [...prev, { role: "assistant", content, redirect, whatsapp }]);
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: "Something went wrong. Please call us at 9865009581!" },
-      ]);
-    } finally {
-      setLoading(false);
-    }
+    const botMsg: Message = {
+      role: "assistant",
+      content: chip.response,
+      redirect: chip.redirect,
+      whatsapp: chip.whatsapp,
+    };
+    setMessages((prev) => [...prev, userMsg, botMsg]);
   };
 
   const handleRedirect = (path: string, isWhatsapp?: boolean) => {
@@ -164,23 +85,14 @@ export function MithiBot() {
     }
   };
 
-  const handleReset = () => {
-    setMessages([]);
-    setUsedChips(new Set());
-  };
-
-  // Available chips = all chips not yet used this session
   const availableChips = KEYWORD_CHIPS.filter((c) => !usedChips.has(c.label));
 
   return (
     <>
-      {/* Mithi trigger button — bottom-left */}
       <AnimatePresence>
         {!open && (
           <div className="fixed bottom-6 left-5 z-40 flex flex-col items-start gap-2">
-            {/* Tooltip bubble — appears after 10s, lasts 4s */}
             <TooltipBubble />
-
             <motion.button
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -190,17 +102,12 @@ export function MithiBot() {
               className="w-16 h-16 rounded-full shadow-xl overflow-hidden border-2 border-[#2C1A0E]/20 hover:border-[#C4714A] hover:scale-105 transition-all"
               aria-label="Open Mithi AI assistant"
             >
-              <img
-                src="/images/mithi-icon.png"
-                alt="Mithi AI"
-                className="w-full h-full object-cover bg-[#1a0e06]"
-              />
+              <img src="/images/mithi-icon.png" alt="Mithi AI" className="w-full h-full object-cover bg-[#1a0e06]" />
             </motion.button>
           </div>
         )}
       </AnimatePresence>
 
-      {/* Chat window — opens from bottom-left */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -209,7 +116,7 @@ export function MithiBot() {
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
             className="fixed bottom-6 left-4 z-50 w-[340px] sm:w-[380px] flex flex-col bg-[#FAF7F2] rounded-sm shadow-2xl border border-[#2C1A0E]/10 overflow-hidden"
-            style={{ height: "560px" }}
+            style={{ height: "540px" }}
           >
             {/* Header */}
             <div className="bg-[#1a0e06] px-4 py-3 flex items-center justify-between shrink-0">
@@ -223,46 +130,31 @@ export function MithiBot() {
                   <p className="text-white/40 text-xs font-sans">Hamro Bakery AI · always here</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 {messages.length > 0 && (
-                  <button
-                    onClick={handleReset}
-                    className="text-white/30 hover:text-white/60 text-xs font-sans transition-colors"
-                  >
+                  <button onClick={() => { setMessages([]); setUsedChips(new Set()); }} className="text-white/30 hover:text-white/60 text-xs font-sans transition-colors">
                     Reset
                   </button>
                 )}
-                <button
-                  onClick={() => setOpen(false)}
-                  className="w-7 h-7 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
-                >
+                <button onClick={() => setOpen(false)} className="w-7 h-7 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors">
                   <X className="w-4 h-4 text-white/60" />
                 </button>
               </div>
             </div>
 
-            {/* Messages + chips area */}
+            {/* Messages */}
             <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
-
-              {/* Welcome message */}
               {messages.length === 0 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="bg-white border border-[#2C1A0E]/8 px-3.5 py-2.5 rounded-sm text-sm font-sans text-[#2C1A0E] leading-relaxed"
-                >
+                <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="bg-white border border-[#2C1A0E]/8 px-3.5 py-2.5 rounded-sm text-sm font-sans text-[#2C1A0E] leading-relaxed">
                   Namaste! 🎂 I'm Mithi. Tap what you're looking for below.
                 </motion.div>
               )}
 
-              {/* Conversation */}
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                   <div className="max-w-[90%] space-y-2">
-                    <div className={`px-3.5 py-2.5 rounded-sm text-sm font-sans leading-relaxed ${
-                      msg.role === "user"
-                        ? "bg-[#2C1A0E] text-white"
-                        : "bg-white border border-[#2C1A0E]/8 text-[#2C1A0E]"
+                    <div className={`px-3.5 py-2.5 rounded-sm text-sm font-sans leading-relaxed whitespace-pre-line ${
+                      msg.role === "user" ? "bg-[#2C1A0E] text-white" : "bg-white border border-[#2C1A0E]/8 text-[#2C1A0E]"
                     }`}>
                       {msg.content}
                     </div>
@@ -278,51 +170,36 @@ export function MithiBot() {
                   </div>
                 </div>
               ))}
-
-              {loading && (
-                <div className="flex justify-start">
-                  <div className="bg-white border border-[#2C1A0E]/8 px-4 py-3 rounded-sm flex gap-1.5 items-center">
-                    {[0, 150, 300].map((d) => (
-                      <span key={d} className="w-1.5 h-1.5 bg-[#C4714A]/60 rounded-full animate-bounce" style={{ animationDelay: `${d}ms` }} />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              <div ref={bottomRef} />
             </div>
 
-            {/* Keyword chips — always visible at bottom */}
-            {availableChips.length > 0 && (
-              <div className="px-4 py-3 border-t border-[#2C1A0E]/8 bg-white shrink-0">
-                <p className="text-[#2C1A0E]/30 text-xs font-sans mb-2">
-                  {messages.length === 0 ? "What are you looking for?" : "Ask more:"}
-                </p>
-                <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
-                  {availableChips.map((chip) => (
-                    <button
-                      key={chip.label}
-                      onClick={() => sendChip(chip)}
-                      disabled={loading}
-                      className="text-xs font-sans text-[#2C1A0E]/70 border border-[#2C1A0E]/15 hover:border-[#C4714A] hover:text-[#C4714A] hover:bg-[#C4714A]/5 px-2.5 py-1.5 rounded-sm transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-                    >
-                      {chip.label}
-                    </button>
-                  ))}
+            {/* Chips */}
+            <div className="px-4 py-3 border-t border-[#2C1A0E]/8 bg-white shrink-0">
+              {availableChips.length > 0 ? (
+                <>
+                  <p className="text-[#2C1A0E]/30 text-xs font-sans mb-2">
+                    {messages.length === 0 ? "What are you looking for?" : "Ask more:"}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
+                    {availableChips.map((chip) => (
+                      <button
+                        key={chip.label}
+                        onClick={() => sendChip(chip)}
+                        className="text-xs font-sans text-[#2C1A0E]/70 border border-[#2C1A0E]/15 hover:border-[#C4714A] hover:text-[#C4714A] hover:bg-[#C4714A]/5 px-2.5 py-1.5 rounded-sm transition-colors"
+                      >
+                        {chip.label}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="text-center">
+                  <p className="text-[#2C1A0E]/30 text-xs font-sans mb-1">All questions answered!</p>
+                  <button onClick={() => { setMessages([]); setUsedChips(new Set()); }} className="text-xs font-sans text-[#C4714A] hover:underline">
+                    Start over ↺
+                  </button>
                 </div>
-              </div>
-            )}
-
-            {availableChips.length === 0 && (
-              <div className="px-4 py-3 border-t border-[#2C1A0E]/8 bg-white shrink-0 text-center">
-                <button
-                  onClick={handleReset}
-                  className="text-xs font-sans text-[#C4714A] hover:underline"
-                >
-                  Start over ↺
-                </button>
-              </div>
-            )}
+              )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

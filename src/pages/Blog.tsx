@@ -1,3 +1,7 @@
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { BranchSelector } from "@/components/BranchSelector";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
@@ -97,57 +101,49 @@ const posts = [
 
 export default function Blog() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero */}
-      <div className="bg-primary/10 py-16 px-4 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-serif text-primary mb-4">
-            Hamro Bakery Blog
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            Stories, tips and news from Chitwan's favourite bakery
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Posts Grid */}
-      <div className="container mx-auto max-w-5xl px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {posts.map((post, i) => (
-            <motion.article
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card rounded-2xl overflow-hidden border border-border shadow-sm hover:shadow-md transition-shadow"
-            >
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <p className="text-xs text-muted-foreground mb-2">{post.date}</p>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-3 leading-tight">
-                  {post.title}
-                </h2>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {post.excerpt}
-                </p>
-                <Link href={`/blog/${post.slug}`}>
-                  <span className="text-primary font-semibold text-sm hover:underline cursor-pointer">
-                    Read More →
-                  </span>
-                </Link>
-              </div>
-            </motion.article>
-          ))}
+    <div className="min-h-screen bg-[#FAF7F2]">
+      <BranchSelector />
+      <Navbar />
+      <div className="pt-16">
+        <div className="bg-[#2C1A0E] py-20 px-6 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+            <span className="section-eyebrow text-white/40 mb-4 block">Blog</span>
+            <h1 className="font-serif text-6xl font-light text-white mb-3">Our <span className="italic">stories</span></h1>
+            <p className="text-white/40 font-sans text-sm">Tips, news and sweet reads from Chitwan's favourite bakery</p>
+          </motion.div>
+        </div>
+        <div className="container mx-auto max-w-5xl px-6 pt-8">
+          <Link href="/">
+            <span className="inline-flex items-center gap-2 text-sm font-sans text-[#2C1A0E]/50 hover:text-[#C4714A] transition-colors cursor-pointer">← Back to Home</span>
+          </Link>
+        </div>
+        <div className="container mx-auto max-w-5xl px-6 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {posts.map((post, i) => (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white border border-[#2C1A0E]/8 rounded-sm overflow-hidden hover:border-[#2C1A0E]/20 transition-colors"
+              >
+                <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                <div className="p-6">
+                  <p className="text-xs text-[#2C1A0E]/35 font-sans mb-2">{post.date}</p>
+                  <h2 className="font-serif text-xl text-[#2C1A0E] mb-3 leading-snug">{post.title}</h2>
+                  <p className="text-[#2C1A0E]/50 text-sm font-sans leading-relaxed mb-4">{post.excerpt}</p>
+                  <Link href={`/blog/${post.slug}`}>
+                    <span className="text-[#C4714A] font-sans text-sm font-medium hover:underline cursor-pointer">Read More →</span>
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
+      <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
