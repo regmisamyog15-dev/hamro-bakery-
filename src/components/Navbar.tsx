@@ -1,6 +1,7 @@
 import { useBranch } from "@/context/BranchContext";
 import { ChevronDown, MapPin, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
 
 const NAV_LINKS = [
@@ -40,8 +41,6 @@ export function Navbar() {
   useEffect(() => { setMobileOpen(false); }, [location]);
 
   const transparent = isHome && !scrolled;
-  const textColor = transparent ? "text-white/75" : "text-[#2C1A0E]/65";
-  const textHover = "hover:text-[#C4714A]";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
@@ -51,26 +50,28 @@ export function Navbar() {
 
         {/* Logo */}
         <Link href="/">
-          <button className="flex items-center gap-3 hover:opacity-80 transition-opacity shrink-0" data-testid="link-home">
+          <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity shrink-0" data-testid="link-home">
             <img src="/images/logo.jpeg" alt="Hamro Bakery Logo" className="h-9 w-9 object-contain rounded-full border border-[#2C1A0E]/15" />
-            <span className={`font-serif text-base font-semibold leading-tight hidden sm:block transition-colors ${transparent ? "text-white" : "text-[#2C1A0E]"}`}>
+            <span className={`font-serif text-base font-semibold hidden sm:block transition-colors ${transparent ? "text-white" : "text-[#2C1A0E]"}`}>
               Hamro Bakery
             </span>
-          </button>
+          </div>
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6 text-sm font-sans font-medium">
           {NAV_LINKS.map(({ label, path }) => (
             <Link key={path} href={path}>
-              <span className={`cursor-pointer transition-colors ${textColor} ${textHover} ${location === path ? "text-[#C4714A]" : ""}`}>
+              <span className={`cursor-pointer transition-colors hover:text-[#C4714A] ${
+                location === path ? "text-[#C4714A]" : transparent ? "text-white/75" : "text-[#2C1A0E]/65"
+              }`}>
                 {label}
               </span>
             </Link>
           ))}
         </div>
 
-        {/* Right side */}
+        {/* Right controls */}
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-1.5 text-xs font-sans">
             <span className={`w-1.5 h-1.5 rounded-full ${isOpen ? "bg-green-500" : "bg-red-400"}`} />
@@ -103,17 +104,17 @@ export function Navbar() {
             <ChevronDown className="w-3 h-3" />
           </button>
 
-          {/* Mobile menu toggle */}
           <button
             onClick={() => setMobileOpen((v) => !v)}
             className={`md:hidden w-8 h-8 flex items-center justify-center transition-colors ${transparent ? "text-white/70" : "text-[#2C1A0E]/60"}`}
+            aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -138,6 +139,7 @@ export function Navbar() {
                   onClick={() => {
                     const phone = branchData?.whatsapp ?? "9865009581";
                     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello! I'd like to order.")}`, "_blank");
+                    setMobileOpen(false);
                   }}
                   className="w-full bg-[#2C1A0E] text-white text-sm font-sans py-3 rounded-sm hover:bg-[#C4714A] transition-colors"
                 >
@@ -151,6 +153,3 @@ export function Navbar() {
     </nav>
   );
 }
-
-// Need these for mobile menu animation
-import { AnimatePresence, motion } from "framer-motion";

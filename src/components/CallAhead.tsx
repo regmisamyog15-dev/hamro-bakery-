@@ -1,55 +1,46 @@
 import { useBranch } from "@/context/BranchContext";
-import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import { Phone } from "lucide-react";
 
 export function CallAhead() {
   const { branchData } = useBranch();
 
   return (
-    <section className="py-14 px-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="container mx-auto max-w-2xl"
-      >
-        <div className="relative rounded-2xl overflow-hidden shadow-xl">
-          {/* Background photo */}
+    <section className="py-6 px-6 bg-[#FAF7F2]">
+      <div className="container mx-auto max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden rounded-sm"
+        >
           <img
             src="/images/img9.jpeg"
-            alt="Hamro Bakery customer pickup"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            alt="Hamro Bakery — call ahead and pick up"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Dark gradient overlay so text is readable */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/55 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2C1A0E]/90 via-[#2C1A0E]/70 to-transparent" />
 
-          {/* Content */}
-          <div className="relative z-10 px-8 py-12 text-center text-white">
-            <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mx-auto mb-4">
-              <Phone className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="font-serif text-3xl md:text-4xl font-bold mb-3 drop-shadow-md">
-              Call Ahead &amp; Pick Up
+          <div className="relative z-10 px-8 sm:px-14 py-14 max-w-lg">
+            <span className="section-eyebrow text-white/40 mb-4 block">Call Ahead</span>
+            <h3 className="font-serif text-4xl md:text-5xl font-light text-white mb-3">
+              Order by phone,<br />
+              <span className="italic">pick up fresh</span>
             </h3>
-            <p className="text-white/85 mb-7 text-sm md:text-base leading-relaxed max-w-md mx-auto drop-shadow">
-              Want it fresh and ready when you arrive? Call us, tell us your order,
-              and we'll have it waiting for you.
+            <p className="text-white/55 font-sans text-sm leading-relaxed mb-7 max-w-sm">
+              Call us, tell us your order, and we'll have it ready and waiting when you arrive. No wait, no queue.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="rounded-full px-8 gap-2 bg-white text-primary hover:bg-white/90 shadow-lg font-semibold"
+            <a
+              href={`tel:${branchData?.phone ?? "9865009581"}`}
+              className="inline-flex items-center gap-2.5 bg-white text-[#2C1A0E] hover:bg-[#C4714A] hover:text-white px-6 py-3 rounded-sm text-sm font-sans font-medium transition-colors duration-200"
               data-testid="btn-call-now"
             >
-              <a href={`tel:${branchData?.phone ?? "9865009581"}`}>
-                <Phone className="w-4 h-4" />
-                Call Now
-              </a>
-            </Button>
+              <Phone className="w-4 h-4" />
+              Call {branchData?.phone ?? "9865009581"}
+            </a>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

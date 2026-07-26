@@ -2,7 +2,6 @@ import { BranchSelector } from "@/components/BranchSelector";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Highlights } from "@/components/Highlights";
-import { Specialty } from "@/components/Specialty";
 import { Menu } from "@/components/Menu";
 import { CallAhead } from "@/components/CallAhead";
 import { Gallery } from "@/components/Gallery";
@@ -23,7 +22,6 @@ export default function Home() {
       <main>
         <Hero />
         <Highlights />
-        <Specialty />
         <Menu />
         <CallAhead />
         <Gallery />
