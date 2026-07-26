@@ -58,6 +58,38 @@ Rules for which redirect to use:
 
 TONE: Warm, 1–2 sentences MAX. Be direct. No fluff.`;
 
+// Tooltip that appears after 10s, visible for 4s, then hides until next page load
+function TooltipBubble() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      setVisible(true);
+      const hideTimer = setTimeout(() => setVisible(false), 4000);
+      return () => clearTimeout(hideTimer);
+    }, 10000);
+    return () => clearTimeout(showTimer);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          initial={{ opacity: 0, x: -8, scale: 0.92 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          exit={{ opacity: 0, x: -8, scale: 0.92 }}
+          transition={{ type: "spring", stiffness: 320, damping: 24 }}
+          className="bg-[#1a0e06] text-white text-xs font-sans px-3 py-2 rounded-sm shadow-lg whitespace-nowrap relative"
+        >
+          Chat with Mithi AI 🎂
+          {/* Arrow pointing down-left toward button */}
+          <span className="absolute -bottom-1.5 left-5 w-3 h-3 bg-[#1a0e06] rotate-45" />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export function MithiBot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -138,24 +170,29 @@ export function MithiBot() {
 
   return (
     <>
-      {/* Mithi trigger button — bottom-left so it doesn't clash with WA float on right */}
+      {/* Mithi trigger button — bottom-left */}
       <AnimatePresence>
         {!open && (
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            onClick={() => setOpen(true)}
-            className="fixed bottom-6 left-5 z-40 w-14 h-14 rounded-full shadow-xl overflow-hidden border-2 border-[#2C1A0E]/20 hover:border-[#C4714A] transition-colors"
-            aria-label="Open Mithi AI assistant"
-          >
-            <img
-              src="/images/mithi-icon.png"
-              alt="Mithi AI"
-              className="w-full h-full object-cover bg-[#1a0e06]"
-            />
-          </motion.button>
+          <div className="fixed bottom-6 left-5 z-40 flex flex-col items-start gap-2">
+            {/* Tooltip bubble — appears after 10s, lasts 4s */}
+            <TooltipBubble />
+
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              onClick={() => setOpen(true)}
+              className="w-16 h-16 rounded-full shadow-xl overflow-hidden border-2 border-[#2C1A0E]/20 hover:border-[#C4714A] hover:scale-105 transition-all"
+              aria-label="Open Mithi AI assistant"
+            >
+              <img
+                src="/images/mithi-icon.png"
+                alt="Mithi AI"
+                className="w-full h-full object-cover bg-[#1a0e06]"
+              />
+            </motion.button>
+          </div>
         )}
       </AnimatePresence>
 
