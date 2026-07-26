@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageCircle, ChevronRight } from "lucide-react";
+import { X, ChevronRight } from "lucide-react";
 import { useLocation } from "wouter";
 import { useBranch } from "@/context/BranchContext";
 
@@ -11,7 +11,23 @@ interface Message {
   whatsapp?: boolean;
 }
 
-const SYSTEM_PROMPT = `You are Mithi, the friendly AI assistant for Hamro Bakery — Narayangarh Chitwan's most loved bakery since 2013.
+// All keyword chips — user just taps, no typing needed
+const KEYWORD_CHIPS = [
+  { label: "🎂 Birthday Cake", prompt: "I want a birthday cake" },
+  { label: "💍 Wedding Cake", prompt: "I want a wedding cake" },
+  { label: "🎨 Custom Design", prompt: "I want a custom cake design" },
+  { label: "📋 See Menu", prompt: "Show me the menu and prices" },
+  { label: "📍 Locations", prompt: "Where are your branches located?" },
+  { label: "🚚 Delivery", prompt: "Do you deliver?" },
+  { label: "🕐 Opening Hours", prompt: "What are your opening hours?" },
+  { label: "💰 Cake Prices", prompt: "How much do cakes cost?" },
+  { label: "📸 Gallery", prompt: "Show me photos of your cakes" },
+  { label: "📞 Contact", prompt: "How do I contact you?" },
+  { label: "🛍️ Order Now", prompt: "I want to place an order now" },
+  { label: "🌿 Eggless Options", prompt: "Do you have eggless cakes?" },
+];
+
+const SYSTEM_PROMPT = `You are Mithi, the AI assistant for Hamro Bakery — Narayangarh Chitwan's most loved bakery since 2013.
 
 BAKERY FACTS:
 - 4 branches: Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), Synergy Road (9821207163)
@@ -19,56 +35,47 @@ BAKERY FACTS:
 - Payment: Cash, QR, eSewa, Khalti
 - Custom cakes: order 2–3 days in advance
 - Delivery: Foodmandu, Mero Kinamel, or direct WhatsApp
-- Cake prices: Classic Rs 600/lb, Chocolate Rs 700/lb, Red Velvet Rs 1000/lb, Fondant Rs 1500/lb
+- Cake prices: Classic flavours Rs 600/lb, Chocolate Rs 700/lb, Red Velvet Rs 1000/lb, Fondant/design Rs 1500/lb
 - Pastries: Rs 70–250 | Cookies: Rs 125–200
+- Eggless options: yes available
 
-ROUTING RULES — end your reply with EXACTLY one of these JSON lines when relevant:
+ALWAYS end your reply with EXACTLY one JSON redirect on its own line:
 {"redirect":"/menu","label":"See Full Menu"}
-{"redirect":"/gallery","label":"View Gallery"}
+{"redirect":"/gallery","label":"View Gallery"}  
 {"redirect":"/custom-cake","label":"Order Custom Cake"}
 {"redirect":"/about","label":"Our Story"}
-{"redirect":"/contact","label":"Contact & Branches"}
+{"redirect":"/contact","label":"Find Our Branches"}
 {"redirect":"/menu","label":"Order Now","whatsapp":true}
 
-Trigger routing when:
-- menu / prices / pastry / cookies / what do you sell → /menu
-- gallery / photos / pictures / show me cakes → /gallery
-- custom cake / birthday cake / wedding cake / design cake / order a cake → /custom-cake
-- about / history / since 2013 / story / how long → /about
-- contact / location / address / where / phone / find you → /contact
-- order / buy / want to order → /menu with whatsapp:true
+Rules for which redirect to use:
+- menu / prices / pastry / cookies / eggless → /menu
+- gallery / photos / pictures → /gallery  
+- custom / birthday / wedding / anniversary / design → /custom-cake
+- about / story / history / since 2013 → /about
+- contact / location / address / where / phone / hours / open → /contact
+- order / buy / place order / want to order → /menu with whatsapp:true
+- delivery → /contact
 
-TONE: Warm, very brief (1–2 sentences max before redirect). English unless user writes Nepali — then reply in Nepali. Never claim to be ChatGPT or Claude.`;
+TONE: Warm, 1–2 sentences MAX. Be direct. No fluff.`;
 
 export function MithiBot() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: "Namaste! 🎂 I'm Mithi. Ask me about our cakes, menu, custom orders, or locations!",
-    },
-  ]);
-  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
+  const [usedChips, setUsedChips] = useState<Set<string>>(new Set());
   const [, navigate] = useLocation();
   const { branchData } = useBranch();
   const bottomRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, loading]);
 
-  useEffect(() => {
-    if (open) setTimeout(() => inputRef.current?.focus(), 300);
-  }, [open]);
+  const sendChip = async (chip: typeof KEYWORD_CHIPS[0]) => {
+    if (loading) return;
+    setUsedChips((prev) => new Set([...prev, chip.label]));
 
-  const sendMessage = async (text?: string) => {
-    const msg = (text ?? input).trim();
-    if (!msg || loading) return;
-    setInput("");
-
-    const userMsg: Message = { role: "user", content: msg };
+    const userMsg: Message = { role: "user", content: chip.label };
     const history = [...messages, userMsg];
     setMessages(history);
     setLoading(true);
@@ -79,16 +86,15 @@ export function MithiBot() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           model: "claude-sonnet-4-6",
-          max_tokens: 300,
+          max_tokens: 200,
           system: SYSTEM_PROMPT,
           messages: history.map((m) => ({ role: m.role, content: m.content })),
         }),
       });
 
       const data = await response.json();
-      const raw: string = data.content?.[0]?.text ?? "Sorry, I couldn't process that. Call us at 9865009581!";
+      const raw: string = data.content?.[0]?.text ?? "Please call us at 9865009581!";
 
-      // Parse redirect JSON if present
       let content = raw;
       let redirect: Message["redirect"] = undefined;
       let whatsapp = false;
@@ -122,28 +128,38 @@ export function MithiBot() {
     }
   };
 
-  const quickPrompts = ["Show me the menu", "Custom cake order", "Where are you?", "Photo gallery"];
+  const handleReset = () => {
+    setMessages([]);
+    setUsedChips(new Set());
+  };
+
+  // Available chips = all chips not yet used this session
+  const availableChips = KEYWORD_CHIPS.filter((c) => !usedChips.has(c.label));
 
   return (
     <>
-      {/* Trigger button — sits above WhatsApp float */}
+      {/* Mithi trigger button — bottom-left so it doesn't clash with WA float on right */}
       <AnimatePresence>
         {!open && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
             onClick={() => setOpen(true)}
-            className="fixed bottom-24 right-5 z-40 w-12 h-12 bg-[#2C1A0E] hover:bg-[#C4714A] text-white rounded-full shadow-lg flex items-center justify-center transition-colors duration-200 group"
+            className="fixed bottom-6 left-5 z-40 w-14 h-14 rounded-full shadow-xl overflow-hidden border-2 border-[#2C1A0E]/20 hover:border-[#C4714A] transition-colors"
             aria-label="Open Mithi AI assistant"
           >
-            <MessageCircle className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-[#C4714A] group-hover:bg-green-500 rounded-full border-2 border-white transition-colors text-[8px] font-bold text-white flex items-center justify-center">AI</span>
+            <img
+              src="/images/mithi-icon.png"
+              alt="Mithi AI"
+              className="w-full h-full object-cover bg-[#1a0e06]"
+            />
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Chat window */}
+      {/* Chat window — opens from bottom-left */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -151,31 +167,57 @@ export function MithiBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
-            className="fixed bottom-6 right-4 z-50 w-[340px] sm:w-[380px] flex flex-col bg-[#FAF7F2] rounded-sm shadow-2xl border border-[#2C1A0E]/10 overflow-hidden"
-            style={{ height: "540px" }}
+            className="fixed bottom-6 left-4 z-50 w-[340px] sm:w-[380px] flex flex-col bg-[#FAF7F2] rounded-sm shadow-2xl border border-[#2C1A0E]/10 overflow-hidden"
+            style={{ height: "560px" }}
           >
             {/* Header */}
-            <div className="bg-[#2C1A0E] px-4 py-3.5 flex items-center justify-between shrink-0">
+            <div className="bg-[#1a0e06] px-4 py-3 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
-                <div className="relative">
-                  <div className="w-8 h-8 rounded-full bg-[#C4714A]/20 flex items-center justify-center text-base">🎂</div>
-                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-[#2C1A0E]" />
+                <div className="relative w-9 h-9 rounded-full overflow-hidden border border-white/10 shrink-0">
+                  <img src="/images/mithi-icon.png" alt="Mithi" className="w-full h-full object-cover" />
+                  <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-[#1a0e06]" />
                 </div>
                 <div>
                   <p className="text-white text-sm font-sans font-medium">Mithi</p>
                   <p className="text-white/40 text-xs font-sans">Hamro Bakery AI · always here</p>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} className="w-7 h-7 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors">
-                <X className="w-4 h-4 text-white/60" />
-              </button>
+              <div className="flex items-center gap-2">
+                {messages.length > 0 && (
+                  <button
+                    onClick={handleReset}
+                    className="text-white/30 hover:text-white/60 text-xs font-sans transition-colors"
+                  >
+                    Reset
+                  </button>
+                )}
+                <button
+                  onClick={() => setOpen(false)}
+                  className="w-7 h-7 rounded-full hover:bg-white/10 flex items-center justify-center transition-colors"
+                >
+                  <X className="w-4 h-4 text-white/60" />
+                </button>
+              </div>
             </div>
 
-            {/* Messages */}
+            {/* Messages + chips area */}
             <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+
+              {/* Welcome message */}
+              {messages.length === 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-white border border-[#2C1A0E]/8 px-3.5 py-2.5 rounded-sm text-sm font-sans text-[#2C1A0E] leading-relaxed"
+                >
+                  Namaste! 🎂 I'm Mithi. Tap what you're looking for below.
+                </motion.div>
+              )}
+
+              {/* Conversation */}
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-                  <div className="max-w-[88%] space-y-2">
+                  <div className="max-w-[90%] space-y-2">
                     <div className={`px-3.5 py-2.5 rounded-sm text-sm font-sans leading-relaxed ${
                       msg.role === "user"
                         ? "bg-[#2C1A0E] text-white"
@@ -186,7 +228,7 @@ export function MithiBot() {
                     {msg.redirect && (
                       <button
                         onClick={() => handleRedirect(msg.redirect!.path, msg.whatsapp)}
-                        className="w-full flex items-center gap-2 bg-[#C4714A] hover:bg-[#b56540] text-white text-xs font-sans font-medium px-3.5 py-2 rounded-sm transition-colors"
+                        className="w-full flex items-center gap-2 bg-[#C4714A] hover:bg-[#b56540] text-white text-xs font-sans font-medium px-3.5 py-2.5 rounded-sm transition-colors"
                       >
                         <ChevronRight className="w-3.5 h-3.5 shrink-0" />
                         {msg.redirect.label}
@@ -205,43 +247,41 @@ export function MithiBot() {
                   </div>
                 </div>
               )}
+
               <div ref={bottomRef} />
             </div>
 
-            {/* Quick prompts — shown only at start */}
-            {messages.length <= 1 && (
-              <div className="px-4 pb-2 flex flex-wrap gap-1.5 shrink-0">
-                {quickPrompts.map((p) => (
-                  <button
-                    key={p}
-                    onClick={() => sendMessage(p)}
-                    className="text-xs font-sans text-[#2C1A0E]/55 border border-[#2C1A0E]/15 hover:border-[#C4714A] hover:text-[#C4714A] px-2.5 py-1 rounded-sm transition-colors"
-                  >
-                    {p}
-                  </button>
-                ))}
+            {/* Keyword chips — always visible at bottom */}
+            {availableChips.length > 0 && (
+              <div className="px-4 py-3 border-t border-[#2C1A0E]/8 bg-white shrink-0">
+                <p className="text-[#2C1A0E]/30 text-xs font-sans mb-2">
+                  {messages.length === 0 ? "What are you looking for?" : "Ask more:"}
+                </p>
+                <div className="flex flex-wrap gap-1.5 max-h-28 overflow-y-auto">
+                  {availableChips.map((chip) => (
+                    <button
+                      key={chip.label}
+                      onClick={() => sendChip(chip)}
+                      disabled={loading}
+                      className="text-xs font-sans text-[#2C1A0E]/70 border border-[#2C1A0E]/15 hover:border-[#C4714A] hover:text-[#C4714A] hover:bg-[#C4714A]/5 px-2.5 py-1.5 rounded-sm transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      {chip.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
-            {/* Input */}
-            <div className="px-4 py-3 border-t border-[#2C1A0E]/8 flex gap-2 shrink-0 bg-white">
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                placeholder="Ask about cakes, menu, orders..."
-                className="flex-1 text-sm font-sans text-[#2C1A0E] bg-transparent placeholder:text-[#2C1A0E]/30 focus:outline-none"
-              />
-              <button
-                onClick={() => sendMessage()}
-                disabled={!input.trim() || loading}
-                className="w-8 h-8 bg-[#2C1A0E] hover:bg-[#C4714A] text-white rounded-sm flex items-center justify-center disabled:opacity-30 transition-colors"
-              >
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </div>
+            {availableChips.length === 0 && (
+              <div className="px-4 py-3 border-t border-[#2C1A0E]/8 bg-white shrink-0 text-center">
+                <button
+                  onClick={handleReset}
+                  className="text-xs font-sans text-[#C4714A] hover:underline"
+                >
+                  Start over ↺
+                </button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

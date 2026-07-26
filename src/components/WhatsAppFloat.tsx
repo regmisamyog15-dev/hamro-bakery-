@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBranch } from "@/context/BranchContext";
-import { X, MessageCircle } from "lucide-react";
+import { X } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 
 export function WhatsAppFloat() {
   const { branchData, selectedBranch } = useBranch();
   const [open, setOpen] = useState(false);
 
-  if (!selectedBranch || !branchData) return null;
-
-  const phone = branchData.whatsapp;
+  // Always visible — fallback to main number before branch is chosen
+  const phone = branchData?.whatsapp ?? "9865009581";
+  const branchLabel = selectedBranch ?? "Hamro Bakery";
 
   const quickMessages = [
-    { label: "🛍️ Place an order", text: `Hello Hamro Bakery (${selectedBranch})! I'd like to place an order.` },
-    { label: "🎂 Custom cake enquiry", text: `Hello Hamro Bakery (${selectedBranch})! I'd like to ask about a custom cake.` },
-    { label: "🚚 Check delivery", text: `Hello Hamro Bakery (${selectedBranch})! Can you deliver to my area?` },
+    { label: "🛍️ Place an order", text: `Hello Hamro Bakery (${branchLabel})! I'd like to place an order.` },
+    { label: "🎂 Custom cake enquiry", text: `Hello Hamro Bakery (${branchLabel})! I'd like to ask about a custom cake.` },
+    { label: "🚚 Check delivery", text: `Hello Hamro Bakery (${branchLabel})! Can you deliver to my area?` },
   ];
 
   const openChat = (text: string) => {
@@ -43,7 +43,7 @@ export function WhatsAppFloat() {
                 </div>
                 <div>
                   <p className="text-white text-sm font-sans font-medium leading-tight">Hamro Bakery</p>
-                  <p className="text-white/40 text-xs font-sans">{selectedBranch} · replies fast</p>
+                  <p className="text-white/40 text-xs font-sans">{branchLabel} · replies fast</p>
                 </div>
               </div>
               <button onClick={() => setOpen(false)} className="text-white/40 hover:text-white transition-colors">
@@ -63,7 +63,7 @@ export function WhatsAppFloat() {
                 </button>
               ))}
               <button
-                onClick={() => openChat(`Hello Hamro Bakery (${selectedBranch})! I'd like to get in touch.`)}
+                onClick={() => openChat(`Hello Hamro Bakery (${branchLabel})! I'd like to get in touch.`)}
                 className="w-full mt-1 bg-[#25D366] hover:bg-[#1ebe5a] text-white text-sm font-sans font-medium py-2.5 rounded-sm flex items-center justify-center gap-2 transition-colors"
               >
                 <SiWhatsapp className="w-4 h-4" />
@@ -74,7 +74,7 @@ export function WhatsAppFloat() {
         )}
       </AnimatePresence>
 
-      {/* Floating button */}
+      {/* Floating button — always visible */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
         animate={open ? {} : {
