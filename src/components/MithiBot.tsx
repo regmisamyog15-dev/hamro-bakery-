@@ -29,12 +29,15 @@ const KEYWORD_CHIPS = [
 function TooltipBubble() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
-    const show = setTimeout(() => {
+    // Show after 3s, then toggle every 4s so it pulses on/off
+    const start = setTimeout(() => {
       setVisible(true);
-      const hide = setTimeout(() => setVisible(false), 4000);
-      return () => clearTimeout(hide);
-    }, 10000);
-    return () => clearTimeout(show);
+      const interval = setInterval(() => {
+        setVisible((v) => !v);
+      }, 4000);
+      return () => clearInterval(interval);
+    }, 3000);
+    return () => clearTimeout(start);
   }, []);
 
   return (

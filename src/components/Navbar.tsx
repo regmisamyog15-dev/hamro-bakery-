@@ -92,16 +92,20 @@ export function Navbar() {
 
           <button
             onClick={() => setShowSelector(true)}
-            className={`flex items-center gap-1 text-xs font-sans font-medium transition-colors border-l pl-3 ${
-              transparent
-                ? "text-white/60 border-white/20 hover:text-white"
-                : "text-[#2C1A0E]/60 border-[#2C1A0E]/15 hover:text-[#2C1A0E]"
+            className={`flex items-center gap-1.5 text-xs font-sans font-medium transition-all duration-200 px-3 py-1.5 rounded-sm border ${
+              !selectedBranch
+                ? "border-[#C4714A] bg-[#C4714A] text-white animate-pulse"
+                : transparent
+                ? "border-white/25 text-white/80 hover:border-white hover:text-white"
+                : "border-[#2C1A0E]/20 text-[#2C1A0E]/70 hover:border-[#C4714A] hover:text-[#C4714A]"
             }`}
             data-testid="btn-change-branch"
           >
-            <MapPin className="w-3 h-3 hidden sm:block" />
-            <span className="truncate max-w-[80px] sm:max-w-[110px]">{selectedBranch || "Branch"}</span>
-            <ChevronDown className="w-3 h-3" />
+            <MapPin className="w-3 h-3 shrink-0" />
+            <span className="truncate max-w-[80px] sm:max-w-[110px]">
+              {selectedBranch || "Pick Branch"}
+            </span>
+            <ChevronDown className="w-3 h-3 shrink-0" />
           </button>
 
           <button
