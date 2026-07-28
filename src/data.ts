@@ -20,7 +20,7 @@ const img16 = "/images/img17.jpeg";
 const img37 = "/images/img37.png";
 const img38 = "/images/img38.png";
 export const galleryImages = [
-  img37, img38,
+  img38, img37,
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16
 ];
 
