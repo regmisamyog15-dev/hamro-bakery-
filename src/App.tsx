@@ -14,6 +14,7 @@ import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
 import { BranchProvider } from "@/context/BranchContext";
 import { MithiBot } from "@/components/MithiBot";
+import { CanonicalHead } from "@/components/CanonicalHead";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -73,6 +74,7 @@ function App() {
         <BranchProvider>
           <FestiveMode />
           <WouterRouter base="">
+            <CanonicalHead />
             <Router />
             <MithiBot />
           </WouterRouter>

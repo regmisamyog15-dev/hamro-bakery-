@@ -1,19 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /blog
-Allow: /blog/
-Allow: /facts
-Allow: /blog/best-birthday-cakes-chitwan
-Allow: /blog/custom-cakes-narayangarh
-Allow: /blog/hamro-bakery-chitwan-since-2013
-Allow: /blog/best-bakery-bharatpur-nepal
-
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
 
 Sitemap: https://hamrobakery1.com/sitemap.xml
