@@ -1,12 +1,18 @@
-import { galleryImages } from "@/data";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBranch } from "@/context/BranchContext";
 import { SiWhatsapp } from "react-icons/si";
 import { Link } from "wouter";
 
-// Only use the best 6 images in hero — not all 18
-const HERO_IMAGES = galleryImages.slice(0, 6);
+// Curated hero images — picked for visual impact
+const HERO_IMAGES = [
+  "/images/img38.png",   // fruit drip cake — photoshoot
+  "/images/img27.jpeg",  // white wedding cake with roses — stunning
+  "/images/img23.jpeg",  // from original set
+  "/images/img25.jpeg",  // chocolate glaze close-up
+  "/images/img18.jpeg",  // original branch shot
+  "/images/img24.jpeg",  // original set
+];
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
