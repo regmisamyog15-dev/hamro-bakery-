@@ -39,7 +39,7 @@ export function CustomCake() {
             </div>
             {/* Floating tag */}
             <div className="absolute -bottom-5 -right-3 sm:-right-6 bg-[#C4714A] text-white px-5 py-4 rounded-sm shadow-lg">
-              <p className="font-serif text-2xl font-light leading-none">2–3 days</p>
+              <p className="font-semibold text-xl leading-none">2–3 days</p>
               <p className="font-sans text-xs mt-1 text-white/80">advance order</p>
             </div>
           </motion.div>
@@ -52,9 +52,9 @@ export function CustomCake() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <span className="section-eyebrow mb-4 block">Custom Cakes</span>
-            <h2 className="font-serif text-4xl md:text-5xl font-light text-[#2C1A0E] leading-tight mb-4">
+            <h2 className="font-bold text-3xl md:text-4xl text-[#2C1A0E] leading-tight mb-4">
               Your dream cake,<br />
-              <span className="italic">brought to life</span>
+              <span>brought to life</span>
             </h2>
             <p className="text-[#2C1A0E]/55 font-sans text-sm leading-relaxed mb-8">
               Describe your vision — flavour, design, colours, message, occasion. Our bakers will craft it exactly to your specification.

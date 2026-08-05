@@ -25,8 +25,8 @@ export function RateUs() {
       <div className="container mx-auto max-w-lg">
         <div className="text-center mb-10">
           <span className="section-eyebrow mb-3 block">Reviews</span>
-          <h2 className="font-serif text-5xl font-light text-[#2C1A0E]">
-            How did we <span className="italic">do?</span>
+          <h2 className="font-bold text-4xl text-[#2C1A0E]">
+            How did we <span>do?</span>
           </h2>
           <p className="text-[#2C1A0E]/45 font-sans text-sm mt-3">
             Happy? Leave us a Google review. Not happy? Tell us directly — we'll fix it.
@@ -45,7 +45,7 @@ export function RateUs() {
                 <div className="w-14 h-14 rounded-full bg-[#C4714A]/10 flex items-center justify-center mx-auto mb-4">
                   <ThumbsUp className="w-6 h-6 text-[#C4714A]" />
                 </div>
-                <h3 className="font-serif text-2xl text-[#2C1A0E] mb-2">
+                <h3 className="font-semibold text-xl text-[#2C1A0E] mb-2">
                   {rating >= 4 ? "Thank you so much!" : "We hear you."}
                 </h3>
                 <p className="text-[#2C1A0E]/45 text-sm font-sans mb-5">

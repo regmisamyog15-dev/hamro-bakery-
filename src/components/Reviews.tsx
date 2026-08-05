@@ -53,9 +53,9 @@ export function Reviews() {
           {/* Left — heading */}
           <div>
             <span className="section-eyebrow text-white/40 mb-4 block">Reviews</span>
-            <h2 className="font-serif text-5xl md:text-6xl font-light text-white leading-tight">
+            <h2 className="font-bold text-4xl md:text-5xl text-white leading-tight">
               Loved by<br />
-              <span className="italic text-[#C4714A]">Chitwan</span>
+              <span className="text-[#C4714A]">Chitwan</span>
             </h2>
             <div className="mt-8 flex items-center gap-3">
               <div className="flex">
@@ -97,12 +97,12 @@ export function Reviews() {
                 data-testid={`card-review-${current}`}
               >
                 {/* Quote mark */}
-                <p className="font-serif text-6xl text-[#C4714A]/30 leading-none mb-4 select-none">"</p>
+                <p className="font-bold text-5xl text-[#C4714A]/30 leading-none mb-4 select-none">"</p>
                 <p className="text-white/75 font-sans text-base leading-relaxed mb-6 font-light">
                   {reviews[current].text}
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#C4714A]/20 flex items-center justify-center text-[#C4714A] font-serif font-medium text-sm">
+                  <div className="w-9 h-9 rounded-full bg-[#C4714A]/20 flex items-center justify-center text-[#C4714A] font-bold font-medium text-sm">
                     {reviews[current].name[0]}
                   </div>
                   <div>

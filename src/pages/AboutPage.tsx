@@ -17,9 +17,9 @@ export default function AboutPage() {
           <div className="container mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <span className="section-eyebrow text-white/40 mb-4 block">Our Story</span>
-              <h1 className="font-serif text-6xl md:text-7xl font-light text-white leading-tight">
+              <h1 className="font-bold text-5xl md:text-6xl text-white leading-tight">
                 Baking<br />
-                <span className="italic text-[#C4714A]">happiness</span><br />
+                <span className="text-[#C4714A]">happiness</span><br />
                 since 2013
               </h1>
             </motion.div>
@@ -41,7 +41,7 @@ export default function AboutPage() {
           <div className="container mx-auto max-w-5xl">
             <div className="mb-14 text-center">
               <span className="section-eyebrow mb-3 block">What drives us</span>
-              <h2 className="font-serif text-5xl font-light text-[#2C1A0E]">Our <span className="italic">values</span></h2>
+              <h2 className="font-bold text-4xl text-[#2C1A0E]">Our <span>values</span></h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#2C1A0E]/8">
               {[
@@ -51,7 +51,7 @@ export default function AboutPage() {
               ].map((v) => (
                 <div key={v.title} className="bg-white p-10">
                   <p className="text-3xl mb-5">{v.icon}</p>
-                  <p className="font-serif text-xl text-[#2C1A0E] mb-3">{v.title}</p>
+                  <p className="font-semibold text-lg text-[#2C1A0E] mb-3">{v.title}</p>
                   <p className="font-sans text-sm text-[#2C1A0E]/50 leading-relaxed">{v.desc}</p>
                 </div>
               ))}
@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="container mx-auto max-w-5xl">
             <div className="mb-3">
               <span className="section-eyebrow mb-3 block">Real. Local. Ours.</span>
-              <h2 className="font-serif text-4xl font-light text-[#2C1A0E]">From our <span className="italic">kitchen in Narayangarh</span></h2>
+              <h2 className="font-bold text-3xl text-[#2C1A0E]">From our <span>kitchen in Narayangarh</span></h2>
             </div>
             <p className="text-[#2C1A0E]/40 text-sm font-sans mb-10 max-w-lg">
               These are actual photos from our branches — not studio shots. Real cakes made by our bakers, for our customers.

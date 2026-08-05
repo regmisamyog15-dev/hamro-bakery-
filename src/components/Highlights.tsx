@@ -21,7 +21,7 @@ export function Highlights() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="bg-[#2C1A0E] px-8 py-10 text-center"
             >
-              <p className="font-serif text-5xl font-light text-[#C4714A] mb-2 leading-none">{s.number}</p>
+              <p className="font-bold text-4xl text-[#C4714A] mb-2 leading-none">{s.number}</p>
               <p className="text-white/80 text-sm font-sans font-medium leading-snug mb-1">{s.label}</p>
               <p className="text-white/35 text-xs font-sans">{s.sub}</p>
             </motion.div>

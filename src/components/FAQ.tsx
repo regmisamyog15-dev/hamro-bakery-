@@ -43,8 +43,8 @@ export function FAQ() {
       <div className="container mx-auto max-w-3xl">
         <div className="mb-12">
           <span className="section-eyebrow mb-3 block">FAQ</span>
-          <h2 className="font-serif text-5xl md:text-6xl font-light text-[#2C1A0E]">
-            Common <span className="italic">questions</span>
+          <h2 className="font-bold text-4xl md:text-5xl text-[#2C1A0E]">
+            Common <span>questions</span>
           </h2>
         </div>
 

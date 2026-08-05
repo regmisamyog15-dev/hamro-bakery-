@@ -13,8 +13,8 @@ export function Gallery() {
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12">
           <span className="section-eyebrow mb-3 block">Gallery</span>
-          <h2 className="font-serif text-5xl md:text-6xl font-light text-[#2C1A0E]">
-            From our <span className="italic">kitchen</span>
+          <h2 className="font-bold text-4xl md:text-5xl text-[#2C1A0E]">
+            From our <span>kitchen</span>
           </h2>
         </div>
 
@@ -98,7 +98,7 @@ export function Gallery() {
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white">
-                <p className="font-serif text-2xl font-light">+{galleryImages.length - 7}</p>
+                <p className="font-semibold text-xl">+{galleryImages.length - 7}</p>
                 <p className="font-sans text-xs tracking-wider">more</p>
               </div>
             </div>

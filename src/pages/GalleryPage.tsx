@@ -18,8 +18,8 @@ export default function GalleryPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="section-eyebrow mb-4 block">Gallery</span>
-            <h1 className="font-serif text-6xl md:text-7xl font-light text-[#2C1A0E]">
-              From our <span className="italic">kitchen</span>
+            <h1 className="font-bold text-5xl md:text-6xl text-[#2C1A0E]">
+              From our <span>kitchen</span>
             </h1>
             <p className="text-[#2C1A0E]/45 font-sans text-sm mt-4 max-w-md mx-auto">
               Real cakes, real people, real happiness — captured from our branches across Narayangarh.

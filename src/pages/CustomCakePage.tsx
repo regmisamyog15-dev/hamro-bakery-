@@ -27,8 +27,8 @@ export default function CustomCakePage() {
             transition={{ duration: 0.6 }}
           >
             <span className="section-eyebrow text-white/50 mb-3 block">Custom Cakes</span>
-            <h1 className="font-serif text-5xl md:text-6xl font-light text-white">
-              Your vision, <span className="italic">our craft</span>
+            <h1 className="font-bold text-4xl md:text-5xl text-white">
+              Your vision, <span>our craft</span>
             </h1>
           </motion.div>
         </div>
@@ -40,7 +40,7 @@ export default function CustomCakePage() {
           <div className="container mx-auto max-w-4xl">
             <div className="mb-12 text-center">
               <span className="section-eyebrow mb-3 block">How it works</span>
-              <h2 className="font-serif text-4xl font-light text-[#2C1A0E]">From idea to cake</h2>
+              <h2 className="font-bold text-3xl text-[#2C1A0E]">From idea to cake</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-8">
               {[
@@ -50,7 +50,7 @@ export default function CustomCakePage() {
                 { step: "04", title: "Collect or receive", desc: "Pick up from your nearest branch or we arrange delivery. Fresh, packaged, perfect." },
               ].map((s) => (
                 <div key={s.step} className="text-center">
-                  <p className="font-serif text-4xl text-[#C4714A]/30 font-light mb-3">{s.step}</p>
+                  <p className="font-bold text-4xl text-[#C4714A]/30 font-light mb-3">{s.step}</p>
                   <p className="font-sans text-sm font-semibold text-[#2C1A0E] mb-2">{s.title}</p>
                   <p className="font-sans text-xs text-[#2C1A0E]/45 leading-relaxed">{s.desc}</p>
                 </div>

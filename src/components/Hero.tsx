@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBranch } from "@/context/BranchContext";
 import { SiWhatsapp } from "react-icons/si";
+import { Link } from "wouter";
+
+// Only use the best 6 images in hero — not all 18
+const HERO_IMAGES = galleryImages.slice(0, 6);
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,15 +14,14 @@ export function Hero() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 3500);
+      setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const handleOrder = () => {
     const phone = branchData?.whatsapp ?? "9865009581";
-    const msg = `Hello Hamro Bakery! I'd like to place an order. Please help me!`;
-    window.open(`https://wa.me/977${phone}?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello Hamro Bakery! I'd like to place an order. Please help me!")}`, "_blank");
   };
 
   return (
@@ -26,82 +29,81 @@ export function Hero() {
       <AnimatePresence initial={false}>
         <motion.img
           key={currentIndex}
-          src={galleryImages[currentIndex]}
+          src={HERO_IMAGES[currentIndex]}
           alt="Hamro Bakery — fresh cakes and pastries in Narayangarh Chitwan"
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ opacity: 0, scale: 1.04 }}
+          initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         />
       </AnimatePresence>
 
-      {/* Layered natural overlay — not just flat black */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a0e06]/90 via-[#1a0e06]/30 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a0e06]/50 to-transparent" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a0e06]/85 via-[#1a0e06]/25 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a0e06]/60 to-transparent" />
 
-      <div className="absolute inset-0 flex flex-col items-start justify-end px-6 sm:px-12 pb-20 sm:pb-24 max-w-4xl">
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
+      {/* Content */}
+      <div className="absolute inset-0 flex flex-col items-start justify-end px-6 sm:px-12 pb-20 sm:pb-24 max-w-3xl">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7 }}
-          className="section-eyebrow text-white/60 mb-4"
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="section-eyebrow text-white/50 mb-5"
         >
           Narayangarh, Chitwan · Since 2013
-        </motion.span>
+        </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.9 }}
-          className="text-6xl sm:text-7xl lg:text-8xl font-serif font-light text-white leading-[0.95] mb-5"
-          style={{ fontStyle: "italic" }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
         >
           Hamro<br />
-          <span className="font-semibold not-italic">Bakery</span>
+          <span className="text-[#C4714A]">Bakery</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, duration: 0.8 }}
-          className="text-white/75 text-base sm:text-lg font-sans font-light max-w-md leading-relaxed mb-8"
+          transition={{ delay: 0.6, duration: 0.7 }}
+          className="text-white/70 text-base sm:text-lg max-w-sm leading-relaxed mb-8"
         >
           Custom cakes, fresh pastries, and baked happiness — four branches across Narayangarh.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.95, duration: 0.7 }}
-          className="flex items-center gap-4"
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="flex items-center gap-3 flex-wrap"
         >
           <button
             onClick={handleOrder}
-            className="flex items-center gap-2.5 bg-[#C4714A] hover:bg-[#b56540] text-white px-6 py-3 rounded-sm text-sm font-sans font-medium tracking-wide transition-colors duration-200"
+            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5a] text-white px-6 py-3 rounded-lg text-sm font-bold transition-colors duration-200 shadow-lg"
           >
             <SiWhatsapp className="w-4 h-4" />
             Order Now
           </button>
-          <button
-            onClick={() => document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" })}
-            className="text-white/70 hover:text-white text-sm font-sans border-b border-white/30 hover:border-white/70 pb-0.5 transition-colors duration-200"
-          >
-            View Menu
-          </button>
+          <Link href="/menu">
+            <span className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-5 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer border border-white/20">
+              View Menu
+            </span>
+          </Link>
         </motion.div>
       </div>
 
-      {/* Minimal dot navigation — bottom right */}
-      <div className="absolute bottom-8 right-8 flex flex-col gap-1.5">
-        {galleryImages.map((_, i) => (
+      {/* Slide counter — bottom right, minimal */}
+      <div className="absolute bottom-8 right-8 flex items-center gap-2">
+        {HERO_IMAGES.map((_, i) => (
           <button
             key={i}
-            className={`block rounded-full transition-all duration-300 ${
-              i === currentIndex ? "w-1.5 h-4 bg-[#C4714A]" : "w-1.5 h-1.5 bg-white/30"
-            }`}
             onClick={() => setCurrentIndex(i)}
-            aria-label={`Go to slide ${i + 1}`}
+            className={`rounded-full transition-all duration-300 ${
+              i === currentIndex ? "w-6 h-2 bg-[#C4714A]" : "w-2 h-2 bg-white/30 hover:bg-white/60"
+            }`}
+            aria-label={`Slide ${i + 1}`}
           />
         ))}
       </div>

@@ -25,8 +25,8 @@ export default function ContactPage() {
           <div className="container mx-auto max-w-5xl">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="section-eyebrow text-white/40 mb-4 block">Contact</span>
-              <h1 className="font-serif text-6xl md:text-7xl font-light text-white">
-                Let's <span className="italic">talk</span>
+              <h1 className="font-bold text-5xl md:text-6xl text-white">
+                Let's <span>talk</span>
               </h1>
               <p className="text-white/40 font-sans text-sm mt-4 max-w-sm">
                 Four branches. One WhatsApp away.
@@ -40,7 +40,7 @@ export default function ContactPage() {
           <div className="container mx-auto max-w-5xl">
             <div className="mb-10">
               <span className="section-eyebrow mb-3 block">All Branches</span>
-              <h2 className="font-serif text-4xl font-light text-[#2C1A0E]">Find your nearest <span className="italic">branch</span></h2>
+              <h2 className="font-bold text-3xl text-[#2C1A0E]">Find your nearest <span>branch</span></h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {(Object.entries(branches) as [BranchName, typeof branches[BranchName]][]).map(([name, data], i) => (
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <p className="font-serif text-lg text-[#2C1A0E]">{name}</p>
+                      <p className="font-semibold text-[#2C1A0E]">{name}</p>
                       <p className="text-[#2C1A0E]/40 text-xs font-sans mt-0.5">Narayangarh, Chitwan</p>
                     </div>
                     <span className="w-2 h-2 rounded-full bg-green-400 mt-2" />
@@ -97,7 +97,7 @@ export default function ContactPage() {
         <section className="py-20 px-6 bg-[#FAF7F2]">
           <div className="container mx-auto max-w-3xl text-center">
             <span className="section-eyebrow mb-4 block">Social</span>
-            <h2 className="font-serif text-4xl font-light text-[#2C1A0E] mb-10">Follow along</h2>
+            <h2 className="font-bold text-3xl text-[#2C1A0E] mb-10">Follow along</h2>
             <div className="flex flex-wrap justify-center gap-4">
               {[
                 { Icon: SiFacebook, label: "Facebook", href: "https://www.facebook.com/share/1E8bcas3Dv/", color: "hover:text-blue-600" },

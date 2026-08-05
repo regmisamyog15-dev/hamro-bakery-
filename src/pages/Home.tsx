@@ -3,9 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Highlights } from "@/components/Highlights";
 import { Menu } from "@/components/Menu";
-import { CallAhead } from "@/components/CallAhead";
 import { Gallery } from "@/components/Gallery";
 import { CustomCake } from "@/components/CustomCake";
+import { CallAhead } from "@/components/CallAhead";
 import { OpeningHours } from "@/components/OpeningHours";
 import { Reviews } from "@/components/Reviews";
 import { RateUs } from "@/components/RateUs";
@@ -22,9 +22,9 @@ export default function Home() {
         <Hero />
         <Highlights />
         <Menu />
-        <CallAhead />
         <Gallery />
         <CustomCake />
+        <CallAhead />
         <OpeningHours />
         <Reviews />
         <RateUs />

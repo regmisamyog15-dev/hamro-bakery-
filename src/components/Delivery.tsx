@@ -36,7 +36,7 @@ export function Delivery() {
           <span className="section-eyebrow mb-3 block">Delivery</span>
           <h2 className="font-serif text-5xl md:text-6xl font-light text-[#2C1A0E]">
             Fresh to your<br />
-            <span className="italic">doorstep</span>
+            <span>doorstep</span>
           </h2>
         </div>
 

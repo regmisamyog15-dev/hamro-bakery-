@@ -21,9 +21,9 @@ export function OpeningHours() {
           {/* Left */}
           <div>
             <span className="section-eyebrow mb-3 block">Hours</span>
-            <h2 className="font-serif text-5xl font-light text-[#2C1A0E] mb-6">
+            <h2 className="font-bold text-4xl text-[#2C1A0E] mb-6">
               We're open<br />
-              <span className="italic">every day</span>
+              <span>every day</span>
             </h2>
             <p className="text-[#2C1A0E]/50 text-sm font-sans leading-relaxed mb-8">
               All four branches open at 8 AM daily. Hours may vary on public holidays — call ahead to confirm.

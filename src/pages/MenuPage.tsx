@@ -19,8 +19,8 @@ export default function MenuPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="section-eyebrow text-white/40 mb-4 block">Full Menu</span>
-            <h1 className="font-serif text-6xl md:text-7xl font-light text-white">
-              What we <span className="italic">bake</span>
+            <h1 className="font-bold text-5xl md:text-6xl text-white">
+              What we <span>bake</span>
             </h1>
             <p className="text-white/45 font-sans text-sm mt-4 max-w-md mx-auto">
               Everything baked fresh every morning. Prices in NPR per unit or per pound for cakes.

@@ -23,9 +23,9 @@ export function CallAhead() {
 
           <div className="relative z-10 px-8 sm:px-14 py-14 max-w-lg">
             <span className="section-eyebrow text-white/40 mb-4 block">Call Ahead</span>
-            <h3 className="font-serif text-4xl md:text-5xl font-light text-white mb-3">
+            <h3 className="font-bold text-3xl md:text-4xl text-white mb-3">
               Order by phone,<br />
-              <span className="italic">pick up fresh</span>
+              <span>pick up fresh</span>
             </h3>
             <p className="text-white/55 font-sans text-sm leading-relaxed mb-7 max-w-sm">
               Call us, tell us your order, and we'll have it ready and waiting when you arrive. No wait, no queue.

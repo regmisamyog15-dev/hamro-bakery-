@@ -41,7 +41,7 @@ export function Footer() {
               alt="Hamro Bakery"
               className="h-12 w-12 object-contain rounded-full border border-white/10 mb-5"
             />
-            <p className="font-serif text-2xl text-white font-light mb-2">Hamro Bakery</p>
+            <p className="font-semibold text-xl text-white font-light mb-2">Hamro Bakery</p>
             <p className="text-white/35 text-xs font-sans leading-relaxed mb-6">
               Narayangarh, Chitwan · Since 2013<br />
               "We bake and shake your happiness."
