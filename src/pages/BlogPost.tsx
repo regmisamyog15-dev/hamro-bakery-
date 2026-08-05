@@ -101,7 +101,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-serif text-primary mb-4">Post not found</h1>
+          <h1 className="text-2xl font-bold text-primary mb-4">Post not found</h1>
           <Link href="/blog">
             <span className="text-primary hover:underline cursor-pointer">← Back to Blog</span>
           </Link>
@@ -130,13 +130,13 @@ export default function BlogPost() {
           </div>
           <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-sm mb-8" />
           <p className="text-[#2C1A0E]/35 text-xs font-sans mb-3">{post.date}</p>
-          <h1 className="font-serif text-4xl md:text-5xl font-light text-[#2C1A0E] mb-8 leading-tight">{post.title}</h1>
+          <h1 className="font-bold text-3xl md:text-5xl font-light text-[#2C1A0E] mb-8 leading-tight">{post.title}</h1>
           <div
-            className="prose prose-lg max-w-none text-[#2C1A0E]/70 font-sans [&>h2]:font-serif [&>h2]:text-2xl [&>h2]:text-[#2C1A0E] [&>h2]:font-light [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>p]:leading-relaxed [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:pl-6 [&>ol>li]:mb-2"
+            className="prose prose-lg max-w-none text-[#2C1A0E]/70 font-sans [&>h2]:font-bold [&>h2]:text-2xl [&>h2]:text-[#2C1A0E] [&>h2]:font-light [&>h2]:mt-8 [&>h2]:mb-4 [&>p]:mb-4 [&>p]:leading-relaxed [&>ul]:mb-4 [&>ul]:pl-6 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:pl-6 [&>ol>li]:mb-2"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
           <div className="mt-12 p-7 bg-[#2C1A0E] rounded-sm text-center">
-            <h3 className="font-serif text-2xl font-light text-white mb-2">Order from Hamro Bakery</h3>
+            <h3 className="font-bold text-xl font-light text-white mb-2">Order from Hamro Bakery</h3>
             <p className="text-white/45 text-sm font-sans mb-5">Call or WhatsApp any branch to place your order!</p>
             <a
               href="https://wa.me/9779865009581"

@@ -31,7 +31,7 @@ export function BranchSelector() {
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-5 border-b border-[#2C1A0E]/8">
               <div>
-                <p className="font-serif text-lg text-[#2C1A0E]">Choose a branch</p>
+                <p className="font-bold text-lg text-[#2C1A0E]">Choose a branch</p>
                 <p className="text-xs font-sans text-[#2C1A0E]/40 mt-0.5">Prices and hours may vary by location</p>
               </div>
               <button

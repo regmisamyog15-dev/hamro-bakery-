@@ -81,7 +81,7 @@ const facts = [
 
 export default function BakeryFacts() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FAF7F2]">
       {/* Hero */}
       <div className="bg-primary/10 py-16 px-4 text-center relative">
         <motion.div
@@ -103,7 +103,7 @@ export default function BakeryFacts() {
             </motion.div>
           </Link>
 
-          <h1 className="text-4xl md:text-5xl font-serif text-primary mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-3">
             Fun Bakery Facts 🎉
           </h1>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -123,7 +123,7 @@ export default function BakeryFacts() {
       </div>
 
       {/* Facts Grid */}
-      <div className="container mx-auto max-w-5xl px-4 py-16">
+      <div className="container mx-auto max-w-5xl px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {facts.map((item, i) => (
             <motion.div
@@ -133,13 +133,13 @@ export default function BakeryFacts() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
               whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(92,51,23,0.12)" }}
-              className="bg-card rounded-2xl border border-border p-6 shadow-sm transition-all duration-300"
+              className="bg-white rounded-lg border border-[#2C1A0E]/8 p-6 shadow-sm transition-all duration-300"
             >
               <div className="text-4xl mb-3">{item.emoji}</div>
-              <h3 className="font-serif text-lg font-bold text-primary mb-2 leading-tight">
+              <h3 className="text-base font-bold text-[#2C1A0E] mb-2 leading-tight">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-[#2C1A0E]/55 text-sm leading-relaxed">
                 {item.fact}
               </p>
             </motion.div>
@@ -158,21 +158,21 @@ export default function BakeryFacts() {
             alt="Hamro Bakery"
             className="w-20 h-20 object-contain rounded-full border-4 border-primary/20 shadow-lg bg-white mx-auto mb-4"
           />
-          <h2 className="text-3xl font-serif text-primary mb-3">
+          <h2 className="text-3xl font-black text-[#2C1A0E] mb-3">
             Ready to Order?
           </h2>
-          <p className="text-muted-foreground mb-6">
+          <p className="text-[#2C1A0E]/50 text-sm mb-6">
             Visit any of our 4 branches in Narayangarh or order via WhatsApp!
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="https://wa.me/9779865009581"
-              className="px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold shadow-md hover:opacity-90 transition-opacity"
+              className="px-6 py-3 rounded-lg bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5a] transition-colors"
             >
               WhatsApp Order 🍰
             </a>
             <Link href="/">
-              <span className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-md hover:opacity-90 transition-opacity cursor-pointer">
+              <span className="px-6 py-3 rounded-lg bg-[#2C1A0E] text-white font-semibold hover:bg-[#C4714A] transition-colors cursor-pointer">
                 View Full Menu
               </span>
             </Link>

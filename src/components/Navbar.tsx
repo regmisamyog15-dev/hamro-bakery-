@@ -52,7 +52,7 @@ export function Navbar() {
         <Link href="/">
           <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity shrink-0" data-testid="link-home">
             <img src="/images/logo.jpeg" alt="Hamro Bakery Logo" className="h-9 w-9 object-contain rounded-full border border-[#2C1A0E]/15" />
-            <span className={`font-serif text-base font-semibold hidden sm:block transition-colors ${transparent ? "text-white" : "text-[#2C1A0E]"}`}>
+            <span className={`font-bold text-base hidden sm:block transition-colors ${transparent ? "text-white" : "text-[#2C1A0E]"}`}>
               Hamro Bakery
             </span>
           </div>

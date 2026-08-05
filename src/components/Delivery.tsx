@@ -34,7 +34,7 @@ export function Delivery() {
       <div className="container mx-auto max-w-5xl">
         <div className="mb-12">
           <span className="section-eyebrow mb-3 block">Delivery</span>
-          <h2 className="font-serif text-5xl md:text-6xl font-light text-[#2C1A0E]">
+          <h2 className="text-5xl md:text-6xl font-light text-[#2C1A0E]">
             Fresh to your<br />
             <span>doorstep</span>
           </h2>
@@ -52,7 +52,7 @@ export function Delivery() {
               <div className="w-9 h-9 rounded-full bg-[#C4714A]/20 flex items-center justify-center mb-5">
                 <Zap className="w-4.5 h-4.5 text-[#C4714A]" />
               </div>
-              <p className="font-serif text-2xl font-light text-white leading-snug mb-2">
+              <p className="text-2xl font-light text-white leading-snug mb-2">
                 Order directly via WhatsApp
               </p>
               <p className="text-white/45 text-xs font-sans leading-relaxed">

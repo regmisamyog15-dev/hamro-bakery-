@@ -35,7 +35,7 @@ export function FeedbackModal() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-md rounded-2xl" data-testid="modal-feedback">
         <DialogHeader>
-          <DialogTitle className="font-serif text-2xl text-primary">Send Feedback</DialogTitle>
+          <DialogTitle className="font-bold text-xl text-primary">Send Feedback</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 pt-2">
           <p className="text-sm text-muted-foreground">

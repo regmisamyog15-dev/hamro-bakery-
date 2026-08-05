@@ -108,7 +108,7 @@ export default function Blog() {
         <div className="bg-[#2C1A0E] py-20 px-6 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-eyebrow text-white/40 mb-4 block">Blog</span>
-            <h1 className="font-serif text-6xl font-light text-white mb-3">Our <span>stories</span></h1>
+            <h1 className="font-bold text-5xl font-light text-white mb-3">Our <span>stories</span></h1>
             <p className="text-white/40 font-sans text-sm">Tips, news and sweet reads from Chitwan's favourite bakery</p>
           </motion.div>
         </div>
@@ -131,7 +131,7 @@ export default function Blog() {
                 <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <p className="text-xs text-[#2C1A0E]/35 font-sans mb-2">{post.date}</p>
-                  <h2 className="font-serif text-xl text-[#2C1A0E] mb-3 leading-snug">{post.title}</h2>
+                  <h2 className="font-bold text-xl text-[#2C1A0E] mb-3 leading-snug">{post.title}</h2>
                   <p className="text-[#2C1A0E]/50 text-sm font-sans leading-relaxed mb-4">{post.excerpt}</p>
                   <Link href={`/blog/${post.slug}`}>
                     <span className="text-[#C4714A] font-sans text-sm font-medium hover:underline cursor-pointer">Read More →</span>
