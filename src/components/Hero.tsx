@@ -9,7 +9,7 @@ const HERO_IMAGES = [
   "/images/img38.png",   // fruit drip cake — photoshoot
   "/images/img27.jpeg",  // white wedding cake with roses — stunning
   "/images/img23.jpeg",  // from original set
-  "/images/img25.jpeg",  // chocolate glaze close-up
+  "/images/img13.jpeg",  // white cake with roses and gold trim — elegant, no text
   "/images/img18.jpeg",  // original branch shot
   "/images/img24.jpeg",  // original set
 ];
