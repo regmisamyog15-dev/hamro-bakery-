@@ -6,7 +6,6 @@ import { Menu } from "@/components/Menu";
 import { CallAhead } from "@/components/CallAhead";
 import { Gallery } from "@/components/Gallery";
 import { CustomCake } from "@/components/CustomCake";
-import { Delivery } from "@/components/Delivery";
 import { OpeningHours } from "@/components/OpeningHours";
 import { Reviews } from "@/components/Reviews";
 import { RateUs } from "@/components/RateUs";
@@ -26,7 +25,6 @@ export default function Home() {
         <CallAhead />
         <Gallery />
         <CustomCake />
-        <Delivery />
         <OpeningHours />
         <Reviews />
         <RateUs />
