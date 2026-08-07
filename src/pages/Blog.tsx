@@ -128,7 +128,7 @@ export default function Blog() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white border border-[#2C1A0E]/8 rounded-sm overflow-hidden hover:border-[#2C1A0E]/20 transition-colors"
               >
-                <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
+                <img loading="lazy" src={post.image} alt={post.title} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <p className="text-xs text-[#2C1A0E]/35 font-sans mb-2">{post.date}</p>
                   <h2 className="font-bold text-xl text-[#2C1A0E] mb-3 leading-snug">{post.title}</h2>

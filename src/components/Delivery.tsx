@@ -85,7 +85,7 @@ export function Delivery() {
             >
               <div>
                 <div className="w-12 h-12 rounded-sm overflow-hidden border border-[#2C1A0E]/8 bg-white flex items-center justify-center mb-5">
-                  <img src={p.img} alt={p.name} className="w-full h-full object-contain" />
+                  <img loading="lazy" src={p.img} alt={p.name} className="w-full h-full object-contain" />
                 </div>
                 <p className="font-sans text-sm font-medium text-[#2C1A0E] mb-1">{p.name}</p>
                 <p className="text-[#2C1A0E]/45 text-xs font-sans">{p.description}</p>

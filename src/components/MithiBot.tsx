@@ -105,7 +105,7 @@ export function MithiBot() {
               className="w-16 h-16 rounded-full shadow-xl overflow-hidden border-2 border-[#2C1A0E]/20 hover:border-[#C4714A] hover:scale-105 transition-all"
               aria-label="Open Mithi AI assistant"
             >
-              <img src="/images/mithi-icon.png" alt="Mithi AI" className="w-full h-full object-cover bg-[#1a0e06]" />
+              <img loading="lazy" src="/images/mithi-icon.png" alt="Mithi AI" className="w-full h-full object-cover bg-[#1a0e06]" />
             </motion.button>
           </div>
         )}
@@ -125,7 +125,7 @@ export function MithiBot() {
             <div className="bg-[#1a0e06] px-4 py-3 flex items-center justify-between shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative w-9 h-9 rounded-full overflow-hidden border border-white/10 shrink-0">
-                  <img src="/images/mithi-icon.png" alt="Mithi" className="w-full h-full object-cover" />
+                  <img loading="lazy" src="/images/mithi-icon.png" alt="Mithi" className="w-full h-full object-cover" />
                   <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-green-400 rounded-full border-2 border-[#1a0e06]" />
                 </div>
                 <div>

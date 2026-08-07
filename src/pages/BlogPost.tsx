@@ -128,7 +128,7 @@ export default function BlogPost() {
             <span>/</span>
             <span className="text-[#2C1A0E]/60 truncate max-w-[200px]">{post.title}</span>
           </div>
-          <img src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-sm mb-8" />
+          <img loading="lazy" src={post.image} alt={post.title} className="w-full h-64 object-cover rounded-sm mb-8" />
           <p className="text-[#2C1A0E]/35 text-xs font-sans mb-3">{post.date}</p>
           <h1 className="font-bold text-3xl md:text-5xl font-light text-[#2C1A0E] mb-8 leading-tight">{post.title}</h1>
           <div

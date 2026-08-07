@@ -79,7 +79,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="col-span-2 row-span-2 aspect-[4/3] overflow-hidden rounded-sm relative group"
               >
-                <img src="/images/img18.jpeg" alt="Hamro Bakery Narayangarh — original" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" />
+                <img loading="lazy" src="/images/img18.jpeg" alt="Hamro Bakery Narayangarh — original" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" />
                 <div className="absolute bottom-3 left-3 bg-[#2C1A0E]/70 backdrop-blur-sm px-2.5 py-1 rounded-sm">
                   <p className="text-white text-xs font-sans">Sangam Road branch</p>
                 </div>
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.1 }}
                   className="aspect-square overflow-hidden rounded-sm"
                 >
-                  <img src={src} alt={`Hamro Bakery Narayangarh ${i + 2}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img loading="lazy" src={src} alt={`Hamro Bakery Narayangarh ${i + 2}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </motion.div>
               ))}
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.07 }}
                   className="aspect-square overflow-hidden rounded-sm"
                 >
-                  <img src={src} alt={`Hamro Bakery product ${i + 4}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img loading="lazy" src={src} alt={`Hamro Bakery product ${i + 4}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </motion.div>
               ))}
             </div>
