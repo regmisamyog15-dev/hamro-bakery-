@@ -22,9 +22,9 @@ export default function Home() {
         <Hero />
         <Highlights />
         <Menu />
+        <CallAhead />
         <Gallery />
         <CustomCake />
-        <CallAhead />
         <OpeningHours />
         <Reviews />
         <RateUs />
