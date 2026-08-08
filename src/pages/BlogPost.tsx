@@ -162,5 +162,93 @@ const posts = [
       <p>Narayangarh and Bharatpur are neighbouring cities separated by just a few kilometres. Our Sangam Road and Hakim Chowk branches are the closest to Bharatpur. Many Bharatpur residents visit us daily for fresh pastries and place weekly cake orders for their families.</p>
       <p>To order: WhatsApp <strong>9865009581</strong> or visit any branch from 8 AM daily. We're proud to be Chitwan's favourite bakery — and that includes Bharatpur.</p>
     `
+  },
+  {
+    id: 5,
+    slug: "wedding-cake-chitwan-nepal",
+    title: "Wedding Cakes in Chitwan Nepal — Hamro Bakery Narayangarh",
+    date: "July 27, 2026",
+    image: "/images/img27.jpeg",
+    excerpt: "Planning a wedding in Chitwan? Hamro Bakery creates stunning multi-tier wedding cakes with fresh flowers and custom designs.",
+    content: `
+      <p>Your wedding day deserves the most beautiful cake. Hamro Bakery has been creating <strong>wedding cakes in Chitwan Nepal</strong> since 2013 — each one crafted to match your vision, your colours and your style.</p>
+
+      <h2>Wedding Cakes We Create in Chitwan</h2>
+      <p>Our bakers specialise in a wide range of wedding cake styles:</p>
+      <ul>
+        <li><strong>Multi-tier fondant wedding cakes</strong> — elegant, classic, stunning</li>
+        <li><strong>Fresh flower cakes</strong> — real roses, baby's breath, and seasonal flowers</li>
+        <li><strong>Ombre and gradient cakes</strong> — soft colour transitions</li>
+        <li><strong>Naked cakes</strong> — rustic, semi-frosted style</li>
+        <li><strong>Custom monogram and initial cakes</strong></li>
+        <li><strong>Gold and silver leaf decoration</strong></li>
+      </ul>
+
+      <h2>Wedding Cake Pricing in Narayangarh</h2>
+      <p>Wedding cake prices at Hamro Bakery start from <strong>Rs 1,500 per pound</strong> for fondant designs. Most wedding cakes are 3–6 pounds depending on guest count. We recommend:</p>
+      <ul>
+        <li>Up to 50 guests — 3 lb cake</li>
+        <li>50–100 guests — 4–5 lb cake</li>
+        <li>100+ guests — 6 lb or multi-tier setup</li>
+      </ul>
+      <p>We'll help you choose the right size and design during your consultation.</p>
+
+      <h2>How to Order a Wedding Cake in Chitwan</h2>
+      <p>For wedding cakes, we recommend ordering at least <strong>7 days in advance</strong>. Larger or more complex designs may require 10–14 days. Here's how to order:</p>
+      <ul>
+        <li>WhatsApp us at 9865009581 with your wedding date and guest count</li>
+        <li>Share reference photos of designs you love</li>
+        <li>We'll discuss flavour, size, design and pricing</li>
+        <li>Confirm with a small advance payment</li>
+        <li>Collect from your nearest branch or arrange delivery</li>
+      </ul>
+
+      <h2>Available Flavours for Wedding Cakes</h2>
+      <p>All our wedding cakes can be made in any flavour — Blackforest, Butterscotch, Vanilla, Strawberry, Chocolate Truffle, or Red Velvet. Eggless options are available on request.</p>
+
+      <h2>Best Wedding Cake Bakery in Chitwan Nepal</h2>
+      <p>With a 4.8-star Google rating and over 92 reviews, Hamro Bakery is trusted by families across Narayangarh, Bharatpur and all of Chitwan for their most important occasions. Let us be part of your special day.</p>
+      <p>Contact us: <strong>9865009581</strong> | bakeryhamro1@gmail.com | hamrobakery1.com</p>
+    `
+  },
+  {
+    id: 6,
+    slug: "fresh-pastries-narayangarh",
+    title: "Fresh Pastries in Narayangarh — Baked Every Morning at Hamro Bakery",
+    date: "July 28, 2026",
+    image: "/images/img18.jpeg",
+    excerpt: "The best fresh pastries in Narayangarh Chitwan — baked from scratch every morning at Hamro Bakery. Croissants, puffs, cookies and more from Rs 70.",
+    content: `
+      <p>Every morning at 7 AM, our bakers begin preparing fresh pastries at all four Hamro Bakery branches in Narayangarh. By 8 AM when the doors open, everything is fresh out of the oven. That's our promise — and it's been our standard since 2013.</p>
+
+      <h2>Fresh Pastries Available at Hamro Bakery Narayangarh</h2>
+      <p>Our daily baked pastry selection includes:</p>
+      <ul>
+        <li><strong>Veg Puff</strong> — flaky pastry with spiced vegetable filling — Rs 70</li>
+        <li><strong>Chicken Puff</strong> — pastry with seasoned chicken — Rs 90</li>
+        <li><strong>Egg Puff</strong> — classic egg pastry — Rs 80</li>
+        <li><strong>Croissant</strong> — buttery, flaky layers — Rs 120</li>
+        <li><strong>Cheese Croissant</strong> — Rs 150</li>
+        <li><strong>Danish Pastry</strong> — fruit and cream filled — Rs 140</li>
+        <li><strong>Muffins</strong> — chocolate, blueberry, vanilla — Rs 120</li>
+        <li><strong>Donuts</strong> — glazed, chocolate, sprinkles — Rs 90</li>
+        <li><strong>Cookies</strong> — chocolate chip, butter, oat — Rs 125–200</li>
+      </ul>
+
+      <h2>Why Hamro Bakery Pastries Are the Best in Chitwan</h2>
+      <p>We never sell yesterday's pastries. Every item in our display case was baked that morning. We use no artificial preservatives — just real butter, fresh flour, and quality ingredients. This is what makes the difference between our pastries and mass-produced alternatives.</p>
+
+      <h2>Best Time to Visit for Fresh Pastries</h2>
+      <p>For the freshest selection, visit any Hamro Bakery branch between <strong>8 AM and 11 AM</strong>. Popular items like Veg Puff and Chicken Puff often sell out by noon. You can also call ahead to reserve specific items.</p>
+
+      <h2>Visit Our Pastry Shops in Narayangarh</h2>
+      <ul>
+        <li>Hakim Chowk — 9865009581 — opens 8 AM</li>
+        <li>Bishal Chowk — 9702663750 — opens 8 AM</li>
+        <li>Sangam Road — 9855070143 — opens 8 AM</li>
+        <li>Synergy Road — 9821207163 — opens 8 AM</li>
+      </ul>
+      <p>All branches open 7 days a week including public holidays. Fresh pastries daily — no exceptions.</p>
+    `
   }
 ]

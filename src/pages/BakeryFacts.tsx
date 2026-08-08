@@ -83,7 +83,7 @@ export default function BakeryFacts() {
   return (
     <div className="min-h-screen bg-[#FAF7F2]">
       {/* Hero */}
-      <div className="bg-primary/10 py-16 px-4 text-center relative">
+      <div className="bg-[#2C1A0E] py-20 px-6 text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,10 +103,10 @@ export default function BakeryFacts() {
             </motion.div>
           </Link>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
             Fun Bakery Facts 🎉
           </h1>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-white/50 text-base max-w-xl mx-auto font-sans">
             Everything you ever wanted to know about cakes, pastries and Hamro Bakery!
           </p>
 
@@ -114,7 +114,7 @@ export default function BakeryFacts() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="mt-6 px-6 py-2 rounded-full bg-primary text-primary-foreground font-semibold text-sm shadow-md"
+              className="mt-6 px-6 py-2 rounded-sm bg-[#C4714A] text-white font-semibold text-sm hover:bg-[#b56540] transition-colors"
             >
               ← Back to Home
             </motion.button>

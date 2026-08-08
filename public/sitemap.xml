@@ -122,4 +122,26 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://hamrobakery1.com/blog/wedding-cake-chitwan-nepal</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://hamrobakery1.com/images/img27.jpeg</image:loc>
+      <image:title>Wedding Cakes in Chitwan Nepal — Hamro Bakery Narayangarh</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hamrobakery1.com/blog/fresh-pastries-narayangarh</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://hamrobakery1.com/images/img18.jpeg</image:loc>
+      <image:title>Fresh Pastries Narayangarh — Hamro Bakery Chitwan</image:title>
+    </image:image>
+  </url>
+
 </urlset>

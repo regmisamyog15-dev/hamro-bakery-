@@ -38,6 +38,22 @@ const posts = [
     image: "/images/img38.png",
     excerpt: "Searching for the best bakery in Bharatpur Nepal? Hamro Bakery in Narayangarh delivers fresh custom cakes, pastries and baked goods across all of Chitwan.",
   },
+  {
+    id: 5,
+    slug: "wedding-cake-chitwan-nepal",
+    title: "Wedding Cakes in Chitwan Nepal — Hamro Bakery",
+    date: "July 27, 2026",
+    image: "/images/img27.jpeg",
+    excerpt: "Planning a wedding in Chitwan? Hamro Bakery creates stunning wedding cakes — multi-tier fondant designs, fresh flowers, and custom decorations. Order in Narayangarh.",
+  },
+  {
+    id: 6,
+    slug: "fresh-pastries-narayangarh",
+    title: "Fresh Pastries in Narayangarh — Baked Every Morning at Hamro Bakery",
+    date: "July 28, 2026",
+    image: "/images/img18.jpeg",
+    excerpt: "The best fresh pastries in Narayangarh Chitwan — baked from scratch every morning at Hamro Bakery. Croissants, puffs, cookies and more from Rs 70.",
+  },
 ];
 
 export default function Blog() {

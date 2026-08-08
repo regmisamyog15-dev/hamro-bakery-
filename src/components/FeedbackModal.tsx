@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useBranch } from "@/context/BranchContext";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MessageSquare } from "lucide-react";
+import { MessageSquare, Send } from "lucide-react";
 
 export function FeedbackModal() {
   const { selectedBranch } = useBranch();
@@ -23,45 +21,46 @@ export function FeedbackModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          size="sm"
-          className="rounded-full gap-2 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+        <button
+          className="flex items-center gap-2 text-xs font-sans text-white/35 hover:text-white/65 transition-colors"
           data-testid="btn-open-feedback"
         >
-          <MessageSquare className="w-4 h-4" />
+          <MessageSquare className="w-3.5 h-3.5" />
           Send Feedback
-        </Button>
+        </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md rounded-2xl" data-testid="modal-feedback">
+      <DialogContent className="sm:max-w-md rounded-sm border border-[#2C1A0E]/10 bg-[#FAF7F2]" data-testid="modal-feedback">
         <DialogHeader>
-          <DialogTitle className="font-bold text-xl text-primary">Send Feedback</DialogTitle>
+          <DialogTitle className="font-bold text-lg text-[#2C1A0E]">Send Feedback</DialogTitle>
         </DialogHeader>
-        <div className="space-y-4 pt-2">
-          <p className="text-sm text-muted-foreground">
+        <div className="space-y-4 pt-1">
+          <p className="text-sm text-[#2C1A0E]/50 font-sans">
             We read every message. Tell us how we can serve you better.
           </p>
-          <Textarea
+          <textarea
             placeholder="Your feedback or suggestion..."
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            rows={5}
-            className="resize-none"
+            rows={4}
+            className="w-full border border-[#2C1A0E]/15 bg-white rounded-sm px-4 py-3 text-sm font-sans text-[#2C1A0E] placeholder:text-[#2C1A0E]/30 focus:outline-none focus:border-[#C4714A] resize-none transition-colors"
             data-testid="textarea-feedback-modal"
           />
-          <div className="flex gap-3 justify-end">
-            <Button variant="ghost" size="sm" onClick={() => setOpen(false)} className="rounded-full">
+          <div className="flex gap-2 justify-end">
+            <button
+              onClick={() => setOpen(false)}
+              className="px-4 py-2 text-xs font-sans text-[#2C1A0E]/50 hover:text-[#2C1A0E] border border-[#2C1A0E]/12 rounded-sm transition-colors"
+            >
               Cancel
-            </Button>
-            <Button
-              size="sm"
+            </button>
+            <button
               onClick={handleSend}
               disabled={!message.trim()}
-              className="rounded-full px-6"
+              className="flex items-center gap-2 px-5 py-2 bg-[#2C1A0E] hover:bg-[#C4714A] text-white text-xs font-sans font-medium rounded-sm transition-colors disabled:opacity-40"
               data-testid="btn-send-feedback"
             >
-              Send Feedback
-            </Button>
+              <Send className="w-3.5 h-3.5" />
+              Send
+            </button>
           </div>
         </div>
       </DialogContent>
