@@ -28,7 +28,7 @@ export function Gallery() {
           >
             <img
               src={featured[0]}
-              alt="Hamro Bakery signature cake"
+              alt="Hamro Bakery signature custom cake — best bakery in Narayangarh Chitwan Nepal"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <motion.div
@@ -50,7 +50,7 @@ export function Gallery() {
             >
               <img
                 src={featured[idx]}
-                alt={`Hamro Bakery product ${idx + 1}`}
+                alt={`Custom cake design by Hamro Bakery Narayangarh Chitwan — fresh baked daily`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -73,7 +73,7 @@ export function Gallery() {
             >
               <img
                 src={featured[idx]}
-                alt={`Hamro Bakery product ${idx + 1}`}
+                alt={`Custom cake design by Hamro Bakery Narayangarh Chitwan — fresh baked daily`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -93,7 +93,7 @@ export function Gallery() {
           >
             <img
               src={galleryImages[7]}
-              alt="More from Hamro Bakery"
+              alt="More cakes and pastries from Hamro Bakery Narayangarh Chitwan"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
             />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -127,7 +127,7 @@ export function Gallery() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               src={galleryImages[lightbox]}
-              alt="Hamro Bakery"
+              alt="Hamro Bakery — custom cakes and pastries in Narayangarh Chitwan Nepal"
               className="max-w-full max-h-[85vh] object-contain rounded-sm"
               onClick={(e) => e.stopPropagation()}
             />

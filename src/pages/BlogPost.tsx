@@ -4,6 +4,7 @@ import { BranchSelector } from "@/components/BranchSelector";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { motion } from "framer-motion";
 import { useRoute, Link } from "wouter";
+import { useEffect } from "react";
 
 const posts = [
   {
@@ -252,3 +253,130 @@ const posts = [
     `
   }
 ]
+export default function BlogPost() {
+  const [, params] = useRoute("/blog/:slug");
+  const slug = params?.slug;
+  const post = posts.find((p) => p.slug === slug);
+
+  // Inject per-post Article schema for Google
+  useEffect(() => {
+    if (!post) return;
+    const existing = document.getElementById("blog-post-schema");
+    if (existing) existing.remove();
+    const script = document.createElement("script");
+    script.id = "blog-post-schema";
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt || post.title,
+      "image": `https://hamrobakery1.com${post.image}`,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": { "@type": "Organization", "name": "Hamro Bakery", "url": "https://hamrobakery1.com" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hamro Bakery Narayangarh",
+        "logo": { "@type": "ImageObject", "url": "https://hamrobakery1.com/images/logo.jpeg" }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `https://hamrobakery1.com/blog/${post.slug}` },
+      "url": `https://hamrobakery1.com/blog/${post.slug}`,
+      "keywords": "Hamro Bakery, " + post.title + ", best bakery Chitwan, Narayangarh bakery"
+    });
+    document.head.appendChild(script);
+    // Update page title and canonical
+    document.title = post.title + " — Hamro Bakery";
+    const canonical = document.querySelector("link[rel='canonical']") as HTMLLinkElement;
+    if (canonical) canonical.href = `https://hamrobakery1.com/blog/${post.slug}`;
+    return () => { const s = document.getElementById("blog-post-schema"); if (s) s.remove(); };
+  }, [post]);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-[#FAF7F2]">
+        <BranchSelector />
+        <Navbar />
+        <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
+          <p className="text-6xl mb-4">🎂</p>
+          <h1 className="text-3xl font-bold text-[#2C1A0E] mb-3">Post not found</h1>
+          <Link href="/blog">
+            <span className="text-[#C4714A] hover:underline cursor-pointer text-sm">← Back to Blog</span>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#FAF7F2]">
+      <BranchSelector />
+      <Navbar />
+      <div className="pt-16">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="container mx-auto max-w-3xl px-6 py-12"
+        >
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-sans text-[#2C1A0E]/40 mb-8 flex-wrap">
+            <Link href="/"><span className="hover:text-[#C4714A] cursor-pointer transition-colors">Home</span></Link>
+            <span>/</span>
+            <Link href="/blog"><span className="hover:text-[#C4714A] cursor-pointer transition-colors">Blog</span></Link>
+            <span>/</span>
+            <span className="text-[#2C1A0E]/60 truncate max-w-[200px]">{post.title}</span>
+          </div>
+
+          <img
+            src={post.image}
+            alt={post.title}
+            loading="lazy"
+            className="w-full h-64 object-cover rounded-sm mb-8"
+          />
+
+          <p className="text-[#2C1A0E]/35 text-xs font-sans mb-3">{post.date}</p>
+
+          <h1 className="font-bold text-3xl md:text-4xl text-[#2C1A0E] mb-8 leading-tight">
+            {post.title}
+          </h1>
+
+          <div
+            className="prose max-w-none text-[#2C1A0E]/70 font-sans
+              [&>p]:mb-4 [&>p]:leading-relaxed [&>p]:text-sm
+              [&>h2]:font-bold [&>h2]:text-xl [&>h2]:text-[#2C1A0E] [&>h2]:mt-8 [&>h2]:mb-3
+              [&>ul]:mb-4 [&>ul]:pl-5 [&>ul>li]:mb-1.5 [&>ul>li]:text-sm [&>ul>li]:leading-relaxed
+              [&>ol]:mb-4 [&>ol]:pl-5 [&>ol>li]:mb-1.5 [&>ol>li]:text-sm
+              [&>strong]:text-[#2C1A0E] [&>strong]:font-semibold"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          {/* CTA */}
+          <div className="mt-12 p-7 bg-[#2C1A0E] rounded-sm text-center">
+            <h3 className="font-bold text-xl text-white mb-2">
+              Order from Hamro Bakery
+            </h3>
+            <p className="text-white/45 text-sm font-sans mb-5">
+              WhatsApp any branch — we reply fast and confirm your order the same day.
+            </p>
+            <a
+              href="https://wa.me/9779865009581"
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5a] text-white px-6 py-3 rounded-lg text-sm font-bold transition-colors"
+            >
+              WhatsApp: 9865009581
+            </a>
+          </div>
+
+          <div className="mt-6 text-center">
+            <Link href="/blog">
+              <span className="text-[#2C1A0E]/40 hover:text-[#C4714A] text-sm font-sans cursor-pointer transition-colors">
+                ← More articles
+              </span>
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+      <Footer />
+      <WhatsAppFloat />
+    </div>
+  );
+}

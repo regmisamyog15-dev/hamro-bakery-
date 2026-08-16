@@ -165,7 +165,10 @@ export function Footer() {
       <div className="px-6 py-5">
         <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-white/20 text-xs font-sans">
-            © 2026 Hamro Bakery, Narayangarh, Chitwan. All rights reserved.
+            © 2026 Hamro Bakery, Narayangarh, Chitwan, Nepal. All rights reserved.
+          </p>
+          <p className="text-white/10 text-xs font-sans hidden sm:block">
+            Best bakery in Chitwan · Custom cakes Narayangarh · Birthday cakes Nepal · Wedding cakes Bharatpur
           </p>
           <p className="text-white/12 text-xs font-sans">
             <a href="https://hamrobakery1.com/blog" className="hover:text-white/30 transition-colors">Blog</a>

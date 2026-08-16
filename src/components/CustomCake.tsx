@@ -33,7 +33,7 @@ export function CustomCake() {
             <div className="aspect-[4/5] overflow-hidden rounded-sm">
               <img
                 src="/images/img26.jpeg"
-                alt="Custom cake design by Hamro Bakery Chitwan"
+                alt="Custom cake design by Hamro Bakery Narayangarh — birthday and wedding cakes in Chitwan Nepal"
                 className="w-full h-full object-cover"
               />
             </div>

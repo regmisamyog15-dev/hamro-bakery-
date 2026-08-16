@@ -36,7 +36,7 @@ export function Hero() {
         <motion.img
           key={currentIndex}
           src={HERO_IMAGES[currentIndex]}
-          alt="Hamro Bakery — fresh cakes and pastries in Narayangarh Chitwan"
+          alt="Hamro Bakery Narayangarh — best cakes pastries and custom designs in Chitwan Nepal"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ opacity: 0, scale: 1.03 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -66,8 +66,8 @@ export function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
         >
-          Hamro<br />
-          <span className="text-[#C4714A]">Bakery</span>
+          Hamro <span className="text-[#C4714A]">Bakery</span><br />
+          <span className="text-3xl sm:text-4xl font-medium text-white/70">Narayangarh, Chitwan</span>
         </motion.h1>
 
         <motion.p

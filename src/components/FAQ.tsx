@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { MessageCircle } from "lucide-react";
+import { Link } from "wouter";
 import { useBranch } from "@/context/BranchContext";
 
 // These are written for AEO — conversational, the way someone types into ChatGPT/Google
@@ -73,8 +74,26 @@ export function FAQ() {
           </Accordion>
         </motion.div>
 
+        {/* Internal links — helps SEO and UX */}
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {[
+            { label: "View Full Menu", path: "/menu" },
+            { label: "Order Custom Cake", path: "/custom-cake" },
+            { label: "Our Gallery", path: "/gallery" },
+            { label: "Find a Branch", path: "/contact" },
+            { label: "About Us", path: "/about" },
+            { label: "Read Our Blog", path: "/blog" },
+          ].map(({ label, path }) => (
+            <Link key={path} href={path}>
+              <span className="block text-center text-xs font-sans font-medium text-[#2C1A0E]/60 border border-[#2C1A0E]/12 hover:border-[#C4714A] hover:text-[#C4714A] px-3 py-2 rounded-sm transition-colors cursor-pointer">
+                {label}
+              </span>
+            </Link>
+          ))}
+        </div>
+
         {/* Ask anything CTA */}
-        <div className="mt-10 flex items-center justify-between p-5 bg-white border border-[#2C1A0E]/8 rounded-sm">
+        <div className="mt-6 flex items-center justify-between p-5 bg-white border border-[#2C1A0E]/8 rounded-sm">
           <div>
             <p className="font-sans text-sm font-medium text-[#2C1A0E]">Still have a question?</p>
             <p className="font-sans text-xs text-[#2C1A0E]/45 mt-0.5">Our team usually responds within minutes on WhatsApp.</p>
