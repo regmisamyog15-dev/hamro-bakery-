@@ -3,6 +3,26 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 
+const GALLERY_ALTS = [
+  "Custom fondant cake — Hamro Bakery Narayangarh Chitwan Nepal",
+  "Fresh cream cake display — Hamro Bakery best bakery in Chitwan",
+  "Birthday cake with custom design — Hamro Bakery Narayangarh",
+  "Layered birthday cake — Hamro Bakery cake shop Chitwan Nepal",
+  "Special occasion cake — Hamro Bakery fresh baked Narayangarh",
+  "Custom cake with flowers — Hamro Bakery Chitwan Nepal",
+  "Elegant white wedding cake with roses — Hamro Bakery Narayangarh",
+  "More custom cakes and pastries — Hamro Bakery Chitwan",
+  "Red velvet cake — Hamro Bakery best cake shop Narayangarh Nepal",
+  "Chocolate birthday cake — Hamro Bakery Chitwan",
+  "Fresh pastries — Hamro Bakery daily baked goods Narayangarh",
+  "Anniversary cake — Hamro Bakery custom designs Chitwan",
+  "Fondant design cake — Hamro Bakery wedding cake Narayangarh",
+  "Cream cake with berries — Hamro Bakery Narayangarh Chitwan",
+  "Custom birthday cake order — Hamro Bakery Chitwan Nepal",
+  "Chocolate drip cake — Hamro Bakery specialty cake Narayangarh",
+  "Traditional cake design — Hamro Bakery Narayangarh Chitwan",
+];
+
 export function Gallery() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
@@ -28,7 +48,7 @@ export function Gallery() {
           >
             <img
               src={featured[0]}
-              alt="Hamro Bakery signature custom cake — best bakery in Narayangarh Chitwan Nepal"
+              alt={GALLERY_ALTS[0]}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <motion.div
@@ -50,7 +70,7 @@ export function Gallery() {
             >
               <img
                 src={featured[idx]}
-                alt={`Custom cake design by Hamro Bakery Narayangarh Chitwan — fresh baked daily`}
+                alt={GALLERY_ALTS[idx] ?? "Custom cake design by Hamro Bakery Narayangarh Chitwan"}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -73,7 +93,7 @@ export function Gallery() {
             >
               <img
                 src={featured[idx]}
-                alt={`Custom cake design by Hamro Bakery Narayangarh Chitwan — fresh baked daily`}
+                alt={GALLERY_ALTS[idx] ?? "Custom cake and pastry from Hamro Bakery Narayangarh Chitwan"}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -93,7 +113,7 @@ export function Gallery() {
           >
             <img
               src={galleryImages[7]}
-              alt="More cakes and pastries from Hamro Bakery Narayangarh Chitwan"
+              alt={GALLERY_ALTS[7] ?? "More custom cakes and pastries — Hamro Bakery Narayangarh Chitwan"}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
             />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -127,7 +147,7 @@ export function Gallery() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               src={galleryImages[lightbox]}
-              alt="Hamro Bakery — custom cakes and pastries in Narayangarh Chitwan Nepal"
+              alt={GALLERY_ALTS[lightbox] ?? "Hamro Bakery — custom cakes and pastries in Narayangarh Chitwan Nepal"}
               className="max-w-full max-h-[85vh] object-contain rounded-sm"
               onClick={(e) => e.stopPropagation()}
             />

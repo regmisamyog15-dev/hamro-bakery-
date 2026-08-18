@@ -104,14 +104,34 @@ export function CanonicalHead() {
       kw.content = meta.keywords;
     }
 
-    // Update OG tags
+    // Update OG tags — create if missing (happens when 200.html fallback loads on inner pages)
     const og = (prop: string, val: string) => {
-      const el = document.querySelector<HTMLMetaElement>(`meta[property='${prop}']`);
-      if (el) el.content = val;
+      let el = document.querySelector<HTMLMetaElement>(`meta[property='${prop}']`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("property", prop);
+        document.head.appendChild(el);
+      }
+      el.content = val;
     };
-    og("og:url", canonical === `${base}` ? `${base}/` : canonical);
+    const canonicalHref = canonical === `${base}` ? `${base}/` : canonical;
+    og("og:url", canonicalHref);
     og("og:title", meta.title);
     og("og:description", meta.description);
+    og("og:image", "https://hamrobakery1.com/opengraph.jpg");
+
+    // Update twitter card as well
+    const tw = (name: string, val: string) => {
+      let el = document.querySelector<HTMLMetaElement>(`meta[name='${name}']`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.name = name;
+        document.head.appendChild(el);
+      }
+      el.content = val;
+    };
+    tw("twitter:title", meta.title);
+    tw("twitter:description", meta.description);
   }, [location]);
 
   return null;

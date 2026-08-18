@@ -79,13 +79,16 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="col-span-2 row-span-2 aspect-[4/3] overflow-hidden rounded-sm relative group"
               >
-                <img loading="lazy" src="/images/img18.jpeg" alt="Hamro Bakery Narayangarh — original" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" />
+                <img loading="lazy" src="/images/img18.jpeg" alt="Hamro Bakery Sangam Road branch — best bakery in Narayangarh Chitwan Nepal" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" />
                 <div className="absolute bottom-3 left-3 bg-[#2C1A0E]/70 backdrop-blur-sm px-2.5 py-1 rounded-sm">
                   <p className="text-white text-xs font-sans">Sangam Road branch</p>
                 </div>
               </motion.div>
 
-              {["/images/img23.jpeg", "/images/img24.jpeg"].map((src, i) => (
+              {[
+                { src: "/images/img23.jpeg", alt: "Custom birthday cake design — Hamro Bakery Narayangarh Chitwan" },
+                { src: "/images/img24.jpeg", alt: "Fresh baked cakes at Hamro Bakery Chitwan Nepal" }
+              ].map(({ src, alt }, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0 }}
@@ -94,11 +97,16 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.1 }}
                   className="aspect-square overflow-hidden rounded-sm"
                 >
-                  <img loading="lazy" src={src} alt={`Hamro Bakery Narayangarh ${i + 2}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img loading="lazy" src={src} alt={alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </motion.div>
               ))}
 
-              {["/images/img26.jpeg", "/images/img14.jpeg", "/images/img27.jpeg", "/images/img25.jpeg"].map((src, i) => (
+              {[
+                { src: "/images/img26.jpeg", alt: "Hamro Bakery custom cake — wedding and anniversary cakes Chitwan" },
+                { src: "/images/img14.jpeg", alt: "Freshly baked pastries from Hamro Bakery Narayangarh Nepal" },
+                { src: "/images/img27.jpeg", alt: "Elegant white wedding cake with roses — Hamro Bakery Chitwan Nepal" },
+                { src: "/images/img25.jpeg", alt: "Birthday cake order — Hamro Bakery best bakery in Narayangarh" }
+              ].map(({ src, alt }, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0 }}
@@ -107,7 +115,7 @@ export default function AboutPage() {
                   transition={{ delay: i * 0.07 }}
                   className="aspect-square overflow-hidden rounded-sm"
                 >
-                  <img loading="lazy" src={src} alt={`Hamro Bakery product ${i + 4}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <img loading="lazy" src={src} alt={alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </motion.div>
               ))}
             </div>

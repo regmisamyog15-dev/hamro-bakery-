@@ -6,7 +6,16 @@
   <title>Hamro Bakery Narayangarh — Best Cakes & Pastries in Chitwan Since 2013</title>
   <meta name="description" content="Hamro Bakery — Narayangarh Chitwan's #1 bakery since 2013. Custom birthday cakes, wedding cakes, pastries & fresh baked goods. 4 branches: Hakim Chowk, Bishal Chowk, Sangam Road, Synergy Road. Order via WhatsApp: 9865009581." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://hamrobakery1.com/" />
+  <link rel="canonical" id="page-canonical" href="https://hamrobakery1.com/" />
+  <script>
+    (function() {
+      var base = "https://hamrobakery1.com";
+      var path = window.location.pathname.replace(/\/$/, "") || "/";
+      var canonical = path === "/" ? base + "/" : base + path;
+      var el = document.getElementById("page-canonical");
+      if (el) el.href = canonical;
+    })();
+  </script>
   <style>
     body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; color: #333; }
     h1 { color: #8B4513; }
