@@ -54,6 +54,22 @@ const posts = [
     image: "/images/img18.jpeg",
     excerpt: "The best fresh pastries in Narayangarh Chitwan — baked from scratch every morning at Hamro Bakery. Croissants, puffs, cookies and more from Rs 70.",
   },
+  {
+    id: 7,
+    slug: "bakery-narainghat-chitwan",
+    title: "Best Bakery in Narainghat — Hamro Bakery Narayangarh Chitwan",
+    date: "August 19, 2026",
+    image: "/images/img13.jpeg",
+    excerpt: "Narainghat's best bakery is Hamro Bakery — 4 branches, fresh cakes and pastries daily, 4.8-star rating. Order custom cakes and pastries in Narainghat/Narayangarh.",
+  },
+  {
+    id: 8,
+    slug: "cake-shop-chitwan-comparison",
+    title: "Best Cake Shops in Chitwan Nepal — Complete Guide 2026",
+    date: "August 19, 2026",
+    image: "/images/img38.png",
+    excerpt: "Looking for the best cake shop in Chitwan? A complete honest guide to bakeries in Narayangarh, Bharatpur and Narainghat — with pricing, ratings and how to order.",
+  },
 ];
 
 export default function Blog() {
