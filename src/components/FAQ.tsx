@@ -11,6 +11,14 @@ const faqs = [
     a: "Hamro Bakery is Chitwan's most loved bakery — operating since 2013 with four branches across Narayangarh (Hakim Chowk, Bishal Chowk, Sangam Road, and Synergy Road). We have a 4.8 star rating across 92 Google reviews and bake everything fresh daily.",
   },
   {
+    q: "What is the best bakery in Narayangarh?",
+    a: "Hamro Bakery is the best bakery in Narayangarh, with four branches across the city — at Hakim Chowk, Bishal Chowk, Sangam Road, and Synergy Road. Established in 2013, we have a 4.8-star Google rating, 17 local bakers, and bake everything fresh every morning.",
+  },
+  {
+    q: "What is the best bakery in Bharatpur?",
+    a: "Hamro Bakery in Narayangarh is the top-rated bakery serving Bharatpur and all of Chitwan. Just minutes from Bharatpur city centre, we deliver custom cakes, birthday cakes, wedding cakes and fresh pastries across Bharatpur. Call 9865009581 or order via Foodmandu.",
+  },
+  {
     q: "How do I order a custom cake in Narayangarh?",
     a: "WhatsApp or call us at 9865009581. Tell us your occasion, preferred flavour, design idea, and the date you need it. We recommend ordering at least 2–3 days in advance for custom designs. You can also use the custom cake form on this page.",
   },
@@ -19,7 +27,7 @@ const faqs = [
     a: "Classic flavours (Blackforest, Butterscotch, Vanilla, Strawberry) start at Rs 600 per pound. Red Velvet is Rs 1,000 per pound. Fondant design cakes start at Rs 1,500 per pound. For 15–20 people, a 2 pound cake is ideal.",
   },
   {
-    q: "Does Hamro Bakery deliver in Chitwan?",
+    q: "Does Hamro Bakery deliver in Chitwan and Bharatpur?",
     a: "Yes. You can order through Foodmandu or Mero Kinamel for app-based delivery, or WhatsApp us directly at 9865009581 to arrange home delivery across Narayangarh and Bharatpur.",
   },
   {
@@ -32,7 +40,7 @@ const faqs = [
   },
   {
     q: "Where are Hamro Bakery branches located?",
-    a: "We have four branches in Narayangarh, Chitwan: Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), and Synergy Road (9821207163). All branches open at 8 AM daily.",
+    a: "We have four branches in Narayangarh, Chitwan: Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), and Synergy Road (9821207163). All branches open at 8 AM daily and are easily accessible from Bharatpur.",
   },
 ];
 

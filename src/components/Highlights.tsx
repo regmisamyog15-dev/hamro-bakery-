@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { number: "12+", label: "Years baking in Chitwan", sub: "Since 2013" },
-  { number: "4", label: "Branches in Narayangarh", sub: "Hakim · Bishal · Sangam · Synergy" },
+  { number: "4", label: "Branches in Narayangarh", sub: "Serving Bharatpur & Chitwan" },
   { number: "17", label: "Skilled bakers & staff", sub: "Locally employed" },
   { number: "4.8★", label: "Google rating", sub: "92 reviews" },
 ];

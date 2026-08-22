@@ -55,7 +55,7 @@ export function Reviews() {
             <span className="section-eyebrow text-white/40 mb-4 block">Reviews</span>
             <h2 className="font-bold text-4xl md:text-5xl text-white leading-tight">
               Loved by<br />
-              <span className="text-[#C4714A]">Chitwan</span>
+              <span className="text-[#C4714A]">Narayangarh,<br />Bharatpur & Chitwan</span>
             </h2>
             <div className="mt-8 flex items-center gap-3">
               <div className="flex">

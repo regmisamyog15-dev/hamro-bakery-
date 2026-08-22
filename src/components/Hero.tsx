@@ -57,7 +57,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="section-eyebrow text-white/50 mb-5"
         >
-          Narayangarh, Chitwan · Since 2013
+          Narayangarh · Bharatpur · Chitwan · Since 2013
         </motion.p>
 
         <motion.h1
@@ -67,7 +67,7 @@ export function Hero() {
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
         >
           Hamro <span className="text-[#C4714A]">Bakery</span><br />
-          <span className="text-3xl sm:text-4xl font-medium text-white/70">Narayangarh, Chitwan</span>
+          <span className="text-3xl sm:text-4xl font-medium text-white/70">Narayangarh & Bharatpur</span>
         </motion.h1>
 
         <motion.p
@@ -76,7 +76,7 @@ export function Hero() {
           transition={{ delay: 0.6, duration: 0.7 }}
           className="text-white/70 text-base sm:text-lg max-w-sm leading-relaxed mb-8"
         >
-          Custom cakes, fresh pastries, and baked happiness — four branches across Narayangarh.
+          Custom cakes, fresh pastries, and baked happiness — serving Narayangarh, Bharatpur & all of Chitwan from four branches since 2013.
         </motion.p>
 
         <motion.div

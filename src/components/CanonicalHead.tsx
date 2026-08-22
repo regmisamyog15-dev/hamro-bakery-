@@ -3,9 +3,9 @@ import { useLocation } from "wouter";
 
 const PAGE_META: Record<string, { title: string; description: string; keywords?: string }> = {
   "/": {
-    title: "Hamro Bakery Narayangarh — Best Bakery in Chitwan Nepal",
-    description: "Best bakery in Chitwan since 2013. Custom birthday cakes, wedding cakes, fresh pastries. 4 branches in Narayangarh. Order: 9865009581.",
-    keywords: "best bakery Chitwan, best bakery Narayangarh, bakery Nepal, custom cake Narayangarh, birthday cake Chitwan",
+    title: "Hamro Bakery — Best Bakery in Narayangarh & Bharatpur | Chitwan Nepal",
+    description: "Best bakery in Narayangarh, Bharatpur & Chitwan since 2013. Custom birthday cakes, wedding cakes, pastries. 4.8★ 92 reviews. Call 9865009581.",
+    keywords: "best bakery Chitwan, best bakery Narayangarh, best bakery Bharatpur, bakery Nepal, custom cake Narayangarh, birthday cake Chitwan, wedding cake Bharatpur",
   },
   "/menu": {
     title: "Menu & Prices — Hamro Bakery Narayangarh | Cakes from Rs 600",
