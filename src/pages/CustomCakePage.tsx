@@ -16,7 +16,8 @@ export default function CustomCakePage() {
         <div className="relative h-72 overflow-hidden">
           <img
             src={galleryImages[2]}
-            alt="Custom cake design"
+            alt="Custom fondant cake — Hamro Bakery Narayangarh Bharatpur Chitwan"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2C1A0E]/80 to-[#2C1A0E]/20" />

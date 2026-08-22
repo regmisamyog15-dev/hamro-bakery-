@@ -49,6 +49,7 @@ export function Gallery() {
             <img
               src={featured[0]}
               alt={GALLERY_ALTS[0]}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <motion.div
@@ -71,6 +72,7 @@ export function Gallery() {
               <img
                 src={featured[idx]}
                 alt={GALLERY_ALTS[idx] ?? "Custom cake design by Hamro Bakery Narayangarh Chitwan"}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -94,6 +96,7 @@ export function Gallery() {
               <img
                 src={featured[idx]}
                 alt={GALLERY_ALTS[idx] ?? "Custom cake and pastry from Hamro Bakery Narayangarh Chitwan"}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <motion.div
@@ -114,6 +117,7 @@ export function Gallery() {
             <img
               src={galleryImages[7]}
               alt={GALLERY_ALTS[7] ?? "More custom cakes and pastries — Hamro Bakery Narayangarh Chitwan"}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-50"
             />
             <div className="absolute inset-0 flex items-center justify-center">

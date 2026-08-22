@@ -97,6 +97,16 @@ export function Hero() {
               View Menu
             </span>
           </Link>
+          <Link href="/custom-cake">
+            <span className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-5 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer border border-white/20">
+              Custom Cakes
+            </span>
+          </Link>
+          <Link href="/gallery">
+            <span className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-5 py-3 rounded-lg text-sm font-semibold transition-colors cursor-pointer border border-white/20">
+              Gallery
+            </span>
+          </Link>
         </motion.div>
       </div>
 
