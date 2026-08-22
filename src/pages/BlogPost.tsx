@@ -740,7 +740,7 @@ export default function BlogPost() {
         <Navbar />
         <div className="flex flex-col items-center justify-center min-h-screen px-6 text-center">
           <p className="text-6xl mb-4">🎂</p>
-          <h1 className="text-3xl font-bold text-[#2C1A0E] mb-3">Post not found</h1>
+          <h2 className="text-3xl font-bold text-[#2C1A0E] mb-3">Post not found</h2>
           <Link href="/blog">
             <span className="text-[#C4714A] hover:underline cursor-pointer text-sm">← Back to Blog</span>
           </Link>

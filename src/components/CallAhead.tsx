@@ -16,7 +16,8 @@ export function CallAhead() {
         >
           <img
             src="/images/img9.jpeg"
-            alt="Hamro Bakery — call ahead and pick up"
+            alt="Order cakes by phone at Hamro Bakery Narayangarh — call ahead pickup Chitwan"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#2C1A0E]/90 via-[#2C1A0E]/70 to-transparent" />

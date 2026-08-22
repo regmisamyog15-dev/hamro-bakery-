@@ -136,9 +136,9 @@ export default function BakeryFacts() {
               className="bg-white rounded-lg border border-[#2C1A0E]/8 p-6 shadow-sm transition-all duration-300"
             >
               <div className="text-4xl mb-3">{item.emoji}</div>
-              <h3 className="text-base font-bold text-[#2C1A0E] mb-2 leading-tight">
+              <h2 className="text-base font-bold text-[#2C1A0E] mb-2 leading-tight">
                 {item.title}
-              </h3>
+              </h2>
               <p className="text-[#2C1A0E]/55 text-sm leading-relaxed">
                 {item.fact}
               </p>
@@ -158,9 +158,9 @@ export default function BakeryFacts() {
             alt="Hamro Bakery"
             className="w-20 h-20 object-contain rounded-full border-4 border-primary/20 shadow-lg bg-white mx-auto mb-4"
           />
-          <h2 className="text-3xl font-black text-[#2C1A0E] mb-3">
+          <h3 className="text-3xl font-black text-[#2C1A0E] mb-3">
             Ready to Order?
-          </h2>
+          </h3>
           <p className="text-[#2C1A0E]/50 text-sm mb-6">
             Visit any of our 4 branches in Narayangarh or order via WhatsApp!
           </p>

@@ -91,6 +91,31 @@ export function Footer() {
                 </div>
               ))}
             </div>
+
+            {/* Quick Links */}
+            <p className="text-white/30 text-xs font-sans uppercase tracking-widest mt-8 mb-3">Quick Links</p>
+            <nav aria-label="Footer navigation">
+              <ul className="space-y-1.5">
+                {[
+                  { label: "Menu & Prices", href: "/menu" },
+                  { label: "Custom Cakes", href: "/custom-cake" },
+                  { label: "Gallery", href: "/gallery" },
+                  { label: "About Us", href: "/about" },
+                  { label: "Contact & Locations", href: "/contact" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "Bakery Facts", href: "/facts" },
+                ].map(({ label, href }) => (
+                  <li key={href}>
+                    <a
+                      href={href}
+                      className="text-white/30 text-xs font-sans hover:text-white/60 transition-colors"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* Map + actions column */}
