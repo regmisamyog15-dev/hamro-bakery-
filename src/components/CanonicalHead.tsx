@@ -67,7 +67,21 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
     description: "Best fresh pastries in Narayangarh Chitwan at Hamro Bakery. Puffs, croissants, muffins, donuts from Rs 70 — baked every morning at 8AM.",
     keywords: "fresh pastries Narayangarh, pastry shop Chitwan, best pastry Nepal, bakery Narayangarh morning",
   },
-  "/blog/bakery-narainghat-chitwan": {
+  "/blog/send-cake-chitwan-from-uk-us": {
+    title: "Send Cake to Chitwan from UK, US & Australia — Hamro Bakery",
+    description: "Send a birthday or anniversary cake to your family in Chitwan, Narayangarh or Bharatpur from the UK, US or Australia. Same-day delivery available. WhatsApp +977-9865009581.",
+    keywords: "send cake to Nepal from UK, send birthday cake Chitwan, online cake delivery Narayangarh, gift delivery Chitwan Nepal, send cake Bharatpur from abroad",
+  },
+  "/blog/trending-cake-designs-nepal-2026": {
+    title: "Top 7 Trending Cake Designs in Nepal 2026 — Hamro Bakery Chitwan",
+    description: "Korean bento cakes, burn-away cakes, Lambeth vintage, 3D character cakes — top trending birthday cake designs in Nepal 2026 with prices from Hamro Bakery Narayangarh.",
+    keywords: "trending cake designs Nepal 2026, bento cake Chitwan, burn away cake Narayangarh, Lambeth cake Nepal, Spiderman cake price Nepal, Korean cake design Chitwan",
+  },
+  "/blog/eggless-cakes-chitwan-nepal": {
+    title: "Eggless Cakes in Chitwan — 100% Vegetarian Cakes at Hamro Bakery",
+    description: "Order 100% eggless vegetarian cakes in Chitwan. Hamro Bakery Narayangarh bakes eggless cakes with separate utensils — all flavours, custom designs, same-day available.",
+    keywords: "eggless cake Narayangarh, eggless cake Chitwan, vegetarian cake Nepal, eggless birthday cake Bharatpur, eggless fondant cake Chitwan, sugar free cake Chitwan",
+  },
     title: "Best Bakery in Narainghat — Hamro Bakery Narayangarh Chitwan",
     description: "Narainghat's best bakery is Hamro Bakery — 4 branches, fresh cakes daily, 4.8-star rating. Custom cakes, pastries, wedding cakes in Narainghat/Narayangarh.",
     keywords: "best bakery Narainghat, bakery Narainghat, Narainghat cake shop, best cake Narainghat Nepal, Narainghat Narayangarh bakery",

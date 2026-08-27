@@ -19,24 +19,28 @@ const faqs = [
     a: "Hamro Bakery in Narayangarh is the top-rated bakery serving Bharatpur and all of Chitwan. Just minutes from Bharatpur city centre, we deliver custom cakes, birthday cakes, wedding cakes and fresh pastries across Bharatpur. Call 9865009581 or order via Foodmandu.",
   },
   {
+    q: "What is the price of a customized birthday cake per pound in Chitwan?",
+    a: "The price of a customized birthday cake in Chitwan starts from Rs 700 to Rs 1,200 per pound depending on the design complexity, frosting type (whipped cream, fondant, or ganache), and flavour (classic chocolate, red velvet, or premium fresh fruit). Standard flavours like Blackforest and Butterscotch start at Rs 600/lb.",
+  },
+  {
+    q: "Can I order an eggless cake in Narayangarh?",
+    a: "Yes, you can order 100% vegetarian eggless cakes at Hamro Bakery in Narayangarh. We follow strict hygiene and preparation standards — eggless cakes are baked with completely separate utensils and baking pans, making them safe for vegetarian families and religious celebrations.",
+  },
+  {
+    q: "How do I send a birthday cake to Bharatpur or Chitwan from the UK or Australia?",
+    a: "WhatsApp Hamro Bakery at +977-9865009581 with the recipient's name, full address in Chitwan, phone number, your chosen cake design, and delivery date. We deliver across Narayangarh and Bharatpur and can send you a photo confirming delivery.",
+  },
+  {
+    q: "What are the most popular cake flavours for weddings in Nepal?",
+    a: "The most popular wedding and engagement cake flavours in Nepal are Red Velvet with Cream Cheese, Chocolate Fudge Truffle, and White Forest/Black Forest. For weddings, elegant multi-tier designs decorated with edible fresh flowers or metallic gold flakes are highly sought after. Eggless versions are available for all flavours.",
+  },
+  {
+    q: "Does Hamro Bakery offer same-day or express cake delivery in Chitwan?",
+    a: "Yes, we offer same-day express cake delivery in Chitwan within 2 to 3 hours for standard flavours like Black Forest, Pineapple, and Chocolate. For custom-designed cakes, photo cakes, or large multi-tier event cakes, we recommend ordering at least 24 hours in advance.",
+  },
+  {
     q: "How do I order a custom cake in Narayangarh?",
-    a: "WhatsApp or call us at 9865009581. Tell us your occasion, preferred flavour, design idea, and the date you need it. We recommend ordering at least 2–3 days in advance for custom designs. You can also use the custom cake form on this page.",
-  },
-  {
-    q: "How much does a birthday cake cost at Hamro Bakery?",
-    a: "Classic flavours (Blackforest, Butterscotch, Vanilla, Strawberry) start at Rs 600 per pound. Red Velvet is Rs 1,000 per pound. Fondant design cakes start at Rs 1,500 per pound. For 15–20 people, a 2 pound cake is ideal.",
-  },
-  {
-    q: "Does Hamro Bakery deliver in Chitwan and Bharatpur?",
-    a: "Yes. You can order through Foodmandu or Mero Kinamel for app-based delivery, or WhatsApp us directly at 9865009581 to arrange home delivery across Narayangarh and Bharatpur.",
-  },
-  {
-    q: "Are the products baked fresh every day?",
-    a: "Everything at Hamro Bakery is baked fresh every morning. We never sell day-old goods and we don't compromise on freshness — that's been our standard since 2013.",
-  },
-  {
-    q: "What payment methods does Hamro Bakery accept?",
-    a: "We accept cash, QR payment, eSewa, and Khalti at all four branches.",
+    a: "WhatsApp or call us at 9865009581. Tell us your occasion, preferred flavour, design idea, and the date you need it. We recommend ordering at least 2–3 days in advance for custom designs. Share a reference photo from Instagram or Pinterest and we'll match it.",
   },
   {
     q: "Where are Hamro Bakery branches located?",
