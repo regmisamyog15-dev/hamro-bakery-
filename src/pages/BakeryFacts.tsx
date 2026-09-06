@@ -4,78 +4,78 @@ import { Link } from "wouter";
 const facts = [
   {
     emoji: "🎂",
-    title: "Birthday Cakes Start at Rs 600/pound",
-    fact: "Our classic Blackforest, Whiteforest, Butterscotch, Pineapple, Blueberry, Vanilla and Strawberry cakes all start at just Rs 600 per pound. Our premium Redvelvet goes for Rs 1000/pound!",
-  },
-  {
-    emoji: "🍰",
-    title: "1 kg Cake Feeds About 15 People",
-    fact: "A 1 kg (2.2 pound) cake is perfect for 12-15 people. For a party of 20-25, go for a 1.5 kg cake. Our bakers can help you pick the right size!",
+    title: "Birthday Cakes Start at Rs 600/lb",
+    fact: "Classic flavours — Blackforest, Whiteforest, Butterscotch, Pineapple, Blueberry, Vanilla and Strawberry — all start at Rs 600 per pound. Red Velvet is Rs 1,000/lb. Fondant Design cakes start at Rs 1,500/lb.",
   },
   {
     emoji: "📏",
     title: "We Measure Cakes in Pounds",
-    fact: "In Nepal, cake is traditionally priced per pound. 1 pound = 450 grams. So a 2 pound cake = about 900 grams — perfect for 8-10 people.",
+    fact: "In Nepal, cakes are priced per pound. 1 pound = approximately 450 grams. So a 2 lb cake is about 900 grams — enough for 15–20 people.",
+  },
+  {
+    emoji: "🍰",
+    title: "Size Guide — How Much Cake You Need",
+    fact: "1 lb feeds 8–10 people. 2 lb feeds 15–20 people. 3 lb feeds 25+ people. Our team can help you pick the right size for your event.",
   },
   {
     emoji: "✨",
-    title: "Fondant vs Simple Design",
-    fact: "Simple design cakes start at Rs 1000/pound and feature beautiful cream decorations. Fondant design cakes start at Rs 1500/pound with detailed sculpted decorations.",
+    title: "Simple Design vs Fondant Design",
+    fact: "Simple design cakes start at Rs 1,000/lb — cream decorations, clean finish. Fondant design cakes start at Rs 1,500/lb — sculpted, detailed decorations made from fondant.",
   },
   {
     emoji: "🧁",
-    title: "Our Pastries Are Just Rs 70-250",
-    fact: "Fresh pastries start at just Rs 70 for a classic Blackforest. Our premium Cheese Pastries (Blueberry, Oreo, Strawberry) are Rs 250 each — a true indulgence!",
+    title: "Pastries from Rs 70",
+    fact: "Fresh pastries baked every morning. Blackforest pastry Rs 70, most standard pastries Rs 80–100. Premium Cheese Pastries (Blueberry, Oreo, Strawberry) are Rs 250 each.",
   },
   {
     emoji: "🍪",
-    title: "11 Types of Cookies!",
-    fact: "We bake 11 different cookies including Spicy, Coconut, Cherry, Chocochips, Peanuts, Vanilla and more — all starting from Rs 125 per pack.",
+    title: "11 Types of Cookies",
+    fact: "We bake 11 cookie varieties daily: Spicy, Salt & Sweet, Cherry, Coconut, Macaroni, Sweet Puff, Chocochips, Puff, Chocolate, Peanuts, and Vanilla. From Rs 125 per pack.",
   },
   {
     emoji: "🌅",
     title: "Baked Fresh Every Single Day",
-    fact: "Everything at Hamro Bakery is baked fresh daily. We never serve day-old products. Our bakers start early every morning so you always get the freshest baked goods in Chitwan.",
+    fact: "Our bakers start at 7 AM every morning. Everything is baked fresh daily. We do not serve day-old products. Best selection of pastries is between 8–11 AM.",
   },
   {
     emoji: "📅",
-    title: "Order 2-3 Days in Advance",
-    fact: "For custom designed cakes, we recommend ordering at least 2-3 days in advance. This gives our skilled bakers enough time to craft your perfect cake with attention to every detail.",
+    title: "How Far Ahead to Order",
+    fact: "Standard cakes: 1 day ahead. Custom design cakes: 2–3 days ahead. Fondant and character cakes: 3–5 days. Wedding cakes: 7 days minimum.",
   },
   {
     emoji: "🏪",
-    title: "4 Branches Across Narayangarh",
-    fact: "We have 4 convenient branches: Hakim Chowk (our original!), Bishal Chowk, Sangam Road and Synergy Road. All open 8 AM to 8-9 PM daily.",
+    title: "4 Branches in Narayangarh, Bharatpur",
+    fact: "Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road — open until 9 PM (9855070143), and Synergy Road (9821207163). All open from 8 AM daily.",
   },
   {
     emoji: "📆",
-    title: "Baking Happiness Since 2013",
-    fact: "Hamro Bakery started in 2013 at Hakim Chowk with a simple dream — to bring happiness through freshly baked goods. Over 10 years later, we serve thousands of happy customers daily!",
+    title: "Baking Since 2013",
+    fact: "Hamro Bakery started at Hakim Chowk, Narayangarh in 2013. Over 10 years later, we have 4 branches across Narayangarh, Bharatpur and serve thousands of customers every month.",
   },
   {
     emoji: "🚚",
-    title: "We Deliver to Your Door",
-    fact: "Order through Foodmandu or Mero Kinamel for fast delivery across Chitwan. Or WhatsApp us directly for personal delivery service straight to your home!",
+    title: "Delivery: Bharatpur & Gaidakot",
+    fact: "We deliver within Bharatpur and to Gaidakot. Order via WhatsApp 9865009581, or through Foodmandu and Mero Kinamel.",
   },
   {
     emoji: "💳",
-    title: "Pay with eSewa or Khalti",
-    fact: "We accept Cash, QR Payment, eSewa and Khalti. Order your cake, pay digitally, and pick it up at any branch or get it delivered!",
+    title: "Pay with eSewa, Khalti or Cash",
+    fact: "We accept Cash, QR Payment, eSewa and Khalti at all branches. Pick up in-store or get delivery within Bharatpur and Gaidakot.",
   },
   {
     emoji: "👨‍🍳",
-    title: "17 Skilled Bakers & Staff",
-    fact: "Hamro Bakery proudly employs 17 skilled bakers and staff members, generating local employment and sharing the art of baking across Chitwan.",
+    title: "17 Local Bakers & Staff",
+    fact: "Hamro Bakery employs 17 skilled bakers and staff — all local. We take pride in creating local employment and sharing the craft of baking in our community.",
   },
   {
-    emoji: "🏆",
-    title: "Star of Bharatpur",
-    fact: "Hamro Bakery is known as the Star of Bharatpur — the most loved and trusted bakery in the Chitwan district, serving families for over a decade.",
+    emoji: "🥚",
+    title: "Eggless Options for All Products",
+    fact: "Every cake and pastry is available eggless at no extra charge. Eggless orders are baked with completely separate utensils and pans. Just mention it when you order.",
   },
   {
     emoji: "🧼",
-    title: "Highest Hygiene Standards",
-    fact: "Our kitchen follows strict hygiene protocols. All equipment is sanitized daily, ingredients are always fresh, and our staff maintains the highest cleanliness standards — every bite is safe and delicious!",
+    title: "Fresh Ingredients, Clean Kitchen",
+    fact: "Ingredients are sourced fresh daily. All equipment is cleaned daily. Our kitchen maintains strict hygiene standards so every bite is safe and consistent.",
   },
 ];
 
@@ -88,7 +88,6 @@ export default function BakeryFacts() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          {/* Logo — click to go home */}
           <Link href="/">
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -104,10 +103,10 @@ export default function BakeryFacts() {
           </Link>
 
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            Fun Bakery Facts 🎉
+            Hamro Bakery Facts 🎉
           </h1>
           <p className="text-white/50 text-base max-w-xl mx-auto font-sans">
-            Everything you ever wanted to know about cakes, pastries and Hamro Bakery!
+            Everything you need to know about our cakes, pastries, prices and branches in Bharatpur.
           </p>
 
           <Link href="/">
@@ -146,7 +145,7 @@ export default function BakeryFacts() {
           ))}
         </div>
 
-        {/* CTA at bottom */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +161,7 @@ export default function BakeryFacts() {
             Ready to Order?
           </h3>
           <p className="text-[#2C1A0E]/50 text-sm mb-6">
-            Visit any of our 4 branches in Narayangarh or order via WhatsApp!
+            4 branches in Narayangarh, Bharatpur — or order via WhatsApp for delivery.
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

@@ -9,17 +9,17 @@ import { useEffect } from "react";
 const posts = [
   {
     id: 1,
-    slug: "best-birthday-cakes-chitwan",
-    title: "Best Birthday Cakes in Chitwan — Hamro Bakery Narayangarh",
+    slug: "best-birthday-cakes-bharatpur",
+    title: "Best Birthday Cakes in Bharatpur — Hamro Bakery Narayangarh",
     date: "July 20, 2026",
     image: "/images/img27.jpeg",
-    excerpt: "Looking for the best birthday cake in Chitwan or Narayangarh? Hamro Bakery has been making people smile since 2013.",
+    excerpt: "Looking for the best birthday cake in Bharatpur or Narayangarh? Hamro Bakery has been making people smile since 2013 with 4 branches across the city.",
     faq: [
-      { q: "Where can I get the best birthday cake in Chitwan?", a: "Hamro Bakery in Narayangarh — 4 branches, 4.8-star rating. Call 9865009581." },
-      { q: "How much does a birthday cake cost in Chitwan?", a: "Classic flavours from Rs 600/lb, Red Velvet Rs 1000/lb, Fondant Rs 1500/lb." },
-      { q: "How do I order a custom birthday cake in Chitwan?", a: "WhatsApp 9865009581 with occasion, flavour, size and design. Order 2 days ahead for custom cakes." }
+      { q: "Where can I get the best birthday cake in Bharatpur?", a: "Hamro Bakery — 4 branches in Narayangarh, Bharatpur. 4.8-star Google rating. Call 9865009581." },
+      { q: "How much does a birthday cake cost at Hamro Bakery?", a: "Classic flavours from Rs 600/lb, Red Velvet Rs 1000/lb, Fondant Design Rs 1500/lb. All prices are per pound." },
+      { q: "How do I order a custom birthday cake in Bharatpur?", a: "WhatsApp 9865009581 with occasion, flavour, size and design reference. Order 2–3 days ahead for custom cakes, 1 day for standard." }
     ],
-    content: "<p>Hamro Bakery has been Narayangarh's most loved bakery since 2013, crafting hundreds of birthday cakes every month.</p><h2>Birthday Cake Flavours</h2><ul><li><strong>Blackforest</strong> — Rs 600/lb</li><li><strong>Butterscotch</strong> — Rs 600/lb</li><li><strong>Red Velvet</strong> — Rs 1,000/lb</li><li><strong>Fondant Design</strong> — Rs 1,500/lb</li></ul><h2>Cake Sizes</h2><ul><li>1 lb — 8–10 people</li><li>2 lb — 15–20 people</li><li>3 lb+ — 25+ people</li></ul><h2>How to Order</h2><p>WhatsApp <strong>9865009581</strong>. Order 2–3 days ahead for custom designs. Walk into any of 4 branches in Narayangarh — all open 8 AM daily.</p>"
+    content: "<p>Hamro Bakery has been Bharatpur's most loved bakery since 2013, with 4 branches in Narayangarh to serve you. Whether you need a simple birthday cake or a detailed fondant design, we bake it fresh every day.</p><h2>Birthday Cake Flavours & Prices</h2><ul><li><strong>Blackforest</strong> — Rs 600/lb</li><li><strong>Butterscotch</strong> — Rs 600/lb</li><li><strong>Chocolate</strong> — Rs 700/lb</li><li><strong>Red Velvet</strong> — Rs 1,000/lb</li><li><strong>Simple Design</strong> — Rs 1,000/lb</li><li><strong>Fondant Design</strong> — Rs 1,500/lb</li></ul><h2>Cake Size Guide</h2><ul><li>1 lb — 8–10 people</li><li>2 lb — 15–20 people</li><li>3 lb+ — 25+ people</li></ul><h2>How to Order</h2><p>WhatsApp <strong>9865009581</strong>. For custom designs, order 2–3 days ahead. For standard cakes, 1 day is enough. All 4 branches open daily from 8 AM.</p>"
   },
   {
     id: 2,
@@ -27,55 +27,55 @@ const posts = [
     title: "How to Order Custom Cakes in Narayangarh — Step by Step",
     date: "July 22, 2026",
     image: "/images/img13.jpeg",
-    excerpt: "Want a custom cake in Narayangarh? Here's exactly how to order from Hamro Bakery.",
+    excerpt: "Want a custom cake in Narayangarh, Bharatpur? Here's exactly how to order from Hamro Bakery — step by step.",
     faq: [
-      { q: "How do I order a custom cake in Narayangarh?", a: "WhatsApp 9865009581 with your occasion, size, flavour and design. Fondant cakes: 2–3 days. Wedding cakes: 5–7 days." },
-      { q: "Can I get an eggless custom cake in Narayangarh?", a: "Yes. All flavours available eggless, baked with separate utensils. Mention it when ordering." },
-      { q: "What is the price of a custom cake in Narayangarh?", a: "From Rs 600/lb for standard flavours, Rs 1500/lb for fondant designs. Cash, eSewa, Khalti or QR." }
+      { q: "How do I order a custom cake in Narayangarh?", a: "WhatsApp 9865009581 with your occasion, size, flavour and a design reference photo. Fondant cakes need 2–3 days. Wedding cakes need 5–7 days." },
+      { q: "Can I get an eggless custom cake in Bharatpur?", a: "Yes. All flavours are available eggless, baked with separate utensils. Just mention it when ordering." },
+      { q: "What is the price of a custom cake at Hamro Bakery?", a: "Standard flavours from Rs 600/lb. Simple designs Rs 1000/lb. Fondant designs Rs 1500/lb. Pay by cash, eSewa, Khalti or QR." }
     ],
-    content: "<p>Ordering a <strong>custom cake in Narayangarh</strong> is easy with Hamro Bakery.</p><h2>Step 1 — Choose Your Design</h2><p>Save reference photos and share on WhatsApp. We can recreate almost any design.</p><h2>Step 2 — Choose Flavour</h2><ul><li>Blackforest Rs 600/lb</li><li>Red Velvet Rs 1,000/lb</li><li>Fondant Rs 1,500/lb</li></ul><h2>Step 3 — Order</h2><p>WhatsApp <strong>9865009581</strong>. Standard: 1 day ahead. Custom: 2–3 days. Wedding: 5–7 days.</p><h2>Step 4 — Payment</h2><p>Cash, eSewa, Khalti or QR. Delivery to Bharatpur available.</p>"
+    content: "<p>Ordering a <strong>custom cake in Narayangarh</strong> is easy at Hamro Bakery. We have 4 branches in Bharatpur and deliver to Gaidakot too.</p><h2>Step 1 — Save a Design Reference</h2><p>Find a photo on Instagram or Pinterest that matches what you want. Share it on WhatsApp. Our bakers can recreate most designs.</p><h2>Step 2 — Choose Your Flavour</h2><ul><li>Blackforest / Butterscotch / Vanilla — Rs 600/lb</li><li>Chocolate — Rs 700/lb</li><li>Red Velvet — Rs 1,000/lb</li><li>Simple Design — Rs 1,000/lb</li><li>Fondant Design — Rs 1,500/lb</li></ul><h2>Step 3 — Send Your Order</h2><p>WhatsApp <strong>9865009581</strong>. Tell us: size, flavour, design, date needed, and whether eggless. Standard: 1 day. Custom: 2–3 days. Wedding: 5–7 days.</p><h2>Step 4 — Pay & Collect</h2><p>Pay by cash, eSewa, Khalti or QR scan at any of our 4 branches. We also deliver within Bharatpur and Gaidakot.</p>"
   },
   {
     id: 3,
-    slug: "hamro-bakery-chitwan-since-2013",
-    title: "Hamro Bakery — 10+ Years of Baking Happiness in Chitwan",
+    slug: "hamro-bakery-since-2013",
+    title: "Hamro Bakery — 10+ Years of Baking in Bharatpur, Nepal",
     date: "May 20, 2026",
     image: "/images/img23.jpeg",
-    excerpt: "From one shop at Hakim Chowk in 2013 to four branches serving Narayangarh, Bharatpur and all of Chitwan.",
+    excerpt: "From one shop at Hakim Chowk in 2013 to four branches across Narayangarh, Bharatpur — the story of Hamro Bakery.",
     faq: [
-      { q: "When did Hamro Bakery open?", a: "First branch at Hakim Chowk, Narayangarh in 2013. Now 4 branches across Narayangarh, Chitwan." },
-      { q: "How many branches does Hamro Bakery have?", a: "4 branches: Hakim Chowk, Bishal Chowk, Sangam Road, and Synergy Road — all in Narayangarh, Chitwan." },
-      { q: "What is Hamro Bakery's Google rating?", a: "4.8-star Google rating across 92+ reviews — highest-rated bakery in Narayangarh and Chitwan." }
+      { q: "When did Hamro Bakery open?", a: "The first branch opened at Hakim Chowk, Narayangarh in 2013. We now have 4 branches across Bharatpur." },
+      { q: "How many branches does Hamro Bakery have?", a: "4 branches: Hakim Chowk, Bishal Chowk, Sangam Road, and Synergy Road — all in Narayangarh, Bharatpur." },
+      { q: "What is Hamro Bakery's Google rating?", a: "4.8-star Google rating across 92+ reviews — one of the highest-rated bakeries in Bharatpur." }
     ],
-    content: "<p><strong>Hamro Bakery</strong> has served thousands of families in Narayangarh, Bharatpur and across Chitwan since 2013.</p><h2>4 Branches in Narayangarh</h2><ul><li>Hakim Chowk — original since 2013</li><li>Bishal Chowk</li><li>Sangam Road — busiest branch</li><li>Synergy Road — newest location</li></ul><h2>Why Hamro Bakery?</h2><p>Every item baked fresh every morning. 17 local bakers. 4.8-star Google rating. 92+ reviews. The most trusted bakery in Chitwan.</p>"
+    content: "<p><strong>Hamro Bakery</strong> started with one small shop at Hakim Chowk, Narayangarh in 2013. Over 10 years later, we have grown to 4 branches across Bharatpur and serve thousands of customers every month.</p><h2>Our 4 Branches in Narayangarh, Bharatpur</h2><ul><li><strong>Hakim Chowk</strong> — our original branch, open since 2013 (9865009581)</li><li><strong>Bishal Chowk</strong> — (9702663750)</li><li><strong>Sangam Road</strong> — open until 9 PM (9855070143)</li><li><strong>Synergy Road</strong> — our newest branch (9821207163)</li></ul><h2>What We Stand For</h2><p>Every item baked fresh daily. Nothing is frozen or day-old. 17 local bakers and staff. 4.8-star Google rating from 92+ real customers. We also deliver to Gaidakot.</p>"
   },
   {
     id: 4,
     slug: "best-bakery-bharatpur-nepal",
-    title: "Best Bakery Near Bharatpur Nepal — Hamro Bakery Narayangarh",
+    title: "Best Bakery in Bharatpur Nepal — Hamro Bakery Narayangarh",
     date: "May 15, 2026",
     image: "/images/img38.png",
-    excerpt: "Searching for the best bakery in Bharatpur Nepal? Hamro Bakery delivers custom cakes and pastries across Chitwan.",
+    excerpt: "Looking for the best bakery in Bharatpur? Hamro Bakery has 4 branches in Narayangarh with custom cakes, fresh pastries and delivery to Gaidakot.",
     faq: [
-      { q: "What is the best bakery in Bharatpur Nepal?", a: "Hamro Bakery in Narayangarh — 4.8-star rating, 92+ reviews. Delivers to Bharatpur. Call 9865009581." },
-      { q: "Does Hamro Bakery deliver to Bharatpur?", a: "Yes — via Foodmandu, Mero Kinamel, or WhatsApp 9865009581." },
-      { q: "Is Hamro Bakery close to Bharatpur?", a: "Yes. Sangam Road and Hakim Chowk branches are minutes from Bharatpur city centre." }
+      { q: "What is the best bakery in Bharatpur Nepal?", a: "Hamro Bakery in Narayangarh, Bharatpur — 4.8-star Google rating, 92+ reviews, 4 branches. Call 9865009581." },
+      { q: "Does Hamro Bakery deliver in Bharatpur?", a: "Yes — we deliver within Bharatpur. Order via WhatsApp 9865009581 or through Foodmandu and Mero Kinamel." },
+      { q: "Do you deliver to Gaidakot?", a: "Yes. Hamro Bakery delivers to Gaidakot. WhatsApp 9865009581 to arrange." }
     ],
-    content: "<p><strong>Hamro Bakery in Narayangarh</strong> is the top-rated bakery serving Bharatpur and all of Chitwan.</p><h2>Delivery to Bharatpur</h2><ul><li>Foodmandu — order via app</li><li>Mero Kinamel — local delivery</li><li>WhatsApp 9865009581 — arrange direct delivery</li></ul><h2>What We Bake</h2><ul><li>Custom birthday cakes from Rs 600/lb</li><li>Wedding and anniversary cakes</li><li>Fondant design cakes from Rs 1,500/lb</li><li>Fresh pastries, cookies, breads</li><li>Eggless options for all products</li></ul>"
+    content: "<p><strong>Hamro Bakery</strong> is one of the top-rated bakeries in Bharatpur, Nepal — with 4 branches in Narayangarh and delivery across Bharatpur and Gaidakot.</p><h2>Delivery Areas</h2><ul><li><strong>Bharatpur</strong> — via Foodmandu, Mero Kinamel, or WhatsApp 9865009581</li><li><strong>Gaidakot</strong> — WhatsApp 9865009581 to arrange</li></ul><h2>What We Bake</h2><ul><li>Custom birthday cakes from Rs 600/lb</li><li>Wedding and anniversary cakes</li><li>Fondant design cakes from Rs 1,500/lb</li><li>Fresh pastries, cookies, breads — daily</li><li>Eggless options for all products</li></ul><h2>Our 4 Branches</h2><p>Hakim Chowk · Bishal Chowk · Sangam Road · Synergy Road — all open from 8 AM daily in Narayangarh, Bharatpur.</p>"
   },
   {
     id: 5,
-    slug: "wedding-cake-chitwan-nepal",
-    title: "Wedding Cakes in Chitwan Nepal — Hamro Bakery Narayangarh",
+    slug: "wedding-cake-bharatpur-nepal",
+    title: "Wedding Cakes in Bharatpur Nepal — Hamro Bakery Narayangarh",
     date: "July 27, 2026",
     image: "/images/img27.jpeg",
-    excerpt: "Planning a wedding in Chitwan? Hamro Bakery creates stunning multi-tier wedding cakes with fresh flowers and custom fondant designs.",
+    excerpt: "Planning a wedding in Bharatpur? Hamro Bakery creates multi-tier fondant wedding cakes with fresh flowers. Order 7 days in advance.",
     faq: [
-      { q: "Where can I order a wedding cake in Chitwan Nepal?", a: "Hamro Bakery Narayangarh — multi-tier fondant wedding cakes from Rs 1500/lb. Order 7 days ahead: 9865009581." },
-      { q: "How much does a wedding cake cost in Chitwan?", a: "From Rs 1500/lb. A 3lb cake for 50 guests is around Rs 4500+. WhatsApp for a custom quote." },
-      { q: "What are the most popular wedding cake flavours in Nepal?", a: "Red Velvet with Cream Cheese, Chocolate Fudge Truffle, and White Forest. Eggless options available." }
+      { q: "Where can I order a wedding cake in Bharatpur Nepal?", a: "Hamro Bakery Narayangarh — fondant wedding cakes from Rs 1500/lb. Order 7 days ahead: 9865009581." },
+      { q: "How much does a wedding cake cost at Hamro Bakery?", a: "From Rs 1500/lb for fondant. A 3 lb cake for around 25–30 guests is Rs 4,500+. WhatsApp for a custom quote." },
+      { q: "What are popular wedding cake flavours at Hamro Bakery?", a: "Red Velvet, Chocolate, Butterscotch, and Blackforest. All available in eggless. Fondant designs available on request." }
     ],
-    content: "<p>Hamro Bakery has been creating <strong>wedding cakes in Chitwan</strong> since 2013.</p><h2>Wedding Cake Styles</h2><ul><li>Multi-tier fondant wedding cakes</li><li>Fresh flower cakes — roses, baby's breath</li><li>Ombre and gradient cakes</li><li>Naked cakes — rustic, semi-frosted</li><li>Gold and silver leaf decoration</li></ul><h2>Pricing</h2><ul><li>Up to 50 guests — 3 lb (from Rs 4,500)</li><li>50–100 guests — 4–5 lb</li><li>100+ guests — 6 lb or multi-tier</li></ul><h2>Order</h2><p>WhatsApp <strong>9865009581</strong> at least 7 days before your wedding. Eggless available on request.</p>"
+    content: "<p>Hamro Bakery has been making <strong>wedding cakes in Bharatpur</strong> since 2013. We handle everything from simple 2-tier cakes to detailed fondant designs with fresh flowers.</p><h2>Wedding Cake Styles We Offer</h2><ul><li>Multi-tier fondant cakes</li><li>Fresh flower decoration</li><li>Ombre and gradient cakes</li><li>Naked / rustic cakes</li><li>Gold and silver leaf decoration</li><li>Photo cakes with edible print</li></ul><h2>Size & Pricing Guide</h2><ul><li>25–30 guests — 3 lb (from Rs 4,500)</li><li>50–60 guests — 4–5 lb</li><li>100+ guests — 6 lb or multi-tier</li></ul><h2>How to Order</h2><p>WhatsApp <strong>9865009581</strong> at least 7 days before your wedding. Share your design reference photo. Eggless available on request. We deliver in Bharatpur and Gaidakot.</p>"
   },
   {
     id: 6,
@@ -83,55 +83,55 @@ const posts = [
     title: "Fresh Pastries in Narayangarh — Baked Every Morning at Hamro Bakery",
     date: "July 28, 2026",
     image: "/images/img18.jpeg",
-    excerpt: "The best fresh pastries in Narayangarh Chitwan — baked from scratch every morning from Rs 70.",
+    excerpt: "Fresh pastries baked every morning at Hamro Bakery in Narayangarh, Bharatpur. Blackforest pastry from Rs 70, cheese pastry Rs 250.",
     faq: [
-      { q: "Where can I get fresh pastries in Narayangarh?", a: "Hamro Bakery — bakes fresh every morning. 4 branches open 8 AM daily." },
-      { q: "What pastries does Hamro Bakery sell?", a: "Veg puff Rs 70, chicken puff Rs 90, croissants Rs 120, cheese croissants Rs 150, muffins Rs 120, donuts Rs 90, cookies Rs 125–200." },
-      { q: "What time does Hamro Bakery open?", a: "All 4 branches open 8 AM daily. Best time for fresh pastries: 8–11 AM." }
+      { q: "Where can I get fresh pastries in Narayangarh?", a: "Hamro Bakery — baked fresh every morning. 4 branches in Narayangarh, Bharatpur, open from 8 AM daily." },
+      { q: "What pastries does Hamro Bakery sell?", a: "Blackforest Rs 70, Butterscotch Rs 80, Chocolate Rs 90, Red Velvet Rs 100, Cheese Pastries (Blueberry/Oreo/Strawberry) Rs 250 each." },
+      { q: "What time does Hamro Bakery open?", a: "All 4 branches open at 8 AM daily. Best time for fresh pastries is 8–11 AM." }
     ],
-    content: "<p>Every morning at 7 AM our bakers begin. By 8 AM everything is fresh out of the oven.</p><h2>Fresh Pastries Daily</h2><ul><li>Veg Puff — Rs 70</li><li>Chicken Puff — Rs 90</li><li>Croissant — Rs 120</li><li>Cheese Croissant — Rs 150</li><li>Danish Pastry — Rs 140</li><li>Muffins — Rs 120</li><li>Donuts — Rs 90</li><li>Cookies — Rs 125–200</li></ul><p>Visit between <strong>8–11 AM</strong> for best selection. 4 branches in Narayangarh, all open daily at 8 AM.</p>"
+    content: "<p>Our bakers start at 7 AM every morning. By 8 AM everything is fresh out of the oven — nothing is held over from the day before.</p><h2>Pastry Menu & Prices</h2><ul><li>Blackforest Pastry — Rs 70</li><li>Whiteforest Pastry — Rs 80</li><li>Butterscotch Pastry — Rs 80</li><li>Pineapple / Blueberry / Strawberry / Vanilla — Rs 80</li><li>Red Velvet Pastry — Rs 100</li><li>Chocolate Pastry — Rs 90</li><li>Blueberry Cheese Pastry — Rs 250</li><li>Oreo Cheese Pastry — Rs 250</li><li>Strawberry Cheese Pastry — Rs 250</li><li>Swiss Roll — Rs 100</li></ul><p>Visit between <strong>8–11 AM</strong> for the best selection. 4 branches in Narayangarh, Bharatpur — all open daily from 8 AM.</p>"
   },
   {
     id: 7,
-    slug: "bakery-narainghat-chitwan",
-    title: "Best Bakery in Narainghat — Hamro Bakery Narayangarh Chitwan",
+    slug: "bakery-narainghat-bharatpur",
+    title: "Best Bakery in Narainghat — Hamro Bakery, Bharatpur",
     date: "August 19, 2026",
     image: "/images/img13.jpeg",
-    excerpt: "Narainghat's best bakery — 4 branches, fresh cakes daily, 4.8-star rating.",
+    excerpt: "Looking for a bakery in Narainghat? Hamro Bakery has 4 branches in the Narayangarh area of Bharatpur — fresh cakes daily, 4.8-star rating.",
     faq: [
-      { q: "Which is the best bakery in Narainghat?", a: "Hamro Bakery — 4.8-star rating, 4 branches in Narainghat/Narayangarh. Call 9865009581." },
-      { q: "Is Narainghat and Narayangarh the same place?", a: "Yes. Narainghat and Narayangarh are two names for the same city in Chitwan, Nepal." },
-      { q: "Where is Hamro Bakery in Narainghat?", a: "Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), Synergy Road (9821207163). Open 8 AM daily." }
+      { q: "Which is the best bakery in Narainghat?", a: "Hamro Bakery — 4.8-star rating, 4 branches in Narayangarh, Bharatpur. Call 9865009581." },
+      { q: "Where is Narainghat?", a: "Narainghat is a locality within Bharatpur municipality in Chitwan district, Nepal. Hamro Bakery's branches are in this area." },
+      { q: "Where are Hamro Bakery's branches in Narainghat / Narayangarh?", a: "Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), Synergy Road (9821207163). All open 8 AM daily." }
     ],
-    content: "<p>Searching for the <strong>best bakery in Narainghat</strong>? Hamro Bakery has been Narainghat's most trusted bakery since 2013.</p><h2>Narainghat = Narayangarh</h2><p>Narainghat and Narayangarh are two names for the same city in Chitwan. Hamro Bakery serves the entire area including Bharatpur.</p><h2>4 Branches in Narainghat</h2><ul><li>Hakim Chowk — 9865009581</li><li>Bishal Chowk — 9702663750</li><li>Sangam Road — 9855070143</li><li>Synergy Road — 9821207163</li></ul><p>All open 8 AM daily. Custom cakes, pastries, wedding cakes, eggless options.</p>"
+    content: "<p>Looking for the <strong>best bakery in Narainghat</strong>? Hamro Bakery has 4 branches across the Narayangarh area of Bharatpur and has been baking fresh daily since 2013.</p><h2>Our 4 Branches in Narayangarh, Bharatpur</h2><ul><li><strong>Hakim Chowk</strong> — 9865009581 (8 AM – 8 PM)</li><li><strong>Bishal Chowk</strong> — 9702663750 (8 AM – 8 PM)</li><li><strong>Sangam Road</strong> — 9855070143 (8 AM – 9 PM)</li><li><strong>Synergy Road</strong> — 9821207163 (8 AM – 8 PM)</li></ul><h2>Delivery</h2><p>We deliver within Bharatpur and also to Gaidakot. WhatsApp 9865009581 to arrange delivery.</p><p>Custom cakes, fresh pastries, wedding cakes, eggless options — all available. Order in advance for custom designs.</p>"
   },
   {
     id: 8,
-    slug: "cake-shop-chitwan-comparison",
-    title: "Best Cake Shops in Chitwan Nepal — Complete Guide 2026",
+    slug: "cake-shop-bharatpur-guide",
+    title: "Best Cake Shops in Bharatpur Nepal — 2026 Guide",
     date: "August 19, 2026",
     image: "/images/img38.png",
-    excerpt: "Complete guide to cake shops in Chitwan — Narayangarh, Bharatpur and beyond.",
+    excerpt: "Looking for a cake shop in Bharatpur? Complete guide to finding the best bakery in Narayangarh with pricing, ratings and how to order.",
     faq: [
-      { q: "Which is the best cake shop in Chitwan Nepal?", a: "Hamro Bakery — 4.8-star Google rating, 4 branches in Narayangarh, 10+ years experience." },
-      { q: "How do I find a good bakery in Chitwan?", a: "Look for 4.5+ Google ratings and daily fresh baking. Hamro Bakery has 92+ reviews at 4.8 stars." },
-      { q: "Can I order a cake online in Chitwan Nepal?", a: "Yes. Hamro Bakery accepts orders via WhatsApp 9865009581. Delivery across Chitwan and Bharatpur." }
+      { q: "Which is the best cake shop in Bharatpur Nepal?", a: "Hamro Bakery — 4.8-star Google rating, 4 branches in Narayangarh, Bharatpur, over 10 years in business." },
+      { q: "How do I find a reliable bakery in Bharatpur?", a: "Look for 4.5+ Google ratings and confirmed fresh daily baking. Hamro Bakery has 92+ reviews at 4.8 stars." },
+      { q: "Can I order a cake online in Bharatpur Nepal?", a: "Yes. Hamro Bakery accepts orders via WhatsApp 9865009581. Delivery within Bharatpur and to Gaidakot." }
     ],
-    content: "<p><strong>Hamro Bakery</strong> is the best cake shop in Chitwan Nepal — 4.8-star Google rating, 92+ reviews, 4 branches in Narayangarh.</p><h2>What Makes Hamro Bakery the Best?</h2><ul><li>Fresh daily baking — nothing frozen</li><li>Custom design capability — any design</li><li>Transparent pricing: Rs 600/lb standard, Rs 1500/lb fondant</li><li>4 branches across Narayangarh</li><li>Eggless options for all products</li></ul><p>Order: WhatsApp <strong>9865009581</strong> or visit any branch from 8 AM daily.</p>"
+    content: "<p><strong>Hamro Bakery</strong> is one of the most trusted cake shops in Bharatpur — 4.8-star Google rating, 92+ reviews, 4 branches in Narayangarh, and over 10 years of daily fresh baking.</p><h2>What Sets Hamro Bakery Apart</h2><ul><li>Fresh daily baking — nothing frozen or from the day before</li><li>Custom design cakes — any design from a reference photo</li><li>Clear pricing: Rs 600/lb standard, Rs 1,500/lb fondant</li><li>4 branches in Narayangarh, Bharatpur</li><li>Eggless options for all products</li><li>Delivery within Bharatpur and to Gaidakot</li></ul><p>Order on WhatsApp: <strong>9865009581</strong>. Visit any branch from 8 AM daily.</p>"
   },
   {
     id: 9,
-    slug: "send-cake-chitwan-from-uk-us",
-    title: "Send Cake to Chitwan & Narayangarh from UK, US and Australia",
+    slug: "send-cake-bharatpur-from-abroad",
+    title: "Send a Cake to Bharatpur from UK, US or Australia — Hamro Bakery",
     date: "August 27, 2026",
     image: "/images/img27.jpeg",
-    excerpt: "Living in London, the US or Australia? Order a birthday or anniversary cake for your family in Chitwan online. Hamro Bakery offers reliable delivery across Narayangarh and Bharatpur.",
+    excerpt: "Living abroad? Send a fresh birthday or anniversary cake to your family in Bharatpur or Narayangarh. Hamro Bakery delivers within Bharatpur and to Gaidakot.",
     faq: [
-      { q: "How do I send a birthday cake to Bharatpur or Chitwan from the UK?", a: "WhatsApp +977-9865009581 with recipient name, address in Chitwan, cake design and delivery date. We deliver across Narayangarh and Bharatpur. International customers welcome." },
-      { q: "Can I order a cake for my family in Narayangarh from abroad?", a: "Yes. WhatsApp +977-9865009581 with recipient name, address, cake design and delivery date. We can send a photo confirming delivery." },
-      { q: "Does Hamro Bakery offer same-day cake delivery in Chitwan?", a: "Yes — same-day and 2–3 hour express delivery in Narayangarh and Bharatpur for standard flavours. Custom cakes: 24 hours ahead." }
+      { q: "How do I send a birthday cake to Bharatpur from the UK or US?", a: "WhatsApp +977-9865009581 with the recipient's name, address in Bharatpur, cake design and delivery date. We deliver in Bharatpur and Gaidakot." },
+      { q: "Can I order a cake for my family in Narayangarh from abroad?", a: "Yes. WhatsApp +977-9865009581 with recipient name, address, design and date. We can send a delivery confirmation photo." },
+      { q: "Does Hamro Bakery offer same-day cake delivery in Bharatpur?", a: "Yes — same-day delivery available in Bharatpur for standard flavours. Custom cakes need at least 24 hours notice." }
     ],
-    content: "<p>If your family is in <strong>Chitwan, Narayangarh or Bharatpur</strong> and you're living in the UK, US, or Australia — Hamro Bakery makes it easy to send a fresh custom cake to their doorstep.</p><h2>How to Order from Abroad</h2><ol><li><strong>WhatsApp</strong> +977-9865009581 with the recipient's name, address in Chitwan, and phone number.</li><li><strong>Choose your cake</strong> — flavour, design, size, eggless if required.</li><li><strong>Add a message</strong> — we include it with the delivery.</li><li><strong>Confirm delivery date</strong> — same-day available for standard cakes.</li><li><strong>We deliver</strong> — and can send a photo of your family receiving the cake.</li></ol><h2>Popular Gifting Flavours</h2><ul><li>Chocolate Truffle — Rs 700/lb</li><li>Red Velvet — Rs 1,000/lb</li><li>White Forest — Rs 600/lb</li><li>Blackforest — Rs 600/lb</li><li>All available eggless</li></ul><h2>Eggless Options</h2><p>Many families prefer eggless for religious or dietary reasons. We bake 100% eggless cakes with separate utensils. Just mention it when ordering.</p><h2>Same-Day Delivery</h2><p><strong>2–3 hour express delivery</strong> in Narayangarh and Bharatpur for standard flavours. Custom designs: 24 hours ahead. WhatsApp: <strong>+977-9865009581</strong></p>"
+    content: "<p>If your family is in <strong>Bharatpur or Narayangarh</strong> and you're in the UK, US, or Australia — Hamro Bakery makes it easy to send a fresh custom cake to their door.</p><h2>How to Order from Abroad</h2><ol><li><strong>WhatsApp</strong> +977-9865009581 with the recipient's name and address in Bharatpur.</li><li><strong>Choose your cake</strong> — flavour, size, design, eggless if needed.</li><li><strong>Add a message</strong> — we include it with the cake.</li><li><strong>Confirm the date</strong> — same-day available for standard cakes.</li><li><strong>We deliver</strong> within Bharatpur and to Gaidakot, and can send you a photo.</li></ol><h2>Popular Gifting Flavours</h2><ul><li>Blackforest — Rs 600/lb</li><li>Butterscotch — Rs 600/lb</li><li>Chocolate — Rs 700/lb</li><li>Red Velvet — Rs 1,000/lb</li><li>All available eggless</li></ul><h2>Eggless Options</h2><p>We bake 100% eggless cakes with completely separate utensils and pans. Just mention it when ordering.</p>"
   },
   {
     id: 10,
@@ -139,27 +139,55 @@ const posts = [
     title: "Top 7 Trending Cake Designs in Nepal 2026 — With Prices",
     date: "August 27, 2026",
     image: "/images/img38.png",
-    excerpt: "Korean bento cakes, burn-away cakes, Lambeth vintage, 3D character cakes — the top 7 trending birthday cake designs in Nepal 2026 with prices from Hamro Bakery Chitwan.",
+    excerpt: "Korean bento cakes, burn-away cakes, Lambeth vintage, 3D character cakes — trending birthday cake designs in Nepal 2026 with prices from Hamro Bakery Bharatpur.",
     faq: [
-      { q: "What are the trending cake designs in Nepal in 2026?", a: "Korean bento cakes, burn-away cakes, retro Lambeth vintage cakes, 3D character cakes (Spiderman, Elsa), minimalist naked cakes, multi-tier wedding cakes, and photo cakes. All available at Hamro Bakery Narayangarh." },
-      { q: "What is a bento cake and how much does it cost in Chitwan?", a: "A small Korean-style minimalist cake. At Hamro Bakery Narayangarh, bento cakes start from Rs 400–600 depending on design." },
-      { q: "Can I get a burn-away cake in Narayangarh Chitwan?", a: "Yes. Hamro Bakery can create burn-away cakes in Narayangarh. WhatsApp 9865009581 with your design idea." }
+      { q: "What are the trending cake designs in Nepal in 2026?", a: "Korean bento cakes, burn-away cakes, retro Lambeth vintage cakes, 3D character cakes, minimalist naked cakes, multi-tier wedding cakes, and photo cakes. All available at Hamro Bakery, Bharatpur." },
+      { q: "What is a bento cake and how much does it cost in Bharatpur?", a: "A small Korean-style single-serve cake. At Hamro Bakery, bento cakes start from Rs 400–600 depending on design. WhatsApp 9865009581." },
+      { q: "Can I get a burn-away cake in Bharatpur?", a: "Yes. Hamro Bakery can create burn-away cakes. WhatsApp 9865009581 with your design idea. Order 3–5 days ahead." }
     ],
-    content: "<p>Here are the <strong>top 7 trending cake designs in Nepal 2026</strong> — all available at Hamro Bakery in Narayangarh, Chitwan.</p><h2>1. Korean Bento Cakes</h2><p>Small, minimalist single-serve cakes. Perfect for couples and intimate birthdays. From <strong>Rs 400–600</strong>.</p><h2>2. Burn-Away Cakes</h2><p>A printed outer layer burns away to reveal a hidden message or photo. One of the most viral cake trends in Nepal. Contact us for pricing.</p><h2>3. Vintage Lambeth Cakes</h2><p>Retro-piped scrolls, shells and ruffles — perfect for anniversary photoshoots. Our decorators match any Instagram or Pinterest reference.</p><h2>4. 3D Character Cakes</h2><p>Spiderman, Cocomelon, Elsa, BTS, Doraemon — any character. Share a reference image on WhatsApp. From <strong>Rs 1,500/lb</strong> fondant.</p><h2>5. Minimalist Naked Cakes</h2><p>Semi-frosted rustic style with fresh flowers or fruit. Popular for weddings and photoshoots. From <strong>Rs 800/lb</strong>.</p><h2>6. Multi-Tier Wedding Cakes</h2><p>2–3 tier with edible gold flakes, fresh flowers, or custom toppers. From <strong>Rs 1,500/lb</strong>.</p><h2>7. Photo Cakes</h2><p>Edible photo prints of any memory or photo. From <strong>Rs 800–1,000</strong>.</p><h2>Order Any Design</h2><p>WhatsApp <strong>9865009581</strong> with your reference photo. Order at least 3 days ahead for complex designs.</p>"
+    content: "<p>Here are the <strong>top 7 trending cake designs in Nepal in 2026</strong> — all available at Hamro Bakery's 4 branches in Narayangarh, Bharatpur.</p><h2>1. Korean Bento Cakes</h2><p>Small, minimalist single-serve cakes — perfect for couples and intimate birthdays. From <strong>Rs 400–600</strong>.</p><h2>2. Burn-Away Cakes</h2><p>A printed outer layer that burns to reveal a hidden message or photo underneath. WhatsApp us for pricing and availability.</p><h2>3. Vintage Lambeth Cakes</h2><p>Retro-piped scrolls and ruffles — popular for anniversary and milestone birthdays. Share a Pinterest reference with us.</p><h2>4. 3D Character Cakes</h2><p>Spiderman, Cocomelon, Elsa, Doraemon — any character. Share a reference image. From <strong>Rs 1,500/lb</strong> fondant. Order 3–5 days ahead.</p><h2>5. Minimalist Naked Cakes</h2><p>Semi-frosted rustic style with fresh flowers. Popular for weddings. From <strong>Rs 800/lb</strong>.</p><h2>6. Multi-Tier Wedding Cakes</h2><p>2–3 tier with edible gold, fresh flowers, or custom toppers. From <strong>Rs 1,500/lb</strong>. Order 7 days ahead.</p><h2>7. Photo Cakes</h2><p>Edible photo print of any memory. From <strong>Rs 800–1,000</strong>. Order 1–2 days ahead.</p><h2>Order Any Design</h2><p>WhatsApp <strong>9865009581</strong> with your reference photo. We deliver in Bharatpur and to Gaidakot.</p>"
   },
   {
     id: 11,
-    slug: "eggless-cakes-chitwan-nepal",
-    title: "Eggless Cakes in Chitwan — 100% Vegetarian Cakes at Hamro Bakery",
+    slug: "eggless-cakes-bharatpur-nepal",
+    title: "Eggless Cakes in Bharatpur — 100% Vegetarian Cakes at Hamro Bakery",
     date: "August 27, 2026",
     image: "/images/img23.jpeg",
-    excerpt: "Need an eggless cake in Chitwan or Narayangarh? Hamro Bakery bakes 100% vegetarian eggless cakes with separate utensils — perfect for religious occasions and vegetarian families.",
+    excerpt: "Need an eggless cake in Bharatpur or Narayangarh? Hamro Bakery bakes 100% eggless cakes with separate utensils — all flavours available.",
     faq: [
-      { q: "Can I get an eggless cake in Narayangarh?", a: "Yes. Hamro Bakery offers 100% eggless cakes in all flavours — Blackforest, Butterscotch, Red Velvet, Chocolate Truffle and Fondant. Baked with completely separate utensils and pans." },
-      { q: "Are eggless cakes available for custom designs in Chitwan?", a: "Yes. All custom designs — fondant, character, and wedding cakes — available eggless. Mention it when WhatsApping 9865009581." },
-      { q: "Is there a sugar-free or vegan cake option in Chitwan?", a: "Hamro Bakery offers eggless options for all products. For sugar-free or vegan needs, WhatsApp 9865009581 and our team will advise." }
+      { q: "Can I get an eggless cake in Bharatpur?", a: "Yes. Hamro Bakery bakes 100% eggless cakes in all flavours — Blackforest, Butterscotch, Red Velvet, Chocolate and Fondant. Separate utensils used. WhatsApp 9865009581." },
+      { q: "Are eggless custom design cakes available in Bharatpur?", a: "Yes. Fondant, character, and wedding cakes all available eggless. Just mention it when WhatsApping 9865009581." },
+      { q: "Is there a price difference for eggless cakes?", a: "No extra charge for eggless at Hamro Bakery. Same prices as regular cakes. Mention eggless when ordering." }
     ],
-    content: "<p>Looking for an <strong>eggless cake in Chitwan or Narayangarh</strong>? Hamro Bakery has been Chitwan's most trusted source for 100% vegetarian eggless baked goods since 2013.</p><h2>Why Eggless Matters in Nepal</h2><p>Many families prefer eggless for religious observances, vegetarian diets, or elder family members. We use completely separate utensils, baking pans, and preparation surfaces — no cross-contamination.</p><h2>Eggless Flavours Available</h2><ul><li>Blackforest Eggless — Rs 600/lb</li><li>Butterscotch Eggless — Rs 600/lb</li><li>Chocolate Truffle Eggless — Rs 700/lb</li><li>Red Velvet Eggless — Rs 1,000/lb</li><li>Fondant Design Eggless — Rs 1,500/lb</li></ul><h2>Eggless for Religious & Cultural Occasions</h2><p>For Teej, Dashain, Tihar, puja celebrations — Hamro Bakery is the reliable choice in Narayangarh and across Chitwan.</p><h2>How to Order</h2><p>WhatsApp <strong>9865009581</strong> and mention eggless with your order. Standard eggless: same-day. Custom eggless: 2–3 days ahead.</p>"
+    content: "<p>Looking for an <strong>eggless cake in Bharatpur or Narayangarh</strong>? Hamro Bakery has been baking 100% vegetarian eggless goods since 2013. Every eggless order is made with completely separate utensils and baking pans.</p><h2>Why Eggless Matters</h2><p>Many families prefer eggless for religious observances, vegetarian diets, or personal choice. We treat eggless orders with the same care as all our products — no cross-contamination.</p><h2>Eggless Flavours & Prices</h2><ul><li>Blackforest Eggless — Rs 600/lb</li><li>Butterscotch Eggless — Rs 600/lb</li><li>Chocolate Eggless — Rs 700/lb</li><li>Red Velvet Eggless — Rs 1,000/lb</li><li>Simple Design Eggless — Rs 1,000/lb</li><li>Fondant Design Eggless — Rs 1,500/lb</li></ul><h2>Good for Religious Occasions</h2><p>For Teej, Dashain, Tihar and puja celebrations — just tell us eggless when ordering. No extra charge.</p><h2>How to Order</h2><p>WhatsApp <strong>9865009581</strong> and mention eggless. Standard eggless: same day. Custom eggless: 2–3 days. Wedding eggless: 5–7 days. We deliver in Bharatpur and Gaidakot.</p>"
+  },
+  {
+    id: 12,
+    slug: "cookies-dry-items-hamro-bakery",
+    title: "Cookies & Dry Baked Items at Hamro Bakery — Prices & Varieties",
+    date: "September 1, 2026",
+    image: "/images/img18.jpeg",
+    excerpt: "Hamro Bakery stocks 11 cookie varieties and a full range of dry baked items — from Rs 20. Available at all 4 branches in Narayangarh, Bharatpur.",
+    faq: [
+      { q: "What cookies does Hamro Bakery sell?", a: "11 varieties: Spicy, Salt & Sweet, Cherry, Coconut, Macaroni, Sweet Puff, Chocochips, Puff, Chocolate, Peanuts, and Vanilla. From Rs 125 per pack." },
+      { q: "What dry baked items does Hamro Bakery have?", a: "Banana Cake (Rs 40), Brownie (Rs 70), Muffin (Rs 25), Doughnut (Rs 20), Chocolate Doughnut (Rs 50), Breads (Rs 60), Swiss Roll (Rs 100) and more." },
+      { q: "Can I buy cookies in bulk from Hamro Bakery?", a: "Yes. WhatsApp 9865009581 for bulk orders. Good for office snacks, events and gifting." }
+    ],
+    content: "<p>Hamro Bakery bakes far more than cakes and pastries. Our daily fresh lineup includes 11 cookie varieties and a full range of dry baked items — all at honest prices.</p><h2>Cookies — 11 Varieties</h2><ul><li>Spicy Cookies — Rs 150</li><li>Salt and Sweet Cookies — Rs 150</li><li>Cherry Cookies — Rs 150</li><li>Coconut Cookies — Rs 150</li><li>Macaroni — Rs 200</li><li>Sweet Puff — Rs 125</li><li>Chocochips Cookies — Rs 130</li><li>Puff — Rs 70</li><li>Chocolate Cookies — Rs 130</li><li>Peanuts Cookies — Rs 150</li><li>Vanilla Cookies — Rs 130</li></ul><h2>Dry Baked Items</h2><ul><li>Banana Cake — Rs 40</li><li>Banana Ring — Rs 75</li><li>Banana Family — Rs 150</li><li>Brownie — Rs 70</li><li>Muffin — Rs 25</li><li>Doughnut — Rs 20</li><li>Chocolate Doughnut — Rs 50</li><li>Cream Doughnut — Rs 25</li><li>European Cake — Rs 60</li><li>Fruits Cake — Rs 50</li><li>Nuts Cake — Rs 50</li><li>Breads — Rs 60</li><li>Butter Slice Bread — Rs 350</li><li>Butter Slice — Rs 40</li><li>Swiss Roll — Rs 100</li><li>Hot Roll — Rs 40</li></ul><p>All available at our 4 branches in Narayangarh, Bharatpur from 8 AM daily. Bulk orders: WhatsApp <strong>9865009581</strong>.</p>"
+  },
+  {
+    id: 13,
+    slug: "hamro-bakery-delivery-bharatpur-gaidakot",
+    title: "Cake Delivery in Bharatpur & Gaidakot — Hamro Bakery",
+    date: "September 2, 2026",
+    image: "/images/img13.jpeg",
+    excerpt: "Hamro Bakery delivers fresh cakes and pastries within Bharatpur and to Gaidakot. Order by WhatsApp, Foodmandu or Mero Kinamel.",
+    faq: [
+      { q: "Where does Hamro Bakery deliver?", a: "Hamro Bakery delivers within Bharatpur and to Gaidakot. WhatsApp 9865009581 or order via Foodmandu and Mero Kinamel." },
+      { q: "How do I order cake delivery in Bharatpur?", a: "WhatsApp 9865009581, or download Foodmandu or Mero Kinamel and search for Hamro Bakery." },
+      { q: "Is there same-day cake delivery in Bharatpur?", a: "Yes — same-day delivery in Bharatpur for standard flavours. Custom cakes need 2–3 days. Wedding cakes need 7 days." }
+    ],
+    content: "<p>Hamro Bakery offers cake and pastry delivery within <strong>Bharatpur</strong> and to <strong>Gaidakot</strong>. We don't deliver outside these areas — so what you get is always fast, always fresh.</p><h2>How to Order Delivery</h2><ul><li><strong>WhatsApp</strong> 9865009581 — direct order, fastest response</li><li><strong>Foodmandu</strong> — order through the app</li><li><strong>Mero Kinamel</strong> — local delivery platform</li></ul><h2>Delivery Timelines</h2><ul><li>Standard flavour cakes — same day in Bharatpur</li><li>Custom design cakes — 2–3 days ahead</li><li>Wedding cakes — 7 days ahead</li><li>Pastries and dry items — same day</li></ul><h2>4 Branches in Narayangarh, Bharatpur</h2><p>If you're nearby, pick up directly from any branch — all open 8 AM daily.</p><ul><li>Hakim Chowk — 9865009581</li><li>Bishal Chowk — 9702663750</li><li>Sangam Road — 9855070143 (open until 9 PM)</li><li>Synergy Road — 9821207163</li></ul>"
   }
 ];
 
@@ -187,17 +215,17 @@ export default function BlogPost() {
           "name": "Hamro Bakery",
           "url": "https://hamrobakery1.com",
           "logo": {"@type": "ImageObject","url": "https://hamrobakery1.com/images/logo.jpeg"},
-          "sameAs": ["https://www.facebook.com/hamrobakery1","https://www.instagram.com/hamrobakery_official"]
+          "sameAs": ["https://www.facebook.com/hamrobakery1","https://www.instagram.com/hamrobakerynarayangarh"]
         },
         "publisher": {
           "@type": "Organization",
           "name": "Hamro Bakery Narayangarh",
           "logo": {"@type": "ImageObject","url": "https://hamrobakery1.com/images/logo.jpeg"},
-          "address": {"@type": "PostalAddress","streetAddress": "Hakim Chowk","addressLocality": "Narayangarh","addressRegion": "Chitwan","addressCountry": "NP"}
+          "address": {"@type": "PostalAddress","streetAddress": "Hakim Chowk","addressLocality": "Narayangarh","addressRegion": "Bharatpur, Bagmati Province","addressCountry": "NP"}
         },
         "mainEntityOfPage": {"@type": "WebPage","@id": `https://hamrobakery1.com/blog/${post.slug}`},
         "url": `https://hamrobakery1.com/blog/${post.slug}`,
-        "keywords": `Hamro Bakery, ${post.title}, best bakery Chitwan, best bakery Narayangarh, best bakery Bharatpur`,
+        "keywords": `Hamro Bakery, ${post.title}, best bakery Bharatpur, best bakery Narayangarh, cake delivery Bharatpur`,
         "about": {"@type": "Bakery","@id": "https://hamrobakery1.com/#bakery","name": "Hamro Bakery","telephone": "+977-9865009581"},
         "speakable": {"@type": "SpeakableSpecification","cssSelector": ["h1","h2","p:first-of-type"]}
       }
@@ -261,9 +289,22 @@ export default function BlogPost() {
             className="prose max-w-none text-[#2C1A0E]/70 font-sans [&>p]:mb-4 [&>p]:leading-relaxed [&>p]:text-sm [&>h2]:font-bold [&>h2]:text-xl [&>h2]:text-[#2C1A0E] [&>h2]:mt-8 [&>h2]:mb-3 [&>ul]:mb-4 [&>ul]:pl-5 [&>ul>li]:mb-1.5 [&>ul>li]:text-sm [&>ul>li]:leading-relaxed [&>ol]:mb-4 [&>ol]:pl-5 [&>ol>li]:mb-1.5 [&>ol>li]:text-sm [&>strong]:text-[#2C1A0E] [&>strong]:font-semibold"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          {post.faq && post.faq.length > 0 && (
+            <div className="mt-10 border-t border-[#2C1A0E]/8 pt-8">
+              <h2 className="font-bold text-xl text-[#2C1A0E] mb-5">Frequently Asked Questions</h2>
+              <div className="space-y-5">
+                {post.faq.map((item, i) => (
+                  <div key={i}>
+                    <p className="font-semibold text-sm text-[#2C1A0E] mb-1">{item.q}</p>
+                    <p className="text-sm text-[#2C1A0E]/60 font-sans leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="mt-12 p-7 bg-[#2C1A0E] rounded-sm text-center">
             <h3 className="font-bold text-xl text-white mb-2">Order from Hamro Bakery</h3>
-            <p className="text-white/45 text-sm font-sans mb-5">WhatsApp any branch — we reply fast and confirm your order the same day.</p>
+            <p className="text-white/45 text-sm font-sans mb-5">4 branches in Narayangarh, Bharatpur. Delivery in Bharatpur & Gaidakot.</p>
             <a href="https://wa.me/9779865009581" className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5a] text-white px-6 py-3 rounded-lg text-sm font-bold transition-colors">WhatsApp: 9865009581</a>
           </div>
           <div className="mt-6 text-center">
