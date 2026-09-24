@@ -32,12 +32,12 @@ export function CallAhead() {
               Call us, tell us your order, and we'll have it ready and waiting when you arrive. No wait, no queue.
             </p>
             <a
-              href={`tel:${branchData?.phone ?? "9865009581"}`}
+              href={`tel:${branchData?.phone ?? "9855070143"}`}
               className="inline-flex items-center gap-2.5 bg-white text-[#2C1A0E] hover:bg-[#C4714A] hover:text-white px-6 py-3 rounded-sm text-sm font-sans font-medium transition-colors duration-200"
               data-testid="btn-call-now"
             >
               <Phone className="w-4 h-4" />
-              Call {branchData?.phone ?? "9865009581"}
+              Call {branchData?.phone ?? "9855070143"}
             </a>
           </div>
         </motion.div>

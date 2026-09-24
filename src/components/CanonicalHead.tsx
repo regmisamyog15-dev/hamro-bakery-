@@ -4,7 +4,7 @@ import { useLocation } from "wouter";
 const PAGE_META: Record<string, { title: string; description: string; keywords?: string }> = {
   "/": {
     title: "Hamro Bakery — Best Bakery in Narayangarh & Bharatpur | Chitwan Nepal",
-    description: "Best bakery in Narayangarh, Bharatpur & Chitwan since 2013. Custom birthday cakes, wedding cakes, pastries. 4.8★ 92 reviews. Call 9865009581.",
+    description: "Best bakery in Narayangarh, Bharatpur & Chitwan since 2013. Custom birthday cakes, wedding cakes, pastries. 4.8★ 92 reviews. Call 9855070143.",
     keywords: "best bakery Chitwan, best bakery Narayangarh, best bakery Bharatpur, bakery Nepal, custom cake Narayangarh, birthday cake Chitwan, wedding cake Bharatpur",
   },
   "/menu": {
@@ -19,7 +19,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/custom-cake": {
     title: "Custom Cakes Narayangarh — Order Birthday & Wedding Cakes",
-    description: "Order custom birthday, wedding and anniversary cakes in Narayangarh from Hamro Bakery. Fondant from Rs 1500/lb. WhatsApp 9865009581. 2–3 days notice.",
+    description: "Order custom birthday, wedding and anniversary cakes in Narayangarh from Hamro Bakery. Fondant from Rs 1500/lb. WhatsApp 9855070143. 2–3 days notice.",
     keywords: "custom cake Narayangarh, custom cake Chitwan, birthday cake order Nepal, wedding cake Chitwan, fondant cake Nepal",
   },
   "/about": {
@@ -29,7 +29,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/contact": {
     title: "Contact Hamro Bakery — 4 Branches in Narayangarh Chitwan",
-    description: "Hamro Bakery branches in Narayangarh: Hakim Chowk 9865009581, Bishal Chowk 9702663750, Sangam Road 9855070143, Synergy Road 9821207163. Open 8AM daily.",
+    description: "Hamro Bakery branches in Narayangarh: Hakim Chowk 9855070143, Bishal Chowk 9702663750, Sangam Road 9855070143, Synergy Road 9821207163. Open 8AM daily.",
     keywords: "Hamro Bakery contact, Hamro Bakery location, bakery Narayangarh address, Hakim Chowk bakery",
   },
   "/blog": {
@@ -39,7 +39,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/blog/best-birthday-cakes-chitwan": {
     title: "Best Birthday Cakes in Chitwan — Hamro Bakery Narayangarh",
-    description: "Find the best birthday cakes in Chitwan at Hamro Bakery Narayangarh. Custom designs, fresh daily, from Rs 600/lb. Order: 9865009581.",
+    description: "Find the best birthday cakes in Chitwan at Hamro Bakery Narayangarh. Custom designs, fresh daily, from Rs 600/lb. Order: 9855070143.",
     keywords: "best birthday cake Chitwan, birthday cake Narayangarh, custom birthday cake Nepal, birthday cake price Chitwan",
   },
   "/blog/custom-cakes-narayangarh": {
@@ -59,7 +59,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/blog/wedding-cake-chitwan-nepal": {
     title: "Wedding Cakes in Chitwan Nepal — Order from Hamro Bakery",
-    description: "Beautiful wedding cakes in Chitwan Nepal from Hamro Bakery. Multi-tier fondant, fresh flower cakes. From Rs 1500/lb. Order 9865009581.",
+    description: "Beautiful wedding cakes in Chitwan Nepal from Hamro Bakery. Multi-tier fondant, fresh flower cakes. From Rs 1500/lb. Order 9855070143.",
     keywords: "wedding cake Chitwan, wedding cake Nepal, wedding cake Narayangarh, fondant wedding cake Nepal",
   },
   "/blog/fresh-pastries-narayangarh": {
@@ -69,7 +69,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/blog/send-cake-chitwan-from-uk-us": {
     title: "Send Cake to Chitwan from UK, US & Australia — Hamro Bakery",
-    description: "Send a birthday or anniversary cake to your family in Chitwan, Narayangarh or Bharatpur from the UK, US or Australia. Same-day delivery available. WhatsApp +977-9865009581.",
+    description: "Send a birthday or anniversary cake to your family in Chitwan, Narayangarh or Bharatpur from the UK, US or Australia. Same-day delivery available. WhatsApp +977-9855070143.",
     keywords: "send cake to Nepal from UK, send birthday cake Chitwan, online cake delivery Narayangarh, gift delivery Chitwan Nepal, send cake Bharatpur from abroad",
   },
   "/blog/trending-cake-designs-nepal-2026": {

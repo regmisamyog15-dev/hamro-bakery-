@@ -16,12 +16,12 @@ const KEYWORD_CHIPS = [
   { label: "💍 Wedding Cake", response: "Our wedding cakes are crafted to your exact vision — multi-tier, fondant designs, flowers. Starting Rs 1500/lb. Please order at least 5–7 days ahead.", redirect: { label: "Order Custom Cake", path: "/custom-cake" } },
   { label: "🎨 Custom Design", response: "Describe your dream cake — occasion, flavour, colours, message — and our bakers will bring it to life. 2–3 days advance notice needed.", redirect: { label: "Design Your Cake", path: "/custom-cake" } },
   { label: "📋 See Menu", response: "We have cakes (Rs 600–1500/lb), pastries (Rs 70–250), cookies (Rs 125–200), dry items, breads and more — all baked fresh every morning!", redirect: { label: "View Full Menu", path: "/menu" } },
-  { label: "📍 Locations", response: "We have 4 branches in Narayangarh:\n• Hakim Chowk — 9865009581\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163", redirect: { label: "Contact & Map", path: "/contact" } },
+  { label: "📍 Locations", response: "We have 4 branches in Narayangarh:\n• Hakim Chowk — 9855070143\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163", redirect: { label: "Contact & Map", path: "/contact" } },
   { label: "🚚 Delivery", response: "Yes! We deliver via Foodmandu and Mero Kinamel apps, or WhatsApp us directly for home delivery across Narayangarh and Bharatpur.", redirect: { label: "Contact Us", path: "/contact" }, whatsapp: true },
   { label: "🕐 Opening Hours", response: "All 4 branches open at 8:00 AM daily.\n• Sangam Road closes 9 PM\n• Hakim, Bishal & Synergy close 8 PM\nOpen 7 days a week including public holidays.", redirect: { label: "See All Hours", path: "/contact" } },
   { label: "💰 Cake Prices", response: "Cake prices (per pound):\n• Classic flavours — Rs 600\n• Chocolate — Rs 700\n• Red Velvet — Rs 1000\n• Simple Design — Rs 1000\n• Fondant Design — Rs 1500\nPastries from Rs 70.", redirect: { label: "Full Menu & Prices", path: "/menu" } },
   { label: "📸 Gallery", response: "Check out our gallery — real cakes made by our bakers at our Narayangarh branches. No studio shots!", redirect: { label: "View Gallery", path: "/gallery" } },
-  { label: "📞 Contact", response: "Call or WhatsApp any branch:\n• Hakim Chowk — 9865009581\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163\nEmail: bakeryhamro1@gmail.com", redirect: { label: "All Contacts", path: "/contact" } },
+  { label: "📞 Contact", response: "Call or WhatsApp any branch:\n• Hakim Chowk — 9855070143\n• Bishal Chowk — 9702663750\n• Sangam Road — 9855070143\n• Synergy Road — 9821207163\nEmail: bakeryhamro1@gmail.com", redirect: { label: "All Contacts", path: "/contact" } },
   { label: "🛍️ Order Now", response: "Ready to order? WhatsApp us your items and we'll confirm quickly. For custom cakes, order 2–3 days ahead!", redirect: { label: "Order via WhatsApp", path: "/menu" }, whatsapp: true },
   { label: "🌿 Eggless Options", response: "Yes, we have eggless cake options available! Mention it when ordering and our bakers will prepare accordingly.", redirect: { label: "Order Custom Cake", path: "/custom-cake" } },
 ];
@@ -80,7 +80,7 @@ export function MithiBot() {
   const handleRedirect = (path: string, isWhatsapp?: boolean) => {
     setOpen(false);
     if (isWhatsapp) {
-      const phone = branchData?.whatsapp ?? "9865009581";
+      const phone = branchData?.whatsapp ?? "9855070143";
       window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello! I'd like to place an order.")}`, "_blank");
     } else {
       navigate(path);

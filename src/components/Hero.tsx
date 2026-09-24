@@ -26,7 +26,7 @@ export function Hero() {
   }, []);
 
   const handleOrder = () => {
-    const phone = branchData?.whatsapp ?? "9865009581";
+    const phone = branchData?.whatsapp ?? "9855070143";
     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello Hamro Bakery! I'd like to place an order. Please help me!")}`, "_blank");
   };
 

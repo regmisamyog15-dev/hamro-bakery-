@@ -45,7 +45,7 @@ const facts = [
   {
     emoji: "🏪",
     title: "4 Branches in Narayangarh, Bharatpur",
-    fact: "Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road — open until 9 PM (9855070143), and Synergy Road (9821207163). All open from 8 AM daily.",
+    fact: "Hakim Chowk (9855070143), Bishal Chowk (9702663750), Sangam Road — open until 9 PM (9855070143), and Synergy Road (9821207163). All open from 8 AM daily.",
   },
   {
     emoji: "📆",
@@ -55,7 +55,7 @@ const facts = [
   {
     emoji: "🚚",
     title: "Delivery: Bharatpur & Gaidakot",
-    fact: "We deliver within Bharatpur and to Gaidakot. Order via WhatsApp 9865009581, or through Foodmandu and Mero Kinamel.",
+    fact: "We deliver within Bharatpur and to Gaidakot. Order via WhatsApp 9855070143, or through Foodmandu and Mero Kinamel.",
   },
   {
     emoji: "💳",
@@ -165,7 +165,7 @@ export default function BakeryFacts() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
-              href="https://wa.me/9779865009581"
+              href="https://wa.me/9779855070143"
               className="px-6 py-3 rounded-lg bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5a] transition-colors"
             >
               WhatsApp Order 🍰

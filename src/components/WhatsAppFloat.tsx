@@ -9,7 +9,7 @@ export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
 
   // Always visible — fallback to main number before branch is chosen
-  const phone = branchData?.whatsapp ?? "9865009581";
+  const phone = branchData?.whatsapp ?? "9855070143";
   const branchLabel = selectedBranch ?? "Hamro Bakery";
 
   const quickMessages = [

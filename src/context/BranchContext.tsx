@@ -16,8 +16,8 @@ export interface BranchData {
 
 export const branches: Record<BranchName, BranchData> = {
   "Hakim Chowk": {
-    phone: "9865009581",
-    whatsapp: "9865009581",
+    phone: "9855070143",
+    whatsapp: "9855070143",
     tiktok: "https://www.tiktok.com/@hamro.bakery.shop",
     mapUrl: "https://maps.app.goo.gl/rwkVuBN5VG8wVvje8",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d84.43!3d27.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zSGFraW0gQ2hvd2s!5e0!3m2!1sen!2snp!4v1",

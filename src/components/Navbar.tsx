@@ -82,7 +82,7 @@ export function Navbar() {
 
           <button
             onClick={() => {
-              const phone = branchData?.whatsapp ?? "9865009581";
+              const phone = branchData?.whatsapp ?? "9855070143";
               window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello Hamro Bakery! I'd like to place an order.")}`, "_blank");
             }}
             className="hidden sm:block bg-[#2C1A0E] text-white text-xs font-sans font-medium px-4 py-2 rounded-sm hover:bg-[#C4714A] transition-colors duration-200"
@@ -141,7 +141,7 @@ export function Navbar() {
               <div className="pt-3 border-t border-[#2C1A0E]/8">
                 <button
                   onClick={() => {
-                    const phone = branchData?.whatsapp ?? "9865009581";
+                    const phone = branchData?.whatsapp ?? "9855070143";
                     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello! I'd like to order.")}`, "_blank");
                     setMobileOpen(false);
                   }}

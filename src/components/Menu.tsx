@@ -42,7 +42,7 @@ export function Menu() {
       .map(([key, q]) => `${key.split("__")[1]} x${q}`)
       .join(", ");
     if (!lines) { alert("Select at least one item."); return; }
-    const phone = branchData?.whatsapp ?? "9865009581";
+    const phone = branchData?.whatsapp ?? "9855070143";
     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent(`Hello Hamro Bakery! I'd like to order: ${lines}. Please confirm. Thank you!`)}`, "_blank");
   };
 
@@ -149,7 +149,7 @@ export function Menu() {
           <p className="text-sm text-[#2C1A0E]/50">
             Not sure what to order?{" "}
             <button
-              onClick={() => window.open(`https://wa.me/977${branchData?.whatsapp ?? "9865009581"}?text=${encodeURIComponent("Hello! Can you help me choose a cake?")}`, "_blank")}
+              onClick={() => window.open(`https://wa.me/977${branchData?.whatsapp ?? "9855070143"}?text=${encodeURIComponent("Hello! Can you help me choose a cake?")}`, "_blank")}
               className="text-[#2C1A0E] font-semibold hover:text-[#C4714A] transition-colors"
             >
               Chat with us

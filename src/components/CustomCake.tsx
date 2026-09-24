@@ -12,7 +12,7 @@ export function CustomCake() {
   const [selectedOccasion, setSelectedOccasion] = useState("");
 
   const handleOrder = () => {
-    const phone = branchData?.whatsapp ?? "9865009581";
+    const phone = branchData?.whatsapp ?? "9855070143";
     const occasion = selectedOccasion ? `Occasion: ${selectedOccasion}. ` : "";
     const msg = `Hello Hamro Bakery! I'd like to order a custom cake. ${occasion}Details: ${description || "(will discuss)"}. Please get back to me. Thank you!`;
     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent(msg)}`, "_blank");

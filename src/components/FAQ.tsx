@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "What is the best bakery in Bharatpur?",
-    a: "Hamro Bakery in Narayangarh is the top-rated bakery serving Bharatpur and all of Chitwan. Just minutes from Bharatpur city centre, we deliver custom cakes, birthday cakes, wedding cakes and fresh pastries across Bharatpur. Call 9865009581 or order via Foodmandu.",
+    a: "Hamro Bakery in Narayangarh is the top-rated bakery serving Bharatpur and all of Chitwan. Just minutes from Bharatpur city centre, we deliver custom cakes, birthday cakes, wedding cakes and fresh pastries across Bharatpur. Call 9855070143 or order via Foodmandu.",
   },
   {
     q: "What is the price of a customized birthday cake per pound in Chitwan?",
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "How do I send a birthday cake to Bharatpur or Chitwan from the UK or Australia?",
-    a: "WhatsApp Hamro Bakery at +977-9865009581 with the recipient's name, full address in Chitwan, phone number, your chosen cake design, and delivery date. We deliver across Narayangarh and Bharatpur and can send you a photo confirming delivery.",
+    a: "WhatsApp Hamro Bakery at +977-9855070143 with the recipient's name, full address in Chitwan, phone number, your chosen cake design, and delivery date. We deliver across Narayangarh and Bharatpur and can send you a photo confirming delivery.",
   },
   {
     q: "What are the most popular cake flavours for weddings in Nepal?",
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     q: "How do I order a custom cake in Narayangarh?",
-    a: "WhatsApp or call us at 9865009581. Tell us your occasion, preferred flavour, design idea, and the date you need it. We recommend ordering at least 2–3 days in advance for custom designs. Share a reference photo from Instagram or Pinterest and we'll match it.",
+    a: "WhatsApp or call us at 9855070143. Tell us your occasion, preferred flavour, design idea, and the date you need it. We recommend ordering at least 2–3 days in advance for custom designs. Share a reference photo from Instagram or Pinterest and we'll match it.",
   },
   {
     q: "Where are Hamro Bakery branches located?",
-    a: "We have four branches in Narayangarh, Chitwan: Hakim Chowk (9865009581), Bishal Chowk (9702663750), Sangam Road (9855070143), and Synergy Road (9821207163). All branches open at 8 AM daily and are easily accessible from Bharatpur.",
+    a: "We have four branches in Narayangarh, Chitwan: Hakim Chowk (9855070143), Bishal Chowk (9702663750), Sangam Road (9855070143), and Synergy Road (9821207163). All branches open at 8 AM daily and are easily accessible from Bharatpur.",
   },
 ];
 
@@ -112,7 +112,7 @@ export function FAQ() {
           </div>
           <button
             onClick={() => {
-              const phone = branchData?.whatsapp ?? "9865009581";
+              const phone = branchData?.whatsapp ?? "9855070143";
               window.open(`https://wa.me/977${phone}?text=${encodeURIComponent("Hello Hamro Bakery! I have a question.")}`, "_blank");
             }}
             className="flex items-center gap-2 bg-[#2C1A0E] text-white text-xs font-sans font-medium px-4 py-2.5 rounded-sm hover:bg-[#C4714A] transition-colors duration-200 shrink-0"

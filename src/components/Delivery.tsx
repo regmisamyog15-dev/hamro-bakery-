@@ -24,7 +24,7 @@ export function Delivery() {
   const { branchData } = useBranch();
 
   const handleDirectDelivery = () => {
-    const phone = branchData?.whatsapp ?? "9865009581";
+    const phone = branchData?.whatsapp ?? "9855070143";
     const msg = `Hello Hamro Bakery! I'd like to request a home delivery. Please share available delivery areas and timing. Thank you!`;
     window.open(`https://wa.me/977${phone}?text=${encodeURIComponent(msg)}`, "_blank");
   };

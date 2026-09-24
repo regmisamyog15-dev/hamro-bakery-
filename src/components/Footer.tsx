@@ -8,7 +8,7 @@ export function Footer() {
   const { branchData, selectedBranch } = useBranch();
 
   const saveContact = () => {
-    const phone = branchData?.phone ?? "9865009581";
+    const phone = branchData?.phone ?? "9855070143";
     const name = `Hamro Bakery — ${selectedBranch ?? "Narayangarh"}`;
     const vcf = `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${phone}\nEND:VCARD`;
     const blob = new Blob([vcf], { type: "text/vcard" });
@@ -24,7 +24,7 @@ export function Footer() {
     { Icon: SiFacebook, label: "Facebook", href: "https://www.facebook.com/share/1E8bcas3Dv/", testId: "link-fb-card" },
     { Icon: SiInstagram, label: "Instagram", href: "https://www.instagram.com/hamrobakerynarayangarh", testId: "link-ig-card" },
     { Icon: SiTiktok, label: "TikTok", href: branchData?.tiktok ?? "https://www.tiktok.com/@hamro.bakery.shop", testId: "link-tt-card" },
-    { Icon: SiWhatsapp, label: "WhatsApp", href: `https://wa.me/977${branchData?.whatsapp ?? "9865009581"}`, testId: "link-wa-card" },
+    { Icon: SiWhatsapp, label: "WhatsApp", href: `https://wa.me/977${branchData?.whatsapp ?? "9855070143"}`, testId: "link-wa-card" },
   ];
 
   return (
@@ -70,7 +70,7 @@ export function Footer() {
             <p className="text-white/30 text-xs font-sans uppercase tracking-widest mb-5">Our Branches</p>
             <div className="space-y-4">
               {[
-                { name: "Hakim Chowk", phone: "9865009581" },
+                { name: "Hakim Chowk", phone: "9855070143" },
                 { name: "Bishal Chowk", phone: "9702663750" },
                 { name: "Sangam Road", phone: "9855070143" },
                 { name: "Synergy Road", phone: "9821207163" },
