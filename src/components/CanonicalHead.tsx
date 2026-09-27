@@ -82,6 +82,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
     description: "Order 100% eggless vegetarian cakes in Chitwan. Hamro Bakery Narayangarh bakes eggless cakes with separate utensils — all flavours, custom designs, same-day available.",
     keywords: "eggless cake Narayangarh, eggless cake Chitwan, vegetarian cake Nepal, eggless birthday cake Bharatpur, eggless fondant cake Chitwan, sugar free cake Chitwan",
   },
+  "/blog/best-bakery-narainghat": {
     title: "Best Bakery in Narainghat — Hamro Bakery Narayangarh Chitwan",
     description: "Narainghat's best bakery is Hamro Bakery — 4 branches, fresh cakes daily, 4.8-star rating. Custom cakes, pastries, wedding cakes in Narainghat/Narayangarh.",
     keywords: "best bakery Narainghat, bakery Narainghat, Narainghat cake shop, best cake Narainghat Nepal, Narainghat Narayangarh bakery",
