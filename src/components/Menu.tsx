@@ -9,6 +9,7 @@ type Quantities = Record<string, number>;
 
 const CATEGORIES = [
   { key: "Cakes (Price per Pound)", label: "Cakes", sub: "per pound" },
+  { key: "Mini Cakes (Per Piece)", label: "Mini Cakes", sub: "per piece" },
   { key: "Pastry",                  label: "Pastries", sub: "per piece" },
   { key: "Dry Items",               label: "Dry Items", sub: "per piece" },
   { key: "Cookies",                 label: "Cookies", sub: "per pack" },
@@ -98,6 +99,10 @@ export function Menu() {
           )}
         </div>
 
+        {activeMeta.key.startsWith("Mini") && (
+          <p className="text-sm text-[#2C1A0E]/60 mb-4">Mini cake flavours: Black Forest, White Forest, Chocolate, Pineapple, Blueberry, Butterscotch &amp; more.</p>
+        )}
+
         {/* Items */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -111,10 +116,13 @@ export function Menu() {
             {activeMeta.key.includes("Pound") ? (
               <div className="space-y-6">
                 {[
-                  { tier: "Classic — रु 600 / lb", items: activeCat.items.filter(i => i.price === 600) },
+                  { tier: "Classic — रु 650 / lb", items: activeCat.items.filter(i => i.price === 650) },
                   { tier: "Premium — रु 700 / lb", items: activeCat.items.filter(i => i.price === 700) },
-                  { tier: "Special — रु 1,000 / lb", items: activeCat.items.filter(i => i.price === 1000) },
-                  { tier: "Designer — रु 1,500 / lb", items: activeCat.items.filter(i => i.price === 1500) },
+                  { tier: "Truffle & Jelly — रु 750 / lb", items: activeCat.items.filter(i => i.price === 750) },
+                  { tier: "Special — रु 800 / lb", items: activeCat.items.filter(i => i.price === 800) },
+                  { tier: "Fruit Decoration — रु 1,250 / lb", items: activeCat.items.filter(i => i.price === 1250) },
+                  { tier: "Custom Cakes (starting from) — रु 1,750 / lb", items: activeCat.items.filter(i => i.price === 1750) },
+                  { tier: "Cheesecake — रु 2,250 / lb (order 1 day before)", items: activeCat.items.filter(i => i.price === 2250) },
                 ].filter(g => g.items.length > 0).map(group => (
                   <div key={group.tier}>
                     <div className="flex items-center gap-3 mb-3">

@@ -4,8 +4,8 @@ import { Link } from "wouter";
 const facts = [
   {
     emoji: "🎂",
-    title: "Birthday Cakes Start at Rs 600/lb",
-    fact: "Classic flavours — Blackforest, Whiteforest, Butterscotch, Pineapple, Blueberry, Vanilla and Strawberry — all start at Rs 600 per pound. Red Velvet is Rs 1,000/lb. Fondant Design cakes start at Rs 1,500/lb.",
+    title: "Birthday Cakes Start at Rs 650/lb",
+     fact: "Classic flavours — Black Forest, Butterscotch, Pineapple, Blueberry and Strawberry — start at Rs 650 per pound. White Forest, Mango and Orange are Rs 700/lb. Truffle and Jelly cakes are Rs 750/lb.",
   },
   {
     emoji: "📏",
@@ -19,8 +19,8 @@ const facts = [
   },
   {
     emoji: "✨",
-    title: "Simple Design vs Fondant Design",
-    fact: "Simple design cakes start at Rs 1,000/lb — cream decorations, clean finish. Fondant design cakes start at Rs 1,500/lb — sculpted, detailed decorations made from fondant.",
+    title: "Special & Custom Cakes",
+     fact: "Special cakes like Bow Design and Choco Chips are Rs 800/lb. Fruit decoration cakes are Rs 1,250/lb. Custom design cakes start from Rs 1,750/lb. Cheesecake is Rs 2,250/lb with 1 day advance order.",
   },
   {
     emoji: "🧁",

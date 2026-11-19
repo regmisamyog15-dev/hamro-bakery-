@@ -8,8 +8,8 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
     keywords: "best bakery Chitwan, best bakery Narayangarh, best bakery Bharatpur, bakery Nepal, custom cake Narayangarh, birthday cake Chitwan, wedding cake Bharatpur",
   },
   "/menu": {
-    title: "Menu & Prices — Hamro Bakery Narayangarh | Cakes from Rs 600",
-    description: "Hamro Bakery Narayangarh menu: cakes from Rs 600/lb, pastries Rs 70+, cookies, dry items. All baked fresh daily in Chitwan. Order via WhatsApp.",
+    title: "Menu & Prices — Hamro Bakery Narayangarh | Cakes from Rs 650",
+    description: "Hamro Bakery Narayangarh menu: cakes from Rs 650/lb, pastries Rs 70+, cookies, dry items. All baked fresh daily in Chitwan. Order via WhatsApp.",
     keywords: "cake price Narayangarh, bakery menu Chitwan, cake price Nepal, pastry price Narayangarh, blackforest cake price",
   },
   "/gallery": {
@@ -19,7 +19,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/custom-cake": {
     title: "Custom Cakes Narayangarh — Order Birthday & Wedding Cakes",
-    description: "Order custom birthday, wedding and anniversary cakes in Narayangarh from Hamro Bakery. Fondant from Rs 1500/lb. WhatsApp 9855070143. 2–3 days notice.",
+    description: "Order custom birthday, wedding and anniversary cakes in Narayangarh from Hamro Bakery. Fondant from Rs 1,750/lb. WhatsApp 9855070143. 2–3 days notice.",
     keywords: "custom cake Narayangarh, custom cake Chitwan, birthday cake order Nepal, wedding cake Chitwan, fondant cake Nepal",
   },
   "/about": {
@@ -39,7 +39,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/blog/best-birthday-cakes-chitwan": {
     title: "Best Birthday Cakes in Chitwan — Hamro Bakery Narayangarh",
-    description: "Find the best birthday cakes in Chitwan at Hamro Bakery Narayangarh. Custom designs, fresh daily, from Rs 600/lb. Order: 9855070143.",
+    description: "Find the best birthday cakes in Chitwan at Hamro Bakery Narayangarh. Custom designs, fresh daily, from Rs 650/lb. Order: 9855070143.",
     keywords: "best birthday cake Chitwan, birthday cake Narayangarh, custom birthday cake Nepal, birthday cake price Chitwan",
   },
   "/blog/custom-cakes-narayangarh": {
@@ -59,7 +59,7 @@ const PAGE_META: Record<string, { title: string; description: string; keywords?:
   },
   "/blog/wedding-cake-chitwan-nepal": {
     title: "Wedding Cakes in Chitwan Nepal — Order from Hamro Bakery",
-    description: "Beautiful wedding cakes in Chitwan Nepal from Hamro Bakery. Multi-tier fondant, fresh flower cakes. From Rs 1500/lb. Order 9855070143.",
+    description: "Beautiful wedding cakes in Chitwan Nepal from Hamro Bakery. Multi-tier fondant, fresh flower cakes. From Rs 1,750/lb. Order 9855070143.",
     keywords: "wedding cake Chitwan, wedding cake Nepal, wedding cake Narayangarh, fondant wedding cake Nepal",
   },
   "/blog/fresh-pastries-narayangarh": {

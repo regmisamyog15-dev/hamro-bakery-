@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What is the price of a customized birthday cake per pound in Chitwan?",
-    a: "The price of a customized birthday cake in Chitwan starts from Rs 700 to Rs 1,200 per pound depending on the design complexity, frosting type (whipped cream, fondant, or ganache), and flavour (classic chocolate, red velvet, or premium fresh fruit). Standard flavours like Blackforest and Butterscotch start at Rs 600/lb.",
+    a: "The price of a customized birthday cake in Chitwan starts from Rs 1,750 per pound depending on the design complexity, frosting type (whipped cream, fondant, or ganache), and flavour (classic chocolate, red velvet, or premium fresh fruit). Standard flavours like Black Forest and Butterscotch start at Rs 650/lb, and fruit decoration cakes are Rs 1,250/lb.",
   },
   {
     q: "Can I order an eggless cake in Narayangarh?",
